@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPPSC Mains Paper-I PYQ Analysis 2019–2024</title>
+<style>
+  :root {
+    --saffron: #FF6600;
+    --deep: #1a237e;
+    --green: #1b5e20;
+    --gold: #f9a825;
+    --red: #b71c1c;
+    --teal: #006064;
+    --light-bg: #f5f5f5;
+    --card-bg: #ffffff;
+    --border: #e0e0e0;
+    --text: #212121;
+    --muted: #616161;
+    --hist-color: #1565C0;
+    --geo-color: #2E7D32;
+    --mp-color: #6A1B9A;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--light-bg); color: var(--text); font-size: 14px; }
+  
+  .header { background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #1565C0 100%); color: white; padding: 30px 40px; position: relative; overflow: hidden; }
+  .header::after { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 100%; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='80' cy='50' r='60' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E") no-repeat center/cover; }
+  .header h1 { font-size: 24px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .header p { font-size: 13px; opacity: 0.85; margin-bottom: 4px; }
+  .header-badges { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  .hbadge { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 4px 14px; font-size: 12px; font-weight: 500; }
+
+  .nav { background: var(--deep); position: sticky; top: 0; z-index: 100; padding: 0 20px; display: flex; gap: 0; overflow-x: auto; }
+  .nav a { color: rgba(255,255,255,0.75); text-decoration: none; padding: 12px 16px; font-size: 12px; white-space: nowrap; border-bottom: 3px solid transparent; transition: all 0.2s; }
+  .nav a:hover { color: white; border-bottom-color: var(--gold); }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+  
+  .section { background: var(--card-bg); border-radius: 10px; border: 1px solid var(--border); margin-bottom: 24px; overflow: hidden; }
+  .section-header { background: linear-gradient(90deg, var(--deep) 0%, #283593 100%); color: white; padding: 14px 20px; display: flex; align-items: center; gap: 12px; }
+  .section-number { background: rgba(255,255,255,0.2); border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+  .section-header h2 { font-size: 15px; font-weight: 600; }
+  .section-body { padding: 20px; }
+
+  .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-bottom: 20px; }
+  .metric-card { background: var(--light-bg); border-radius: 8px; padding: 14px 16px; border-left: 4px solid var(--deep); }
+  .metric-card.hist { border-left-color: var(--hist-color); }
+  .metric-card.geo { border-left-color: var(--geo-color); }
+  .metric-card.mp { border-left-color: var(--mp-color); }
+  .metric-card .m-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .metric-card .m-value { font-size: 22px; font-weight: 700; color: var(--text); }
+  .metric-card .m-sub { font-size: 11px; color: var(--muted); margin-top: 3px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: #e8eaf6; color: var(--deep); font-weight: 600; text-align: left; padding: 9px 12px; border-bottom: 2px solid var(--deep); font-size: 12px; }
+  td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:hover td { background: #f8f9ff; }
+  tr:last-child td { border-bottom: none; }
+
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+  .b-must { background: #ffcdd2; color: #b71c1c; }
+  .b-very { background: #ffe0b2; color: #e65100; }
+  .b-imp { background: #fff9c4; color: #f57f17; }
+  .b-good { background: #dcedc8; color: #33691e; }
+  .b-hist { background: #e3f2fd; color: #0d47a1; }
+  .b-geo { background: #e8f5e9; color: #1b5e20; }
+  .b-mp { background: #f3e5f5; color: #4a148c; }
+  .b-world { background: #fce4ec; color: #880e4f; }
+  .b-art { background: #e0f2f1; color: #004d40; }
+  .b-new { background: #e8f5e9; color: #1b5e20; border: 1px solid #4caf50; }
+  .b-stable { background: #fff3e0; color: #e65100; }
+  .b-declining { background: #ffebee; color: #c62828; }
+
+  .priority-matrix { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; border: 2px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .pm-box { padding: 16px; }
+  .pm-box h4 { font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+  .pm-1 { background: #ffcdd2; } .pm-1 h4 { color: #b71c1c; }
+  .pm-2 { background: #fff9c4; } .pm-2 h4 { color: #f57f17; }
+  .pm-3 { background: #e3f2fd; } .pm-3 h4 { color: #0d47a1; }
+  .pm-4 { background: #f5f5f5; } .pm-4 h4 { color: #616161; }
+  .pm-box ul { padding-left: 0; list-style: none; }
+  .pm-box li { font-size: 12px; padding: 2px 0; color: var(--text); border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .pm-box li:last-child { border-bottom: none; }
+  .pm-box li::before { content: '→ '; font-weight: 700; }
+
+  .golden-q { background: linear-gradient(135deg, #fffde7 0%, #fff8e1 100%); border: 1px solid #f9a825; border-left: 4px solid #f9a825; border-radius: 0 8px 8px 0; padding: 10px 14px; margin-bottom: 8px; }
+  .golden-q .qnum { font-size: 11px; font-weight: 700; color: #e65100; margin-bottom: 4px; }
+  .golden-q .qtext { font-size: 13px; font-weight: 500; color: var(--text); }
+  .golden-q .qmeta { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+  .never-asked { background: #fff3e0; border: 1px solid #ffb74d; border-left: 4px solid #ff6d00; border-radius: 0 8px 8px 0; padding: 10px 14px; margin-bottom: 8px; }
+  .high-risk { background: #ffebee; border: 1px solid #ef9a9a; border-left: 4px solid #c62828; border-radius: 0 8px 8px 0; padding: 10px 14px; margin-bottom: 8px; }
+
+  .tab-row { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
+  .tab-btn { padding: 6px 16px; border-radius: 20px; font-size: 12px; cursor: pointer; border: 1px solid var(--border); background: var(--light-bg); color: var(--muted); transition: all 0.2s; }
+  .tab-btn.active { background: var(--deep); color: white; border-color: var(--deep); }
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
+
+  .year-structure { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .ys-card { background: var(--light-bg); border-radius: 8px; padding: 12px; border-top: 3px solid var(--deep); }
+  .ys-card h4 { font-size: 13px; font-weight: 700; color: var(--deep); margin-bottom: 8px; }
+  .ys-card p { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+  .mp-question { background: #f3e5f5; border-left: 3px solid var(--mp-color); padding: 8px 12px; margin-bottom: 6px; border-radius: 0 6px 6px 0; font-size: 12.5px; }
+  .mp-question .yr { font-size: 10px; font-weight: 700; color: var(--mp-color); }
+
+  .progress-bar { background: var(--border); border-radius: 4px; height: 10px; overflow: hidden; margin-top: 4px; }
+  .progress-fill { height: 100%; border-radius: 4px; transition: width 1s ease; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+
+  .tip-box { background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 8px; padding: 14px; margin-top: 12px; }
+  .tip-box h4 { color: #1b5e20; font-size: 13px; margin-bottom: 8px; }
+  .tip-box ul { padding-left: 16px; }
+  .tip-box li { font-size: 12.5px; line-height: 1.7; color: var(--text); }
+
+  .warn-box { background: #fff3e0; border: 1px solid #ffcc80; border-radius: 8px; padding: 14px; margin-top: 12px; }
+  .warn-box h4 { color: #e65100; font-size: 13px; margin-bottom: 8px; }
+  
+  .dashboard-table td { padding: 10px 14px; }
+  .dashboard-table .param { font-weight: 500; color: var(--deep); }
+  .dashboard-table .hist-val { color: var(--hist-color); font-weight: 600; }
+  .dashboard-table .geo-val { color: var(--geo-color); font-weight: 600; }
+  .dashboard-table .combo-val { color: var(--mp-color); font-weight: 600; }
+  .dashboard-table tr:nth-child(even) td { background: #f8f9ff; }
+
+  .wildcard { background: linear-gradient(135deg, #e8eaf6 0%, #ede7f6 100%); border: 1px solid #9575cd; border-left: 4px solid #4527a0; border-radius: 0 8px 8px 0; padding: 10px 14px; margin-bottom: 8px; }
+
+  .overlap-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .overlap-card { background: var(--light-bg); border-radius: 8px; padding: 14px; border-top: 3px solid; }
+  .overlap-card h4 { font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+  .overlap-card ul { padding-left: 14px; font-size: 12px; line-height: 1.8; color: var(--muted); }
+
+  .strategy-item { background: var(--light-bg); border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; border-left: 3px solid; }
+
+  .rank-num { display: inline-flex; width: 22px; height: 22px; background: var(--deep); color: white; border-radius: 50%; font-size: 10px; font-weight: 700; align-items: center; justify-content: center; margin-right: 6px; flex-shrink: 0; }
+  .rank-item { display: flex; align-items: flex-start; padding: 5px 0; border-bottom: 1px solid var(--border); font-size: 12.5px; }
+  .rank-item:last-child { border-bottom: none; }
+
+  @media (max-width: 700px) {
+    .two-col, .three-col, .year-structure, .overlap-grid { grid-template-columns: 1fr; }
+    .priority-matrix { grid-template-columns: 1fr; }
+    .header { padding: 20px; }
+  }
+
+  .footnote { font-size: 11px; color: var(--muted); margin-top: 10px; font-style: italic; }
+  .section-divider { height: 1px; background: var(--border); margin: 16px 0; }
+  h3.sub-h { font-size: 14px; font-weight: 600; color: var(--deep); margin: 16px 0 10px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🎯 MPPSC Mains GS Paper-I — Complete PYQ Analysis</h1>
+  <p>History (Section-A) + Geography (Section-B) | 6 Years Deep Analysis</p>
+  <p>Prepared for serious MPPSC aspirants targeting top rank</p>
+  <div class="header-badges">
+    <span class="hbadge">2019</span>
+    <span class="hbadge">2020</span>
+    <span class="hbadge">2021</span>
+    <span class="hbadge">2022</span>
+    <span class="hbadge">2023</span>
+    <span class="hbadge">2024</span>
+    <span class="hbadge">300 Marks</span>
+    <span class="hbadge">6 Years · 15 Sections Analyzed</span>
+  </div>
+</div>
+
+<div class="nav">
+  <a href="#s1">1. Structure</a>
+  <a href="#s2">2. History</a>
+  <a href="#s3">3. Geography</a>
+  <a href="#s4">4. Repeated Qs</a>
+  <a href="#s5">5. Directive Words</a>
+  <a href="#s6">6. MP Focus</a>
+  <a href="#s7">7. Year Trends</a>
+  <a href="#s8">8. Priority Matrix</a>
+  <a href="#s9">9. Static vs Dynamic</a>
+  <a href="#s10">10. Length Pattern</a>
+  <a href="#s11">11. Never Asked</a>
+  <a href="#s12">12. Overlaps</a>
+  <a href="#s13">13. Answer Strategy</a>
+  <a href="#s14">14. Golden Questions</a>
+  <a href="#s15">15. Dashboard</a>
+</div>
+
+<div class="container">
+
+<!-- ===== SECTION 1: PAPER STRUCTURE ===== -->
+<div class="section" id="s1">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <h2>Paper Overview & Structure (2019–2024)</h2>
+  </div>
+  <div class="section-body">
+    <div class="metrics-grid">
+      <div class="metric-card"><div class="m-label">Total Marks</div><div class="m-value">300</div><div class="m-sub">Per paper</div></div>
+      <div class="metric-card hist"><div class="m-label">History (Sec-A)</div><div class="m-value">150</div><div class="m-sub">50% weightage</div></div>
+      <div class="metric-card geo"><div class="m-label">Geography (Sec-B)</div><div class="m-value">150</div><div class="m-sub">50% weightage</div></div>
+      <div class="metric-card"><div class="m-label">Time Allowed</div><div class="m-value">3 hrs</div><div class="m-sub">All questions compulsory</div></div>
+      <div class="metric-card mp"><div class="m-label">Questions/Paper</div><div class="m-value">~50–60</div><div class="m-sub">Including sub-questions</div></div>
+    </div>
+
+    <h3 class="sub-h">Year-wise Paper Structure Evolution</h3>
+    <table>
+      <tr>
+        <th>Year</th><th>Sec-A Pattern (History)</th><th>Sec-B Pattern (Geo)</th><th>Marks</th><th>Key Change</th>
+      </tr>
+      <tr>
+        <td><strong>2019</strong></td>
+        <td>Q1: 15 VSA×3m | Q2: 10 of 12 SA×6m | Q3: 3 LA×15m (internal)</td>
+        <td>Same pattern as Sec-A</td>
+        <td>300</td>
+        <td>Baseline format; 100-word SA, 300-word LA</td>
+      </tr>
+      <tr>
+        <td><strong>2020</strong></td>
+        <td>Q1: 15 VSA×3m | Q2: 10 SA×5m (all compulsory) | Q3: 5 LA×11m (internal)</td>
+        <td>Same pattern as Sec-A</td>
+        <td>300</td>
+        <td>SA reduced to 50 words; LA to 200 words; 11m per long Q</td>
+      </tr>
+      <tr>
+        <td><strong>2021</strong></td>
+        <td>Q1: 15 VSA×3m | Q2: 10 SA×5m | Q3: 5 LA×11m (internal)</td>
+        <td>Same pattern</td>
+        <td>300</td>
+        <td>Same as 2020</td>
+      </tr>
+      <tr>
+        <td><strong>2022</strong></td>
+        <td>Q1: 15 VSA×3m | Q2: 10 SA×5m | Q3: 5 LA×11m (internal)</td>
+        <td>Same pattern</td>
+        <td>300</td>
+        <td>Same as 2021</td>
+      </tr>
+      <tr>
+        <td><strong>2023</strong></td>
+        <td>Q1: 15 VSA×3m | Q2: 10 SA×5m | Q3: 5 LA×11m (internal)</td>
+        <td>Same pattern</td>
+        <td>300</td>
+        <td>Same format — very stable</td>
+      </tr>
+      <tr>
+        <td><strong>2024</strong></td>
+        <td>Q1: 15 VSA×<strong>2m</strong> | Q2: 10 SA×<strong>7m</strong> | Q3: 5 LA×<strong>10m</strong> (no internal)</td>
+        <td>Same pattern</td>
+        <td>300</td>
+        <td><strong>BIG CHANGE:</strong> VSA reduced to 2m; SA increased to 7m; LA=10m; NO internal option in 2024!</td>
+      </tr>
+    </table>
+
+    <div class="section-divider"></div>
+    <h3 class="sub-h">Mark Distribution Summary (Standardized 2020–2023 Format)</h3>
+    <div class="year-structure">
+      <div class="ys-card">
+        <h4>Type 1 — VSA (Very Short)</h4>
+        <p>15 questions × 3 marks (2019–2023)<br>15 questions × 2 marks (2024)<br>Answer: 10–20 words / 1 line<br>All compulsory</p>
+      </div>
+      <div class="ys-card">
+        <h4>Type 2 — SA (Short Answer)</h4>
+        <p>10 questions × 5 marks (2019–2023)<br>10 questions × 7 marks (2024)<br>Answer: 50–100 words / 5–6 lines<br>All compulsory</p>
+      </div>
+      <div class="ys-card">
+        <h4>Type 3 — LA (Long Answer)</h4>
+        <p>5 questions × 11 marks (2019–2023)<br>5 questions × 10 marks (2024)<br>Answer: 200 words<br>Internal option available (except 2024)</p>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <h4>⚠️ 2024 FORMAT ALERT — Critical Change</h4>
+      <ul style="padding-left:16px; font-size:12.5px; line-height:1.8;">
+        <li>VSA marks REDUCED from 3 to 2 per question (saves time but lower marks)</li>
+        <li>SA marks INCREASED from 5 to 7 (more writing needed per SA)</li>
+        <li>NO internal options in 2024 LA — you must answer ALL 5 compulsorily</li>
+        <li>LA reduced from 11 to 10 marks each — but 5 compulsory = 50 marks total</li>
+        <li>SA total = 70 marks in 2024 vs 50 in earlier years — SA is now the MOST important section!</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 2: HISTORY WEIGHTAGE ===== -->
+<div class="section" id="s2">
+  <div class="section-header">
+    <div class="section-number">2</div>
+    <h2>History — Full Topic-wise Weightage Table (2019–2024)</h2>
+  </div>
+  <div class="section-body">
+    <table>
+      <tr>
+        <th>Rank</th><th>Topic Area</th><th>Sub-Topic / Theme</th><th>Times Asked</th><th>Est. Total Marks</th><th>Weightage%</th><th>Years</th><th>Trend</th>
+      </tr>
+      <!-- MP History — Highest -->
+      <tr>
+        <td><strong>1</strong></td>
+        <td><span class="badge b-mp">MP History</span></td>
+        <td>Holkar Dynasty (Malhar Rao, Ahilyabai, Tukoji Rao III, pre-independence state)</td>
+        <td><strong>6</strong></td>
+        <td>~88</td>
+        <td>~12%</td>
+        <td>2019,20,21,22,23,24</td>
+        <td><span class="badge b-new">EVERY YEAR</span></td>
+      </tr>
+      <tr>
+        <td><strong>2</strong></td>
+        <td><span class="badge b-mp">MP History</span></td>
+        <td>1857 Freedom Struggle in MP (Shankar Shah, Raghunath Shah, Bhima Nayak, Tantya Bhil, Avanti Bai)</td>
+        <td><strong>6</strong></td>
+        <td>~85</td>
+        <td>~11.5%</td>
+        <td>2019,20,21,22,23,24</td>
+        <td><span class="badge b-new">EVERY YEAR</span></td>
+      </tr>
+      <tr>
+        <td><strong>3</strong></td>
+        <td><span class="badge b-mp">MP History</span></td>
+        <td>Gondwana Kingdom / Rani Durgawati / Gondwana genealogy</td>
+        <td><strong>4</strong></td>
+        <td>~55</td>
+        <td>~7.5%</td>
+        <td>2020,22,23,24</td>
+        <td><span class="badge b-new">Rising</span></td>
+      </tr>
+      <tr>
+        <td><strong>4</strong></td>
+        <td><span class="badge b-hist">Modern India</span></td>
+        <td>British Economic Impact (drain of wealth, poverty, industry decline, agriculture)</td>
+        <td><strong>5</strong></td>
+        <td>~72</td>
+        <td>~10%</td>
+        <td>2019,20,22,23,24</td>
+        <td><span class="badge b-stable">Very High</span></td>
+      </tr>
+      <tr>
+        <td><strong>5</strong></td>
+        <td><span class="badge b-hist">Ancient India</span></td>
+        <td>Harappan / Indus Valley Civilisation (urban, economic, terracotta, Great Bath)</td>
+        <td><strong>5</strong></td>
+        <td>~68</td>
+        <td>~9%</td>
+        <td>2019,20,21,22,24</td>
+        <td><span class="badge b-stable">Very High</span></td>
+      </tr>
+      <tr>
+        <td><strong>6</strong></td>
+        <td><span class="badge b-hist">Ancient India</span></td>
+        <td>Gupta Age (science & tech, art & architecture, culture, development)</td>
+        <td><strong>4</strong></td>
+        <td>~55</td>
+        <td>~7.5%</td>
+        <td>2019,20,21,22</td>
+        <td><span class="badge b-stable">High</span></td>
+      </tr>
+      <tr>
+        <td><strong>7</strong></td>
+        <td><span class="badge b-hist">Modern India</span></td>
+        <td>Freedom Movement & National Leaders (Gandhi, Tilak, Arya Samaj, INC, non-cooperation, CDM, Quit India)</td>
+        <td><strong>6</strong></td>
+        <td>~80</td>
+        <td>~11%</td>
+        <td>2019,20,21,22,23,24</td>
+        <td><span class="badge b-new">EVERY YEAR</span></td>
+      </tr>
+      <tr>
+        <td><strong>8</strong></td>
+        <td><span class="badge b-hist">Medieval India</span></td>
+        <td>Mughal Empire (Akbar, Aurangzeb, Nurjahan, Shivaji, administrative system)</td>
+        <td><strong>5</strong></td>
+        <td>~65</td>
+        <td>~9%</td>
+        <td>2020,21,22,23,24</td>
+        <td><span class="badge b-stable">High</span></td>
+      </tr>
+      <tr>
+        <td><strong>9</strong></td>
+        <td><span class="badge b-mp">MP History</span></td>
+        <td>Chandela / Paramara / Kalchuri / Raja Bhoj (temples, architecture, achievements)</td>
+        <td><strong>4</strong></td>
+        <td>~52</td>
+        <td>~7%</td>
+        <td>2019,22,23,24</td>
+        <td><span class="badge b-stable">Rising</span></td>
+      </tr>
+      <tr>
+        <td><strong>10</strong></td>
+        <td><span class="badge b-hist">Post-Independence</span></td>
+        <td>Princely States Integration / Post-independence India (republic, reorganisation, elections)</td>
+        <td><strong>4</strong></td>
+        <td>~52</td>
+        <td>~7%</td>
+        <td>2019,20,22,23</td>
+        <td><span class="badge b-stable">High</span></td>
+      </tr>
+      <tr>
+        <td><strong>11</strong></td>
+        <td><span class="badge b-world">World History</span></td>
+        <td>World Wars / French Revolution / Renaissance / Cold War consequences</td>
+        <td><strong>4</strong></td>
+        <td>~48</td>
+        <td>~6.5%</td>
+        <td>2019,20,22,23</td>
+        <td><span class="badge b-declining">Declining</span></td>
+      </tr>
+      <tr>
+        <td><strong>12</strong></td>
+        <td><span class="badge b-hist">Ancient India</span></td>
+        <td>Mauryan Empire (Ashoka, Dhamma, Arthashastra, tirthas, edicts)</td>
+        <td><strong>4</strong></td>
+        <td>~44</td>
+        <td>~6%</td>
+        <td>2019,21,22,23</td>
+        <td><span class="badge b-stable">Stable</span></td>
+      </tr>
+      <tr>
+        <td><strong>13</strong></td>
+        <td><span class="badge b-hist">Medieval India</span></td>
+        <td>Delhi Sultanate (Balban, Muhammad Tughlaq, Sufi/Bhakti movements)</td>
+        <td><strong>4</strong></td>
+        <td>~44</td>
+        <td>~6%</td>
+        <td>2020,21,22,23</td>
+        <td><span class="badge b-stable">Stable</span></td>
+      </tr>
+      <tr>
+        <td><strong>14</strong></td>
+        <td><span class="badge b-art">Art & Culture</span></td>
+        <td>MP Art Forms (Godana, folk painting Nimad/Malwa, Bagh caves, Bhimbetka, Sanchi)</td>
+        <td><strong>4</strong></td>
+        <td>~40</td>
+        <td>~5.5%</td>
+        <td>2019,21,22,23</td>
+        <td><span class="badge b-stable">Stable</span></td>
+      </tr>
+      <tr>
+        <td><strong>15</strong></td>
+        <td><span class="badge b-hist">Ancient India</span></td>
+        <td>Vedic Period (Rigvedic Panchjan, political organisation, social system)</td>
+        <td><strong>3</strong></td>
+        <td>~33</td>
+        <td>~4.5%</td>
+        <td>2019,21,23</td>
+        <td><span class="badge b-stable">Stable</span></td>
+      </tr>
+      <tr>
+        <td><strong>16</strong></td>
+        <td><span class="badge b-hist">Modern India</span></td>
+        <td>Tribal Revolts against British (Ulgulan, Mopala, Ahome, Bundela, Bheel)</td>
+        <td><strong>3</strong></td>
+        <td>~33</td>
+        <td>~4.5%</td>
+        <td>2019,20,22</td>
+        <td><span class="badge b-stable">Stable</span></td>
+      </tr>
+      <tr>
+        <td><strong>17</strong></td>
+        <td><span class="badge b-mp">MP History</span></td>
+        <td>Scindia / Bhopal State / Bundelkhand (princely states, merger, Madhya Bharat)</td>
+        <td><strong>4</strong></td>
+        <td>~44</td>
+        <td>~6%</td>
+        <td>2019,20,23,24</td>
+        <td><span class="badge b-stable">Rising</span></td>
+      </tr>
+      <tr>
+        <td><strong>18</strong></td>
+        <td><span class="badge b-hist">Ancient India</span></td>
+        <td>Buddhism / Jainism (Vasubandhu, Sangam age culture, ancient lit)</td>
+        <td><strong>3</strong></td>
+        <td>~30</td>
+        <td>~4%</td>
+        <td>2019,20,22</td>
+        <td><span class="badge b-stable">Stable</span></td>
+      </tr>
+      <tr>
+        <td><strong>19</strong></td>
+        <td><span class="badge b-hist">Medieval India</span></td>
+        <td>Maratha Empire (Shivaji's political ideals, administrative system, Maratha wars)</td>
+        <td><strong>3</strong></td>
+        <td>~33</td>
+        <td>~4.5%</td>
+        <td>2021,22,23</td>
+        <td><span class="badge b-new">Rising</span></td>
+      </tr>
+      <tr>
+        <td><strong>20</strong></td>
+        <td><span class="badge b-hist">Post-Independence</span></td>
+        <td>Indian Renaissance / Social Reform (Arya Samaj, Naoroji, printing, Hindu Code Bill)</td>
+        <td><strong>4</strong></td>
+        <td>~40</td>
+        <td>~5.5%</td>
+        <td>2020,21,22,24</td>
+        <td><span class="badge b-stable">Stable</span></td>
+      </tr>
+    </table>
+    <p class="footnote">* Marks are estimates combining VSA + SA + LA appearances. World History showing declining trend from 2019 to 2024.</p>
+  </div>
+</div>
+
+<!-- ===== SECTION 3: GEOGRAPHY WEIGHTAGE ===== -->
+<div class="section" id="s3">
+  <div class="section-header">
+    <div class="section-number">3</div>
+    <h2>Geography — Full Topic-wise Weightage Table (2019–2024)</h2>
+  </div>
+  <div class="section-body">
+    <table>
+      <tr>
+        <th>Rank</th><th>Topic Area</th><th>Sub-Topic / Theme</th><th>Times Asked</th><th>Est. Total Marks</th><th>Weightage%</th><th>Years</th><th>Trend</th>
+      </tr>
+      <tr>
+        <td><strong>1</strong></td>
+        <td><span class="badge b-geo">MP Geography</span></td>
+        <td>MP Physical Geography — Malwa Plateau, Satpura, rivers, physical divisions</td>
+        <td><strong>6</strong></td>
+        <td>~90</td>
+        <td>~12%</td>
+        <td>2019,20,21,22,23,24</td>
+        <td><span class="badge b-new">EVERY YEAR</span></td>
+      </tr>
+      <tr>
+        <td><strong>2</strong></td>
+        <td><span class="badge b-geo">MP Geography</span></td>
+        <td>MP Agriculture & Industries (soyabean, cotton, sugarcane, cement, coal, minerals)</td>
+        <td><strong>6</strong></td>
+        <td>~85</td>
+        <td>~11.5%</td>
+        <td>2019,20,21,22,23,24</td>
+        <td><span class="badge b-new">EVERY YEAR</span></td>
+      </tr>
+      <tr>
+        <td><strong>3</strong></td>
+        <td><span class="badge b-geo">Physical Geo</span></td>
+        <td>Climatology — Monsoon origin, tropical/temperate cyclones, Jet Stream, winds</td>
+        <td><strong>6</strong></td>
+        <td>~82</td>
+        <td>~11%</td>
+        <td>2019,20,21,22,23,24</td>
+        <td><span class="badge b-new">EVERY YEAR</span></td>
+      </tr>
+      <tr>
+        <td><strong>4</strong></td>
+        <td><span class="badge b-geo">Physical Geo</span></td>
+        <td>Geomorphology — Landforms, volcanoes, earthquakes, glacial, karst topography</td>
+        <td><strong>6</strong></td>
+        <td>~80</td>
+        <td>~11%</td>
+        <td>2019,20,21,22,23,24</td>
+        <td><span class="badge b-new">EVERY YEAR</span></td>
+      </tr>
+      <tr>
+        <td><strong>5</strong></td>
+        <td><span class="badge b-geo">Technology</span></td>
+        <td>Remote Sensing, GIS, GPS — principles, applications, elements</td>
+        <td><strong>6</strong></td>
+        <td>~78</td>
+        <td>~10.5%</td>
+        <td>2019,20,21,22,23,24</td>
+        <td><span class="badge b-new">EVERY YEAR</span></td>
+      </tr>
+      <tr>
+        <td><strong>6</strong></td>
+        <td><span class="badge b-geo">Disaster Mgmt</span></td>
+        <td>Disaster Management — types, principles, relief, mitigation, man-made disasters</td>
+        <td><strong>6</strong></td>
+        <td>~75</td>
+        <td>~10%</td>
+        <td>2019,20,21,22,23,24</td>
+        <td><span class="badge b-new">EVERY YEAR</span></td>
+      </tr>
+      <tr>
+        <td><strong>7</strong></td>
+        <td><span class="badge b-geo">Indian Geo</span></td>
+        <td>Indian Drainage Systems — Northern vs Southern rivers, Himalayan, Peninsular</td>
+        <td><strong>5</strong></td>
+        <td>~68</td>
+        <td>~9%</td>
+        <td>2019,20,21,22,23</td>
+        <td><span class="badge b-stable">High</span></td>
+      </tr>
+      <tr>
+        <td><strong>8</strong></td>
+        <td><span class="badge b-geo">Indian Geo</span></td>
+        <td>Soils of India — types, laterite, black soil, Karewa, distribution</td>
+        <td><strong>5</strong></td>
+        <td>~60</td>
+        <td>~8%</td>
+        <td>2020,21,22,23,24</td>
+        <td><span class="badge b-stable">High</span></td>
+      </tr>
+      <tr>
+        <td><strong>9</strong></td>
+        <td><span class="badge b-geo">Environment</span></td>
+        <td>Water Pollution, Soil Erosion, Water Conservation / Harvesting / National Water Policy</td>
+        <td><strong>5</strong></td>
+        <td>~65</td>
+        <td>~9%</td>
+        <td>2019,21,22,23,24</td>
+        <td><span class="badge b-stable">High</span></td>
+      </tr>
+      <tr>
+        <td><strong>10</strong></td>
+        <td><span class="badge b-geo">MP Geography</span></td>
+        <td>MP Forests, Tribes & Wildlife (forest types, Saharia, tribal distribution, shifting cultivation)</td>
+        <td><strong>5</strong></td>
+        <td>~60</td>
+        <td>~8%</td>
+        <td>2019,20,21,22,23</td>
+        <td><span class="badge b-stable">High</span></td>
+      </tr>
+      <tr>
+        <td><strong>11</strong></td>
+        <td><span class="badge b-geo">Indian Geo</span></td>
+        <td>Agriculture of India — dry farming, cotton, wheat, rice, irrigation, Green Revolution</td>
+        <td><strong>5</strong></td>
+        <td>~58</td>
+        <td>~8%</td>
+        <td>2019,20,22,23,24</td>
+        <td><span class="badge b-stable">High</span></td>
+      </tr>
+      <tr>
+        <td><strong>12</strong></td>
+        <td><span class="badge b-geo">Physical Geo</span></td>
+        <td>Physiographic Divisions of India — Northern Plains, Peninsular Plateau, Himalayas</td>
+        <td><strong>4</strong></td>
+        <td>~50</td>
+        <td>~7%</td>
+        <td>2019,21,22,24</td>
+        <td><span class="badge b-stable">Stable</span></td>
+      </tr>
+      <tr>
+        <td><strong>13</strong></td>
+        <td><span class="badge b-geo">Indian Geo</span></td>
+        <td>Minerals & Energy — coal, petroleum, copper, manganese, iron ore in India & MP</td>
+        <td><strong>5</strong></td>
+        <td>~55</td>
+        <td>~7.5%</td>
+        <td>2019,20,21,23,24</td>
+        <td><span class="badge b-stable">High</span></td>
+      </tr>
+      <tr>
+        <td><strong>14</strong></td>
+        <td><span class="badge b-geo">Human Geo</span></td>
+        <td>Population — density, growth, migration, urbanisation, census data</td>
+        <td><strong>4</strong></td>
+        <td>~44</td>
+        <td>~6%</td>
+        <td>2019,21,22,24</td>
+        <td><span class="badge b-stable">Stable</span></td>
+      </tr>
+      <tr>
+        <td><strong>15</strong></td>
+        <td><span class="badge b-geo">Indian Geo</span></td>
+        <td>Industries of India — jute, cotton textile, cement, agro-based industries</td>
+        <td><strong>4</strong></td>
+        <td>~48</td>
+        <td>~6.5%</td>
+        <td>2019,20,22,24</td>
+        <td><span class="badge b-stable">Stable</span></td>
+      </tr>
+      <tr>
+        <td><strong>16</strong></td>
+        <td><span class="badge b-world">World Geo</span></td>
+        <td>World Physical Features — Alps, Himalayas, plateaus (Tibet, Colorado), river systems</td>
+        <td><strong>4</strong></td>
+        <td>~40</td>
+        <td>~5.5%</td>
+        <td>2020,21,22,23</td>
+        <td><span class="badge b-stable">Stable</span></td>
+      </tr>
+    </table>
+    <p class="footnote">* Remote Sensing + GIS + GPS = consistently most important Geography subtopic since 2019. Appears in BOTH VSA and LA every year.</p>
+  </div>
+</div>
+
+<!-- ===== SECTION 4: MOST REPEATED ===== -->
+<div class="section" id="s4">
+  <div class="section-header">
+    <div class="section-number">4</div>
+    <h2>Most Repeated Questions & Question Types</h2>
+  </div>
+  <div class="section-body">
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="switchTab2(this,'rep-hist')">History Repeats</button>
+      <button class="tab-btn" onclick="switchTab2(this,'rep-geo')">Geography Repeats</button>
+      <button class="tab-btn" onclick="switchTab2(this,'near-ident')">Near-Identical Qs</button>
+    </div>
+
+    <div id="rep-hist" class="tab-pane active">
+      <table>
+        <tr><th>Topic/Theme</th><th>Times</th><th>Appeared In</th><th>Priority</th></tr>
+        <tr><td>Holkar Dynasty (Ahilyabai / Malhar Rao / Tukoji Rao / Holkar State)</td><td><strong>6</strong></td><td>2019,20,21,22,23,24</td><td><span class="badge b-must">MUST PREPARE</span></td></tr>
+        <tr><td>1857 Revolt in MP (Shankar Shah, Raghunath Shah, Bhima Nayak, Tantya Bhil)</td><td><strong>6</strong></td><td>2019,20,21,22,23,24</td><td><span class="badge b-must">MUST PREPARE</span></td></tr>
+        <tr><td>Freedom Movement leaders/movements (Tilak, Gandhi, CDM, Quit India, non-cooperation)</td><td><strong>6</strong></td><td>2019,20,21,22,23,24</td><td><span class="badge b-must">MUST PREPARE</span></td></tr>
+        <tr><td>British economic impact on India (poverty, drain of wealth, industry, agriculture)</td><td><strong>5</strong></td><td>2019,20,22,23,24</td><td><span class="badge b-must">MUST PREPARE</span></td></tr>
+        <tr><td>Harappan Civilisation (urban character, economy, terracotta, Great Bath)</td><td><strong>5</strong></td><td>2019,20,21,22,24</td><td><span class="badge b-must">MUST PREPARE</span></td></tr>
+        <tr><td>Mughal administration/policy (Akbar, Aurangzeb, Shivaji, Nurjahan)</td><td><strong>5</strong></td><td>2020,21,22,23,24</td><td><span class="badge b-must">MUST PREPARE</span></td></tr>
+        <tr><td>Gupta Age (art, science, architecture, culture)</td><td><strong>4</strong></td><td>2019,20,21,22</td><td><span class="badge b-very">VERY IMPORTANT</span></td></tr>
+        <tr><td>Gondwana kingdom / Rani Durgawati</td><td><strong>4</strong></td><td>2020,22,23,24</td><td><span class="badge b-very">VERY IMPORTANT</span></td></tr>
+        <tr><td>Princely States integration / Bhopal/Bundelkhand/Scindia/Holkar state</td><td><strong>4</strong></td><td>2020,21,22,23</td><td><span class="badge b-very">VERY IMPORTANT</span></td></tr>
+        <tr><td>Ashoka / Mauryan period (Dhamma, edicts, Arthashastra)</td><td><strong>4</strong></td><td>2019,21,22,23</td><td><span class="badge b-very">VERY IMPORTANT</span></td></tr>
+        <tr><td>Delhi Sultanate (Balban, Muhammad Tughlaq)</td><td><strong>4</strong></td><td>2020,21,22,23</td><td><span class="badge b-very">VERY IMPORTANT</span></td></tr>
+        <tr><td>Indian Renaissance / Social Reform movements</td><td><strong>4</strong></td><td>2020,21,22,24</td><td><span class="badge b-very">VERY IMPORTANT</span></td></tr>
+        <tr><td>Maratha Empire / Shivaji administration</td><td><strong>3</strong></td><td>2021,22,23</td><td><span class="badge b-imp">IMPORTANT</span></td></tr>
+        <tr><td>Tribal revolts against British (Ulgulan, Mopala, Bheel, Bundela)</td><td><strong>3</strong></td><td>2019,20,22</td><td><span class="badge b-imp">IMPORTANT</span></td></tr>
+      </table>
+    </div>
+    <div id="rep-geo" class="tab-pane">
+      <table>
+        <tr><th>Topic/Theme</th><th>Times</th><th>Appeared In</th><th>Priority</th></tr>
+        <tr><td>Remote Sensing, GIS, GPS (principles, applications, elements, types)</td><td><strong>6</strong></td><td>2019,20,21,22,23,24</td><td><span class="badge b-must">MUST PREPARE</span></td></tr>
+        <tr><td>Disaster Management (types, principles, Bhopal gas, man-made, natural)</td><td><strong>6</strong></td><td>2019,20,21,22,23,24</td><td><span class="badge b-must">MUST PREPARE</span></td></tr>
+        <tr><td>Malwa Plateau — features, topography, characteristics</td><td><strong>5</strong></td><td>2019,20,21,22,24</td><td><span class="badge b-must">MUST PREPARE</span></td></tr>
+        <tr><td>Cyclones (tropical / temperate) — origin, features, distribution</td><td><strong>5</strong></td><td>2020,21,22,23,24</td><td><span class="badge b-must">MUST PREPARE</span></td></tr>
+        <tr><td>Monsoon — origin, Jet Stream, SW monsoon, India climate</td><td><strong>5</strong></td><td>2019,20,21,22,24</td><td><span class="badge b-must">MUST PREPARE</span></td></tr>
+        <tr><td>Volcanoes — types, distribution, formation</td><td><strong>5</strong></td><td>2019,20,21,22,23</td><td><span class="badge b-must">MUST PREPARE</span></td></tr>
+        <tr><td>MP minerals & industries (coal, manganese, cement, soyabean)</td><td><strong>5</strong></td><td>2019,20,21,22,24</td><td><span class="badge b-must">MUST PREPARE</span></td></tr>
+        <tr><td>Water pollution — sources, control, drinking water impurities</td><td><strong>5</strong></td><td>2019,21,22,23,24</td><td><span class="badge b-must">MUST PREPARE</span></td></tr>
+        <tr><td>Soils of India — types, black soil, laterite, major types</td><td><strong>5</strong></td><td>2020,21,22,23,24</td><td><span class="badge b-must">MUST PREPARE</span></td></tr>
+        <tr><td>Earthquakes — seismic waves, epicentre, major earthquakes, prone areas</td><td><strong>4</strong></td><td>2019,21,22,24</td><td><span class="badge b-very">VERY IMPORTANT</span></td></tr>
+        <tr><td>MP forests — types, distribution, characteristics</td><td><strong>4</strong></td><td>2019,20,21,22</td><td><span class="badge b-very">VERY IMPORTANT</span></td></tr>
+        <tr><td>MP tribes — Saharia, shifting cultivation, distribution, tribal schemes</td><td><strong>4</strong></td><td>2019,21,22,23</td><td><span class="badge b-very">VERY IMPORTANT</span></td></tr>
+        <tr><td>Indian drainage — Northern vs Peninsular comparison</td><td><strong>4</strong></td><td>2019,21,22,23</td><td><span class="badge b-very">VERY IMPORTANT</span></td></tr>
+        <tr><td>Population of India / MP — density, growth, migration, census</td><td><strong>4</strong></td><td>2019,21,22,24</td><td><span class="badge b-very">VERY IMPORTANT</span></td></tr>
+      </table>
+    </div>
+    <div id="near-ident" class="tab-pane">
+      <h3 class="sub-h">Near-Identical Questions Across Years</h3>
+      <table>
+        <tr><th>Theme</th><th>Year 1 Version</th><th>Year 2 Version</th><th>Insight</th></tr>
+        <tr>
+          <td>Malwa Plateau</td>
+          <td>2019: "Divide MP into physical divisions and write on Malwa Plateau"</td>
+          <td>2020,21,22,24: "Describe topography/geographical characteristics of Malwa Plateau"</td>
+          <td><span class="badge b-must">Guaranteed repeater</span></td>
+        </tr>
+        <tr>
+          <td>Ahilyabai Holkar</td>
+          <td>2021: "Evaluate personality and contribution of Ahilyabai Holkar"</td>
+          <td>2024: "Explain Holkar State before Independence"</td>
+          <td><span class="badge b-must">Different angle, same dynasty</span></td>
+        </tr>
+        <tr>
+          <td>Remote Sensing</td>
+          <td>2020: "Explain principles of Remote Sensing"</td>
+          <td>2021,22,23,24: "Elements and process of RS / applications"</td>
+          <td><span class="badge b-must">Every year, slight variation</span></td>
+        </tr>
+        <tr>
+          <td>Harappan Civilisation</td>
+          <td>2020: "Was it urban? Your opinion"</td>
+          <td>2021: "Great Bath"; 2024: "Terracotta figurines"</td>
+          <td><span class="badge b-very">Different subtopics each year</span></td>
+        </tr>
+        <tr>
+          <td>British Economic Impact</td>
+          <td>2019: "British rule increases poverty — review"</td>
+          <td>2022: "Economic impacts of British rule"; 2024: "Effects on Indian agriculture"</td>
+          <td><span class="badge b-must">Same theme, different framing</span></td>
+        </tr>
+        <tr>
+          <td>Gupta Age</td>
+          <td>2019: "Science and Technology in Gupta period"</td>
+          <td>2020: "Art and architecture in Gupta period"</td>
+          <td><span class="badge b-very">Rotate subtopics — prepare all</span></td>
+        </tr>
+        <tr>
+          <td>Cyclones</td>
+          <td>2020: "Origin and characteristics of tropical cyclones"</td>
+          <td>2022: "What is cyclone? Main features of tropical cyclones"; 2023: "Life cycle of temperate cyclone"</td>
+          <td><span class="badge b-must">Tropical + temperate both asked</span></td>
+        </tr>
+        <tr>
+          <td>GPS</td>
+          <td>2020: "What is GPS and how does it work?"</td>
+          <td>2021,22,23,24: Multiple times from definition to segments to uses</td>
+          <td><span class="badge b-must">Every year in some form</span></td>
+        </tr>
+        <tr>
+          <td>1857 in MP</td>
+          <td>2021: "Shankar Shah and Raghunath Shah in 1857"</td>
+          <td>2024: "Kunwar Raghunath Shah / Bhima Nayak" (VSA)</td>
+          <td><span class="badge b-must">Same people, different format</span></td>
+        </tr>
+        <tr>
+          <td>Disaster Management</td>
+          <td>2019: "Principles of DM + relief and rehabilitation"</td>
+          <td>2020,21,22,23: "National Policy / role of information / Bhopal gas"</td>
+          <td><span class="badge b-must">DM appears every single year</span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 5: DIRECTIVE WORDS ===== -->
+<div class="section" id="s5">
+  <div class="section-header">
+    <div class="section-number">5</div>
+    <h2>Question Nature & Directive Word Analysis</h2>
+  </div>
+  <div class="section-body">
+    <h3 class="sub-h">Directive Word Frequency Table</h3>
+    <table>
+      <tr><th>Directive Word</th><th>Hindi Equivalent</th><th>Count (6 years)</th><th>Subject</th><th>Marks Range</th><th>Type</th></tr>
+      <tr><td><strong>Write a short note on / Briefly describe</strong></td><td>संक्षिप्त टिप्पणी लिखिए</td><td>~72</td><td>Both</td><td>3–7</td><td>VSA/SA</td></tr>
+      <tr><td><strong>Describe / Explain / Give an account</strong></td><td>वर्णन/व्याख्या कीजिए</td><td>~58</td><td>Both</td><td>5–11</td><td>SA/LA</td></tr>
+      <tr><td><strong>Discuss / Comment on</strong></td><td>विवेचना/चर्चा कीजिए</td><td>~42</td><td>History</td><td>5–11</td><td>SA/LA</td></tr>
+      <tr><td><strong>Evaluate / Critically examine</strong></td><td>मूल्यांकन/आलोचनात्मक परीक्षण</td><td>~28</td><td>History</td><td>5–11</td><td>SA/LA</td></tr>
+      <tr><td><strong>Throw light on</strong></td><td>प्रकाश डालिए</td><td>~26</td><td>Both</td><td>5–11</td><td>SA/LA</td></tr>
+      <tr><td><strong>Explain / Clarify</strong></td><td>स्पष्ट कीजिए</td><td>~24</td><td>Both</td><td>5–11</td><td>SA/LA</td></tr>
+      <tr><td><strong>What do you know about / What is</strong></td><td>आप क्या जानते हैं</td><td>~38</td><td>Both</td><td>3–5</td><td>VSA/SA</td></tr>
+      <tr><td><strong>Compare / Divide into / Classify</strong></td><td>तुलना/वर्गीकरण कीजिए</td><td>~18</td><td>Geography</td><td>7–11</td><td>LA</td></tr>
+      <tr><td><strong>Analyse / Review</strong></td><td>विश्लेषण/समीक्षा</td><td>~14</td><td>History</td><td>7–11</td><td>LA</td></tr>
+      <tr><td><strong>Mention / Write the name of</strong></td><td>नाम लिखिए/उल्लेख कीजिए</td><td>~45</td><td>Both</td><td>2–3</td><td>VSA</td></tr>
+    </table>
+
+    <div class="section-divider"></div>
+    <div class="two-col" style="margin-top:14px">
+      <div>
+        <h3 class="sub-h">Question Nature Ratio</h3>
+        <table>
+          <tr><th>Type</th><th>History %</th><th>Geography %</th></tr>
+          <tr><td>Factual (define/name/list)</td><td>35%</td><td>40%</td></tr>
+          <tr><td>Analytical (discuss/evaluate/examine)</td><td>45%</td><td>30%</td></tr>
+          <tr><td>Opinion/Statement-based</td><td>20%</td><td>5%</td></tr>
+          <tr><td>Application/Map-based</td><td>0%</td><td>25%</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3 class="sub-h">Format Distribution</h3>
+        <table>
+          <tr><th>Format</th><th>Count/Paper</th><th>%</th></tr>
+          <tr><td>Very Short (10–20 words)</td><td>15 per section</td><td>~27%</td></tr>
+          <tr><td>Short Answer (50–100 words)</td><td>10 per section</td><td>~27%</td></tr>
+          <tr><td>Essay/Long Answer (200 words)</td><td>5 per section</td><td>~46% of marks</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <h4>📝 Key Insight on Directive Words</h4>
+      <ul>
+        <li>"Write a short note on" = Most common format — prepare 2–3 para template for all major topics</li>
+        <li>"Evaluate/Critically examine" — Used for British rule impact, Freedom movement leaders, Mughal policy</li>
+        <li>"Describe/Explain" — Standard for Geography long answers — always include diagram/map reference</li>
+        <li>Statement-based questions ("XYZ — do you agree?") appear 2–3 times per History section</li>
+        <li>2024 shift: More "explain in 60 words" for 7-mark SAs — requires crisp, dense answers</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 6: MP FOCUS ===== -->
+<div class="section" id="s6">
+  <div class="section-header">
+    <div class="section-number">6</div>
+    <h2>MP-Specific Questions — Deep Special Focus</h2>
+  </div>
+  <div class="section-body">
+    <div class="metrics-grid">
+      <div class="metric-card mp"><div class="m-label">MP History Questions</div><div class="m-value">~55</div><div class="m-sub">Across 6 years (Sec-A)</div></div>
+      <div class="metric-card mp"><div class="m-label">MP Geography Questions</div><div class="m-value">~60</div><div class="m-sub">Across 6 years (Sec-B)</div></div>
+      <div class="metric-card mp"><div class="m-label">MP-Specific % (History)</div><div class="m-value">~42%</div><div class="m-sub">Of all History marks</div></div>
+      <div class="metric-card mp"><div class="m-label">MP-Specific % (Geography)</div><div class="m-value">~35%</div><div class="m-sub">Of all Geography marks</div></div>
+    </div>
+
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="switchTab3(this,'mp-hist')">MP History Questions</button>
+      <button class="tab-btn" onclick="switchTab3(this,'mp-geo')">MP Geography Questions</button>
+      <button class="tab-btn" onclick="switchTab3(this,'mp-rank')">MP Ranked Themes</button>
+    </div>
+
+    <div id="mp-hist" class="tab-pane active">
+      <h3 class="sub-h">Year-wise MP History Questions</h3>
+      <div class="mp-question"><span class="yr">2019</span> — Shankarshah (VSA) | Bhima Nayak (VSA) | Seoni Satyagraha Turia (VSA) | Bhumara Temple (VSA) | Bagh Caves (VSA) | Udayagiri Caves (SA 6m) | Amarkantak religious significance (SA 6m) | Malwa Utsav (SA 6m) | Madhyabharat State post-independence (SA 6m) | Chandel ruler Vidyadhar achievements (LA 15m)</div>
+      <div class="mp-question"><span class="yr">2020</span> — Kun Raghunath Shah (VSA) | Malhar Rao Holkar (VSA) | Bundela Rebellion (VSA) | Abanti Bai (VSA) | Bheel Rebellion (VSA) | Gyaraspur (VSA) | Jhanda Satyagraha (SA 5m) | MP local festivals (SA 5m) | Bhopal Riyasat (SA 5m) | Baghel Riyasat (SA 5m) | Freedom Movement in MP (LA 11m) | Historical tourist places of MP (LA 11m) | Bundelkhand Riyasat (LA 11m) | Holkar dynasty (LA 11m)</div>
+      <div class="mp-question"><span class="yr">2021</span> — Bakashta (VSA) | Hridyanath Kunjaru (VSA) | Jaijakbhukti (VSA) | Tukoji Rao III Holkar (VSA) | Dost Mohammad Khan (VSA) | Great Bath (SA 5m) | Chitrakoot (SA 5m) | Treaty of Mandsaur (SA 5m) | Raja Bakhtawar Singh (SA 5m) | Maharaj Raghuraj Singh (SA 5m) | Non-cooperation in Mahakaushal (LA 11m) | Folk painting of Nimad and Malwa (LA 11m) | Ahilyabai Holkar — personality and contribution (LA 11m) | Shankar Shah and Raghunath Shah in 1857 (LA 11m)</div>
+      <div class="mp-question"><span class="yr">2022</span> — Bhimbetka World Heritage (VSA) | Chausath Yogini temple Kalchuri (VSA) | Books by Raja Bhoj (VSA) | Sipahi Bahadur Sarkar (VSA) | Baiza Bai royal family (VSA) | Godana varieties (SA 5m) | Charan Paduka/Shaheed Mela (SA 5m) | Gondwana Period MP (SA 5m) | Jungle Satyagraha (LA 11m) | Merger of Princely States (LA 11m) | Avanti Bai in Freedom Struggle (LA 11m) | Maharaja Venkat Raman Singh administrative reforms (LA 11m)</div>
+      <div class="mp-question"><span class="yr">2023</span> — Central Province Government (VSA) | Bhadam (VSA) | Gay Gohari (VSA) | Council of Regency (VSA) | Amshera (VSA) | Bhojpur Shiva Temple architecture (SA 5m) | Turra Kalangi folk drama (SA 5m) | Raja Shankar Shah (SA 5m) | Malhar Rao Holkar with British (SA 5m) | Rang Manch history in MP (LA 11m) | Holkar Chhatris Indore as Maratha architecture (LA 11m) | Bhopal Princely State merger factors (LA 11m) | Third Maratha War impact on Scindia and Holkar (LA 11m)</div>
+      <div class="mp-question"><span class="yr">2024</span> — Awanti Janpad (VSA) | Raja Yashovarman (VSA) | Madhya Bharat Conference 1948 (VSA) | Pachmarhi Wood Craft (VSA) | Parikshit Dev Bundela (VSA) | Kunwar Raghunath Shah (VSA) | Bhima Nayak (VSA) | Treaty of Gwalior 1817 (VSA) | Tantya Bhil (VSA) | Bhopal Praja Mandal (VSA) | Rani Durgawati martyrdom (SA 7m) | Ashrfee Palace of Mandu (SA 7m) | Gondwana genealogy and history (LA 10m) | Khajyanayak and associates (LA 10m) | Kalchuri dynasty history (LA 10m) | Parmar period major events in MP (LA 10m) | Role of MP tribals in Jungle Satyagraha (LA 10m) | Holkar State before independence (LA 10m)</div>
+    </div>
+
+    <div id="mp-geo" class="tab-pane">
+      <h3 class="sub-h">Year-wise MP Geography Questions</h3>
+      <div class="mp-question"><span class="yr">2019</span> — Canal irrigation unfavourable factors in MP (VSA) | 3 major crops by area in MP (VSA) | Satpura highest peak (VSA) | Sugarcane districts in MP (VSA) | 2 lowest literacy districts of MP (VSA) | Soyabean producing areas of MP (SA 6m) | Manganese producing areas of MP (SA 6m) | MP physical divisions + Malwa Plateau (SA 6m) | Scheduled Tribes distribution in MP (LA 15m) | Agro-based industries in MP (LA 15m)</div>
+      <div class="mp-question"><span class="yr">2020</span> — 3 Thermal Power Stations of MP (VSA) | 3 tribes doing shifting cultivation in MP (VSA) | Narmada and Tapi proximity (VSA) | Forest resources of MP (SA 5m) | Coal resources geographical distribution in MP (SA 5m) | Cotton reserves and production in MP (LA 11m) | Malwa Plateau topography (LA 11m)</div>
+      <div class="mp-question"><span class="yr">2021</span> — Mt Kilimanjaro in which continent [world but in MP context] | Why Narmada is lifeline of MP (VSA) | Which physical region of MP most forest-dense (VSA) | Balaghat district famous mineral (VSA) | Diamond Mining Project in MP (SA 5m) | Tribal ministry schemes for vulnerable groups in MP (SA 5m) | Malwa Plateau physical features (LA 11m) | Soil erosion problem in MP (LA 11m)</div>
+      <div class="mp-question"><span class="yr">2022</span> — MP forests 3 types (VSA) | Kanhan valley coal area location (VSA) | 2 districts highest wind energy in MP (VSA) | Chambal region soil erosion problems (SA 5m) | National Newsprint and Paper Mills (SA 5m) | Cement industry localisation and distribution in MP (LA 11m) | Malwa plateau geographical characteristics (LA 11m)</div>
+      <div class="mp-question"><span class="yr">2023</span> — Saharia tribes districts in MP (VSA) | Major coalfields of MP (LA 11m) | Black soil areas and characteristics in MP (LA 11m) | Narmada Valley geomorphic character (SA 5m)</div>
+      <div class="mp-question"><span class="yr">2024</span> — Bina Refinery (VSA) | Food Processing industry examples in MP (VSA) | Chambal river (VSA) | Iron-ore deposit areas in MP (VSA) | Agro-based industries in MP (VSA) | Major forest produces of MP (SA 7m) | Amarkantak Thermal Power Station (SA 7m) | Sugarcane and its industries in MP (SA 7m) | Coal production and major areas in MP (LA 10m) | Cement industry in MP (LA 10m)</div>
+    </div>
+
+    <div id="mp-rank" class="tab-pane">
+      <div class="two-col">
+        <div>
+          <h3 class="sub-h">MP History — Most Repeated Themes</h3>
+          <table>
+            <tr><th>Theme</th><th>Times</th><th>Priority</th></tr>
+            <tr><td>Holkar Dynasty (all aspects)</td><td>6</td><td><span class="badge b-must">MUST</span></td></tr>
+            <tr><td>1857 in MP — freedom fighters</td><td>6</td><td><span class="badge b-must">MUST</span></td></tr>
+            <tr><td>Freedom Movement / Satyagraha in MP</td><td>5</td><td><span class="badge b-must">MUST</span></td></tr>
+            <tr><td>Gondwana / Rani Durgawati</td><td>4</td><td><span class="badge b-very">V. IMP</span></td></tr>
+            <tr><td>Scindia / Bhopal / Bundelkhand States</td><td>4</td><td><span class="badge b-very">V. IMP</span></td></tr>
+            <tr><td>Chandela / Paramara / Kalchuri / Raja Bhoj</td><td>4</td><td><span class="badge b-very">V. IMP</span></td></tr>
+            <tr><td>MP Art & Culture (Godana, Bagh, Bhimbetka)</td><td>4</td><td><span class="badge b-very">V. IMP</span></td></tr>
+            <tr><td>MP Folk Drama (Turra Kalangi, Rang Manch)</td><td>2</td><td><span class="badge b-imp">IMP</span></td></tr>
+          </table>
+        </div>
+        <div>
+          <h3 class="sub-h">MP Geography — Most Repeated Themes</h3>
+          <table>
+            <tr><th>Theme</th><th>Times</th><th>Priority</th></tr>
+            <tr><td>Malwa Plateau (features, topography)</td><td>5</td><td><span class="badge b-must">MUST</span></td></tr>
+            <tr><td>MP Industries (coal, cement, agro)</td><td>5</td><td><span class="badge b-must">MUST</span></td></tr>
+            <tr><td>MP Agriculture (cotton, soyabean, sugarcane)</td><td>5</td><td><span class="badge b-must">MUST</span></td></tr>
+            <tr><td>MP Forests & Tribes</td><td>5</td><td><span class="badge b-must">MUST</span></td></tr>
+            <tr><td>MP Rivers (Narmada, Chambal, Tapti)</td><td>4</td><td><span class="badge b-very">V. IMP</span></td></tr>
+            <tr><td>MP Minerals (coal, manganese, diamond)</td><td>4</td><td><span class="badge b-very">V. IMP</span></td></tr>
+            <tr><td>MP Population / Districts / Literacy</td><td>3</td><td><span class="badge b-imp">IMP</span></td></tr>
+            <tr><td>MP Soil Erosion (Chambal region)</td><td>3</td><td><span class="badge b-imp">IMP</span></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 7: YEAR TRENDS ===== -->
+<div class="section" id="s7">
+  <div class="section-header">
+    <div class="section-number">7</div>
+    <h2>Year-wise Trend Analysis</h2>
+  </div>
+  <div class="section-body">
+    <div class="two-col">
+      <div>
+        <h3 class="sub-h">History — Trend by Topic</h3>
+        <table>
+          <tr><th>Topic</th><th>Trend</th><th>Status</th></tr>
+          <tr><td>Holkar / MP Princely States</td><td>↑ Increasing</td><td><span class="badge b-new">Rising</span></td></tr>
+          <tr><td>Gondwana / Rani Durgawati</td><td>↑ New entrant (2020+)</td><td><span class="badge b-new">Rising</span></td></tr>
+          <tr><td>Maratha Empire / Shivaji</td><td>↑ 2021 onwards</td><td><span class="badge b-new">Rising</span></td></tr>
+          <tr><td>MP Art/Culture/Folk</td><td>→ Stable, recurring</td><td><span class="badge b-stable">Stable</span></td></tr>
+          <tr><td>1857 MP Freedom Fighters</td><td>→ Every year stable</td><td><span class="badge b-stable">Stable</span></td></tr>
+          <tr><td>Harappan Civilisation</td><td>→ Stable but different subtopics</td><td><span class="badge b-stable">Stable</span></td></tr>
+          <tr><td>Freedom Movement leaders</td><td>→ Every year stable</td><td><span class="badge b-stable">Stable</span></td></tr>
+          <tr><td>World History (WWI/II, Renaissance)</td><td>↓ Declining from 2022</td><td><span class="badge b-declining">Declining</span></td></tr>
+          <tr><td>Post-independence India (early)</td><td>↓ Fewer long questions</td><td><span class="badge b-declining">Declining</span></td></tr>
+          <tr><td>Ancient Indian science/literature</td><td>↑ Reappearing in 2024</td><td><span class="badge b-new">Rising</span></td></tr>
+        </table>
+      </div>
+      <div>
+        <h3 class="sub-h">Geography — Trend by Topic</h3>
+        <table>
+          <tr><th>Topic</th><th>Trend</th><th>Status</th></tr>
+          <tr><td>Remote Sensing / GIS / GPS</td><td>→ Every year, expanding</td><td><span class="badge b-stable">CONSTANT</span></td></tr>
+          <tr><td>Disaster Management</td><td>→ Every year, expanding</td><td><span class="badge b-stable">CONSTANT</span></td></tr>
+          <tr><td>Cyclones (tropical+temperate)</td><td>→ Every year</td><td><span class="badge b-stable">CONSTANT</span></td></tr>
+          <tr><td>MP Agriculture (soyabean/cotton/sugarcane)</td><td>→ Every year</td><td><span class="badge b-stable">CONSTANT</span></td></tr>
+          <tr><td>Water Conservation / National Water Policy</td><td>↑ Strong 2022–2024</td><td><span class="badge b-new">Rising</span></td></tr>
+          <tr><td>Agriculture of India (rice, wheat, cotton)</td><td>↑ Strong in 2024</td><td><span class="badge b-new">Rising</span></td></tr>
+          <tr><td>Population geography</td><td>→ Stable recurring</td><td><span class="badge b-stable">Stable</span></td></tr>
+          <tr><td>World geography (Alps, plateaus)</td><td>↓ Reducing</td><td><span class="badge b-declining">Declining</span></td></tr>
+          <tr><td>GIS detailed applications</td><td>↑ Increasing depth</td><td><span class="badge b-new">Rising</span></td></tr>
+          <tr><td>Petroleum / energy resources</td><td>↑ 2024 reappeared</td><td><span class="badge b-new">Rising</span></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+    <h3 class="sub-h">2–3 Year Repeat Cycle Observations</h3>
+    <table>
+      <tr><th>Topic</th><th>Pattern Observed</th><th>Next Expected</th></tr>
+      <tr><td>Harappan Civilisation (long answer)</td><td>2019 → 2020 → 2024 (every 2 years approx)</td><td><span class="badge b-must">2025 expected</span></td></tr>
+      <tr><td>Gupta Age (long answer)</td><td>2019 → 2020 → 2021 → 2022 (4 consecutive)</td><td>May return 2025–26</td></tr>
+      <tr><td>Malwa Plateau (long answer Geography)</td><td>2019,20,21,22 — then 2024</td><td><span class="badge b-must">2025 likely</span></td></tr>
+      <tr><td>Cyclones (long answer)</td><td>2020 → 2022 → 2023</td><td>2025 likely</td></tr>
+      <tr><td>Jungle Satyagraha</td><td>2022 → 2024 (every 2 years)</td><td><span class="badge b-very">2026 expected</span></td></tr>
+      <tr><td>Cement industry in MP (Geography)</td><td>2019 → 2022 → 2024</td><td>2026 likely</td></tr>
+      <tr><td>Freedom Movement in MP</td><td>2020 → 2022 → 2024</td><td><span class="badge b-must">2025–26 likely</span></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ===== SECTION 8: PRIORITY MATRIX ===== -->
+<div class="section" id="s8">
+  <div class="section-header">
+    <div class="section-number">8</div>
+    <h2>Marks-Based Priority Matrix</h2>
+  </div>
+  <div class="section-body">
+    <div class="two-col">
+      <div>
+        <h3 class="sub-h">History Priority Matrix</h3>
+        <div class="priority-matrix">
+          <div class="pm-box pm-1">
+            <h4>🔴 MUST DO — High Freq + High Marks</h4>
+            <ul>
+              <li>Holkar Dynasty (all aspects)</li>
+              <li>1857 in MP (all freedom fighters)</li>
+              <li>Freedom Movement (Tilak, Gandhi, CDM)</li>
+              <li>British economic impact on India</li>
+              <li>Harappan Civilisation</li>
+              <li>Mughal Empire (Akbar, Aurangzeb)</li>
+              <li>Gupta Age (science, art, culture)</li>
+              <li>Princely States integration</li>
+            </ul>
+          </div>
+          <div class="pm-box pm-2">
+            <h4>🟡 QUICK WINS — High Freq + Low Marks</h4>
+            <ul>
+              <li>VSA definitions (Dastak, Ulgulan, etc.)</li>
+              <li>MP personalities (Bhima Nayak, etc.)</li>
+              <li>MP festivals / local culture</li>
+              <li>Bhimbetka, Bagh Caves, Udayagiri</li>
+              <li>MP princely states (VSA level)</li>
+              <li>1857 personalities as VSA terms</li>
+            </ul>
+          </div>
+          <div class="pm-box pm-3">
+            <h4>🔵 HIGH RISK / REWARD — Low Freq + High Marks</h4>
+            <ul>
+              <li>Sangam Age culture and society</li>
+              <li>Nalanda Vihar / Buddhist architecture</li>
+              <li>Pallava period art</li>
+              <li>Ahom kingdom vs Mughals</li>
+              <li>Hindu Code Bill</li>
+              <li>Lichchhavi Republic of Vaishali</li>
+            </ul>
+          </div>
+          <div class="pm-box pm-4">
+            <h4>⚪ OPTIONAL — Low Freq + Low Marks</h4>
+            <ul>
+              <li>Cold War in detail</li>
+              <li>French Revolution causes (deep)</li>
+              <li>Minor regional revolts (Polygar)</li>
+              <li>Very obscure medieval terms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="sub-h">Geography Priority Matrix</h3>
+        <div class="priority-matrix">
+          <div class="pm-box pm-1">
+            <h4>🔴 MUST DO — High Freq + High Marks</h4>
+            <ul>
+              <li>Remote Sensing + GIS + GPS</li>
+              <li>Disaster Management (all types)</li>
+              <li>Cyclones (tropical + temperate)</li>
+              <li>Monsoon origin and Jet Stream</li>
+              <li>Malwa Plateau (every angle)</li>
+              <li>MP Industries (coal, cement)</li>
+              <li>Soils of India (all types)</li>
+              <li>Indian Drainage (comparison)</li>
+            </ul>
+          </div>
+          <div class="pm-box pm-2">
+            <h4>🟡 QUICK WINS — High Freq + Low Marks</h4>
+            <ul>
+              <li>MP rivers (VSA — names, origin)</li>
+              <li>MP minerals (VSA — copper, coal areas)</li>
+              <li>Geomorphic terms (karst, karewa)</li>
+              <li>Climate type symbols (BW etc.)</li>
+              <li>Earthquake terminology (epicentre)</li>
+              <li>MP tribes (Saharia districts)</li>
+            </ul>
+          </div>
+          <div class="pm-box pm-3">
+            <h4>🔵 HIGH RISK / REWARD — Low Freq + High Marks</h4>
+            <ul>
+              <li>National Water Policy 2012</li>
+              <li>Glacial landforms (new in 2021)</li>
+              <li>Migration rural to urban</li>
+              <li>Plateau of Tibet</li>
+              <li>River interlinking India</li>
+            </ul>
+          </div>
+          <div class="pm-box pm-4">
+            <h4>⚪ OPTIONAL — Low Freq + Low Marks</h4>
+            <ul>
+              <li>Oceanography (tides, currents)</li>
+              <li>Coral reefs in detail</li>
+              <li>Specific world geography (Colorado Plateau)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 9: STATIC vs DYNAMIC ===== -->
+<div class="section" id="s9">
+  <div class="section-header">
+    <div class="section-number">9</div>
+    <h2>Static vs Dynamic Analysis</h2>
+  </div>
+  <div class="section-body">
+    <div class="metrics-grid">
+      <div class="metric-card hist"><div class="m-label">History — Static %</div><div class="m-value">85%</div><div class="m-sub">Pure textbook content</div></div>
+      <div class="metric-card hist"><div class="m-label">History — Dynamic %</div><div class="m-value">15%</div><div class="m-sub">Current/recent context</div></div>
+      <div class="metric-card geo"><div class="m-label">Geography — Static %</div><div class="m-value">70%</div><div class="m-sub">Pure textbook content</div></div>
+      <div class="metric-card geo"><div class="m-label">Geography — Dynamic %</div><div class="m-value">30%</div><div class="m-sub">Current affairs linked</div></div>
+    </div>
+    <div class="two-col">
+      <div>
+        <h3 class="sub-h">History — Dynamic-Linked Topics</h3>
+        <table>
+          <tr><th>Topic</th><th>Current Affairs Link</th></tr>
+          <tr><td>Tribal rights / movements</td><td>Forest Rights Act, PVTG schemes</td></tr>
+          <tr><td>Post-independence India</td><td>75 years of Independence, state formation</td></tr>
+          <tr><td>Freedom fighters of MP</td><td>Azadi ka Amrit Mahotsav</td></tr>
+          <tr><td>Social reform movements</td><td>Current gender/social justice debates</td></tr>
+          <tr><td>Princely state integration</td><td>National unity narratives</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3 class="sub-h">Geography — Dynamic-Linked Topics</h3>
+        <table>
+          <tr><th>Topic</th><th>Current Affairs Link</th></tr>
+          <tr><td>Cyclones (Amphan, Biparjoy)</td><td>Named cyclones in news</td></tr>
+          <tr><td>Bhopal Gas Tragedy</td><td>40th anniversary (2024)</td></tr>
+          <tr><td>Water Policy</td><td>National Water Mission 2012</td></tr>
+          <tr><td>Coal / energy in MP</td><td>Energy transition, Amarkantak plant</td></tr>
+          <tr><td>Vizag gas leak (2020)</td><td>Industrial disaster, current affairs</td></tr>
+          <tr><td>Bina Refinery (2024)</td><td>MP specific current affairs</td></tr>
+          <tr><td>Population growth (2021 census)</td><td>Census data, state comparisons</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="tip-box">
+      <h4>📰 Recommended Current Affairs Areas for Paper-1 Preparation</h4>
+      <ul>
+        <li>MP government schemes related to forests, tribes, agriculture, water</li>
+        <li>Recent cyclones (names, paths, damage) — geography section</li>
+        <li>Anniversaries of historical events (especially MP freedom struggle)</li>
+        <li>Any new UNESCO Heritage Site announcement (India/MP)</li>
+        <li>New dam / irrigation project in MP (Narmada, Ken-Betwa linking)</li>
+        <li>Industrial accidents / environmental disasters in India</li>
+        <li>MP census 2021 data when released — population, literacy, tribes</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 10: LENGTH PATTERN ===== -->
+<div class="section" id="s10">
+  <div class="section-header">
+    <div class="section-number">10</div>
+    <h2>Difficulty & Length Pattern</h2>
+  </div>
+  <div class="section-body">
+    <table>
+      <tr><th>Answer Length</th><th>Word Limit</th><th>Questions/Paper</th><th>Marks</th><th>Topics Typically Asked</th></tr>
+      <tr>
+        <td><strong>Very Short (VSA)</strong></td>
+        <td>10–20 words</td>
+        <td>15 per section (30 total)</td>
+        <td>2–3 marks each</td>
+        <td>Terms, personalities, dates, names — e.g., "Ulgulan", "Bhima Nayak", "Jet Stream", "GPS", "Malhar Rao Holkar"</td>
+      </tr>
+      <tr>
+        <td><strong>Short Answer (SA)</strong></td>
+        <td>50–100 words</td>
+        <td>10 per section (20 total)</td>
+        <td>5–7 marks each</td>
+        <td>Events, movements, geographical phenomena — e.g., "Jhanda Satyagraha", "Tropical Savana climate", "Soil erosion in MP", "Soyabean areas of MP"</td>
+      </tr>
+      <tr>
+        <td><strong>Long Answer (LA)</strong></td>
+        <td>200 words</td>
+        <td>5 per section (10 total)</td>
+        <td>10–11 marks each</td>
+        <td>Major topics requiring analysis — e.g., "Holkar dynasty", "Cyclones", "Remote Sensing", "Freedom Movement in MP", "Malwa Plateau"</td>
+      </tr>
+    </table>
+
+    <div class="section-divider"></div>
+    <h3 class="sub-h">Topics Demanding Longest Answers (LA Format)</h3>
+    <div class="three-col">
+      <div>
+        <p style="font-size:12px;font-weight:600;color:var(--hist-color);margin-bottom:8px">History Long Answers</p>
+        <div class="rank-item"><span class="rank-num">1</span>Holkar Dynasty — full history + contribution</div>
+        <div class="rank-item"><span class="rank-num">2</span>1857 Revolt in MP — causes, events, leaders</div>
+        <div class="rank-item"><span class="rank-num">3</span>Freedom Movement in MP — timeline</div>
+        <div class="rank-item"><span class="rank-num">4</span>British economic impact — multi-dimension</div>
+        <div class="rank-item"><span class="rank-num">5</span>Princely States integration — process</div>
+      </div>
+      <div>
+        <p style="font-size:12px;font-weight:600;color:var(--geo-color);margin-bottom:8px">Geography Long Answers</p>
+        <div class="rank-item"><span class="rank-num">1</span>Remote Sensing — elements, process, applications</div>
+        <div class="rank-item"><span class="rank-num">2</span>Disaster Management — principles + relief</div>
+        <div class="rank-item"><span class="rank-num">3</span>Cyclones — origin, types, features, distribution</div>
+        <div class="rank-item"><span class="rank-num">4</span>Indian drainage systems — comparison</div>
+        <div class="rank-item"><span class="rank-num">5</span>MP physical geography — plateaus, rivers</div>
+      </div>
+      <div>
+        <p style="font-size:12px;font-weight:600;color:var(--mp-color);margin-bottom:8px">Topics as Short Notes</p>
+        <div class="rank-item"><span class="rank-num">1</span>Jhanda Satyagraha / Jungle Satyagraha</div>
+        <div class="rank-item"><span class="rank-num">2</span>Individual freedom fighters (Bhima Nayak)</div>
+        <div class="rank-item"><span class="rank-num">3</span>MP folk arts (Godana, Turra Kalangi)</div>
+        <div class="rank-item"><span class="rank-num">4</span>Specific cyclones (Amphan, Biparjoy)</div>
+        <div class="rank-item"><span class="rank-num">5</span>MP mineral areas / specific rivers</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 11: NEVER ASKED ===== -->
+<div class="section" id="s11">
+  <div class="section-header">
+    <div class="section-number">11</div>
+    <h2>Never-Asked Important Topics</h2>
+  </div>
+  <div class="section-body">
+    <div class="two-col">
+      <div>
+        <h3 class="sub-h" style="color:#b71c1c">History — Never Asked (2019–2024)</h3>
+        <div class="high-risk">
+          <strong>[HIGH RISK]</strong> Vijayanagara Empire<br>
+          <small>Major medieval kingdom, syllabus topic, never appeared — could come any year</small>
+        </div>
+        <div class="high-risk">
+          <strong>[HIGH RISK]</strong> Bhakti Movement (detailed essay)<br>
+          <small>Only appeared as VSA (Siddha Sahitya); no long answer yet</small>
+        </div>
+        <div class="high-risk">
+          <strong>[HIGH RISK]</strong> Partition of India (1947) and its consequences<br>
+          <small>Syllabus item, socially relevant, yet never asked as main question</small>
+        </div>
+        <div class="high-risk">
+          <strong>[HIGH RISK]</strong> Nehru's foreign policy / Non-Alignment Movement<br>
+          <small>Important post-independence topic never examined</small>
+        </div>
+        <div class="high-risk">
+          <strong>[HIGH RISK]</strong> Green Revolution — causes, impacts, social effects<br>
+          <small>Geography side asked (2024) but History/Economic policy angle not yet</small>
+        </div>
+        <div class="never-asked">
+          <strong>[MODERATE RISK]</strong> Chola Empire administration<br>
+          <small>South Indian dynasty, in syllabus, rarely tested in MPPSC format</small>
+        </div>
+        <div class="never-asked">
+          <strong>[MODERATE RISK]</strong> Cabinet Mission Plan / Constituent Assembly<br>
+          <small>Constitution-making context not deeply examined yet</small>
+        </div>
+        <div class="never-asked">
+          <strong>[SAFE TO SKIP]</strong> Detailed Cold War history (post 1945 international)<br>
+          <small>Trend shows declining; very unlikely to return as major question</small>
+        </div>
+      </div>
+      <div>
+        <h3 class="sub-h" style="color:#1b5e20">Geography — Never Asked (2019–2024)</h3>
+        <div class="high-risk">
+          <strong>[HIGH RISK]</strong> Ocean currents and their impact on climate<br>
+          <small>Major oceanography topic, never properly examined despite being in syllabus</small>
+        </div>
+        <div class="high-risk">
+          <strong>[HIGH RISK]</strong> Climate change and global warming (in depth)<br>
+          <small>Only touched peripherally; full question never asked despite relevance</small>
+        </div>
+        <div class="high-risk">
+          <strong>[HIGH RISK]</strong> Biodiversity hotspots of India (detailed)<br>
+          <small>Ecology chapter, syllabus item, never asked properly</small>
+        </div>
+        <div class="high-risk">
+          <strong>[HIGH RISK]</strong> Transport networks of India (railways, waterways)<br>
+          <small>Syllabus item for economic geography — not asked yet</small>
+        </div>
+        <div class="high-risk">
+          <strong>[HIGH RISK]</strong> Regional planning and development in MP<br>
+          <small>MP-specific planning, economic zones — never asked</small>
+        </div>
+        <div class="never-asked">
+          <strong>[MODERATE RISK]</strong> Weather forecasting and meteorological instruments<br>
+          <small>Climatology side not examined in applied context</small>
+        </div>
+        <div class="never-asked">
+          <strong>[MODERATE RISK]</strong> Land use in India (urban vs rural, LULC)<br>
+          <small>GIS-linked topic that's growing in importance</small>
+        </div>
+        <div class="never-asked">
+          <strong>[SAFE TO SKIP]</strong> Tidal energy and ocean thermal energy<br>
+          <small>Too specific, very unlikely</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 12: OVERLAPS ===== -->
+<div class="section" id="s12">
+  <div class="section-header">
+    <div class="section-number">12</div>
+    <h2>Overlap with MPPSC Prelims & UPSC</h2>
+  </div>
+  <div class="section-body">
+    <div class="overlap-grid">
+      <div class="overlap-card" style="border-top-color:#1565C0">
+        <h4 style="color:#1565C0">🎯 Double Benefit — MPPSC Prelims + Mains</h4>
+        <ul>
+          <li>Harappan Civilisation facts</li>
+          <li>Gupta Age achievements</li>
+          <li>Mauryan period (Ashoka)</li>
+          <li>Mughal administration</li>
+          <li>1857 revolt key events</li>
+          <li>Freedom Movement timeline</li>
+          <li>Indian drainage systems</li>
+          <li>Soils of India</li>
+          <li>MP tribes (Gond, Bhil, Saharia)</li>
+          <li>MP rivers and dams</li>
+          <li>Minerals of India and MP</li>
+          <li>Disaster types and management</li>
+        </ul>
+      </div>
+      <div class="overlap-card" style="border-top-color:#2E7D32">
+        <h4 style="color:#2E7D32">🔗 UPSC Mains GS-1 Overlap</h4>
+        <ul>
+          <li>Bhakti and Sufi movements</li>
+          <li>British economic policies</li>
+          <li>Indian freedom struggle (national)</li>
+          <li>Women in freedom movement</li>
+          <li>Social reform movements</li>
+          <li>Post-independence political integration</li>
+          <li>Indian monsoon system</li>
+          <li>Physiographic divisions of India</li>
+          <li>Indian agriculture challenges</li>
+          <li>Population distribution India</li>
+          <li>Urbanisation impacts</li>
+          <li>Environmental issues (pollution)</li>
+        </ul>
+      </div>
+      <div class="overlap-card" style="border-top-color:#6A1B9A">
+        <h4 style="color:#6A1B9A">⭐ Unique to MPPSC Mains Only</h4>
+        <ul>
+          <li>Holkar / Scindia dynasty (depth)</li>
+          <li>1857 in MP — specific leaders</li>
+          <li>Gondwana kingdom / Rani Durgawati</li>
+          <li>Chandela / Paramara / Kalchuri details</li>
+          <li>Malwa Plateau detailed geography</li>
+          <li>MP Agriculture (soyabean belts)</li>
+          <li>MP minerals (Balaghat manganese)</li>
+          <li>MP tribal schemes and distribution</li>
+          <li>Remote Sensing in Geography depth</li>
+          <li>Bhopal Gas Tragedy (as geography)</li>
+          <li>Madhya Bharat / state reorganisation</li>
+          <li>MP folk art (Godana, Bagh caves)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip-box">
+      <h4>💡 Study Strategy from Overlap Analysis</h4>
+      <ul>
+        <li><strong>Double-benefit topics</strong> = prepare deeply, helps in both Prelims and Mains — never skip these</li>
+        <li><strong>UPSC overlap topics</strong> = use NCERT + standard books for these; UPSC answer writing practice helps here too</li>
+        <li><strong>MPPSC-unique topics</strong> = these require MP-specific sources (MPPSCLIBRARY, MP state textbooks, PYQ-based notes)</li>
+        <li>~40% of questions are unique to MPPSC — MP-specific preparation is NON-NEGOTIABLE</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 13: ANSWER STRATEGY ===== -->
+<div class="section" id="s13">
+  <div class="section-header">
+    <div class="section-number">13</div>
+    <h2>Suggested Answer Writing Strategy (Topic-Specific)</h2>
+  </div>
+  <div class="section-body">
+    <div class="two-col">
+      <div>
+        <h3 class="sub-h" style="color:var(--hist-color)">History Answer Formats</h3>
+        <div class="strategy-item" style="border-left-color:#1565C0">
+          <strong>📅 Timeline/Chronological Format</strong><br>
+          <small>Use for: Freedom Movement, 1857 revolt in MP, Holkar dynasty history, British impact period-wise<br>Structure: Period → Event → Leader → Outcome</small>
+        </div>
+        <div class="strategy-item" style="border-left-color:#e65100">
+          <strong>⚡ Cause-Effect Format</strong><br>
+          <small>Use for: WWI/WWII consequences, British economic policies, tribal revolts, Renaissance impact<br>Structure: Background → Causes → Events → Effects → Legacy</small>
+        </div>
+        <div class="strategy-item" style="border-left-color:#2e7d32">
+          <strong>📊 Achievements/Evaluation Format</strong><br>
+          <small>Use for: Ahilyabai Holkar, Ashoka's Dhamma, Shivaji's administration, Chandela ruler Vidyadhar<br>Structure: Introduction → Positive contributions → Limitations → Overall assessment</small>
+        </div>
+        <div class="strategy-item" style="border-left-color:#6a1b9a">
+          <strong>✍️ Statement Analysis Format</strong><br>
+          <small>Use for: "British rule increased poverty", "Muhammad Tughlaq was mixture of opposites", Tilak extremism<br>Structure: Statement → Evidence for → Evidence against → Balanced conclusion</small>
+        </div>
+        <div class="strategy-item" style="border-left-color:#880e4f">
+          <strong>📝 Short Note Format (SA type)</strong><br>
+          <small>Use for: All SA questions — Jhanda Satyagraha, folk movements, MP personalities<br>Structure: Who/What → When/Where → Significance → Legacy (2–3 para, 5–6 lines)</small>
+        </div>
+      </div>
+      <div>
+        <h3 class="sub-h" style="color:var(--geo-color)">Geography Answer Formats</h3>
+        <div class="strategy-item" style="border-left-color:#2E7D32">
+          <strong>🗺️ Diagram/Map-Supported Format</strong><br>
+          <small>Use for: Drainage systems, physiographic divisions, cyclone diagrams, monsoon flow, Malwa Plateau<br>Always draw: labelled sketch maps for Indian geography topics</small>
+        </div>
+        <div class="strategy-item" style="border-left-color:#006064">
+          <strong>📋 Classification Format</strong><br>
+          <small>Use for: Soils, rocks, forest types, cyclone types, disaster types, RS platforms<br>Structure: Definition → Classification table → Features of each → Distribution</small>
+        </div>
+        <div class="strategy-item" style="border-left-color:#e65100">
+          <strong>⚖️ Comparison Table Format</strong><br>
+          <small>Use for: Northern vs Southern India drainage, Koppen vs Thornthwaite, tropical vs temperate cyclones<br>Always use a table for comparison questions — saves time and looks structured</small>
+        </div>
+        <div class="strategy-item" style="border-left-color:#1565C0">
+          <strong>🔧 Process/Elements Format</strong><br>
+          <small>Use for: Remote sensing process, GIS elements, disaster management steps, GPS working<br>Structure: Definition → Components → Process flowchart → Applications → Limitations</small>
+        </div>
+        <div class="strategy-item" style="border-left-color:#880e4f">
+          <strong>📍 MP-Specific Regional Format</strong><br>
+          <small>Use for: All MP geography topics — forests, tribes, minerals, plateaus, rivers<br>Structure: Location → Physical character → Economic importance → Distribution → Recent data</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 14: GOLDEN QUESTIONS ===== -->
+<div class="section" id="s14">
+  <div class="section-header">
+    <div class="section-number">14</div>
+    <h2>Final Master Priority List & Golden Questions</h2>
+  </div>
+  <div class="section-body">
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="switchTab4(this,'gold-hist')">Top 20 History</button>
+      <button class="tab-btn" onclick="switchTab4(this,'gold-geo')">Top 20 Geography</button>
+      <button class="tab-btn" onclick="switchTab4(this,'gold-mp')">Top 15 MP Topics</button>
+      <button class="tab-btn" onclick="switchTab4(this,'gold-q')">10 Golden Questions</button>
+      <button class="tab-btn" onclick="switchTab4(this,'wild')">5 Wild Cards</button>
+    </div>
+
+    <div id="gold-hist" class="tab-pane active">
+      <h3 class="sub-h">Top 20 History Topics — Ranked by Exam Importance</h3>
+      <table>
+        <tr><th>#</th><th>Topic</th><th>Priority</th><th>Likely Format</th></tr>
+        <tr><td>1</td><td>Holkar Dynasty — Malhar Rao, Ahilyabai, Tukoji Rao, pre-independence state</td><td><span class="badge b-must">MUST</span></td><td>SA + LA</td></tr>
+        <tr><td>2</td><td>1857 in MP — Shankar Shah, Raghunath Shah, Bhima Nayak, Tantya Bhil, Avanti Bai, Rani Durgawati</td><td><span class="badge b-must">MUST</span></td><td>VSA + SA + LA</td></tr>
+        <tr><td>3</td><td>Freedom Movement of India — Non-cooperation, CDM, Quit India, Tilak, Gandhi, Naoroji</td><td><span class="badge b-must">MUST</span></td><td>SA + LA</td></tr>
+        <tr><td>4</td><td>British Economic Impact — drain of wealth, poverty, industry decline, agriculture effects</td><td><span class="badge b-must">MUST</span></td><td>LA (statement-based)</td></tr>
+        <tr><td>5</td><td>Harappan Civilisation — urban character, economy, Great Bath, terracotta, trade</td><td><span class="badge b-must">MUST</span></td><td>SA + LA</td></tr>
+        <tr><td>6</td><td>Mughal Empire — Akbar's policy, Aurangzeb's Deccan, Nurjahan's politics</td><td><span class="badge b-must">MUST</span></td><td>SA + LA</td></tr>
+        <tr><td>7</td><td>Gupta Age — science & tech, art & architecture, cultural achievements</td><td><span class="badge b-must">MUST</span></td><td>SA + LA</td></tr>
+        <tr><td>8</td><td>Gondwana Kingdom / Rani Durgawati martyrdom / Gondwana genealogy</td><td><span class="badge b-must">MUST</span></td><td>SA + LA</td></tr>
+        <tr><td>9</td><td>Princely States Integration — Bhopal, Holkar, Scindia, Bundelkhand, Madhya Bharat</td><td><span class="badge b-must">MUST</span></td><td>LA</td></tr>
+        <tr><td>10</td><td>Ashoka / Mauryan Period — Dhamma, edicts, Arthashastra, tirthas</td><td><span class="badge b-very">V.IMP</span></td><td>SA + LA</td></tr>
+        <tr><td>11</td><td>Delhi Sultanate — Balban's Turkish amirs problem, Muhammad Tughlaq contradictions</td><td><span class="badge b-very">V.IMP</span></td><td>SA + LA</td></tr>
+        <tr><td>12</td><td>Shivaji — political ideals, administrative system, Maratha wars</td><td><span class="badge b-very">V.IMP</span></td><td>SA + LA</td></tr>
+        <tr><td>13</td><td>Chandela / Paramara / Kalchuri / Raja Bhoj — temples, achievements, MP history</td><td><span class="badge b-very">V.IMP</span></td><td>SA + LA</td></tr>
+        <tr><td>14</td><td>Tribal Revolts — Ulgulan (Birsa Munda), Mopala, Bheel, Bundela, Ahome</td><td><span class="badge b-very">V.IMP</span></td><td>SA</td></tr>
+        <tr><td>15</td><td>Indian Renaissance / Social Reform — Arya Samaj, Brahmo Samaj</td><td><span class="badge b-very">V.IMP</span></td><td>SA</td></tr>
+        <tr><td>16</td><td>Freedom Movement in MP — Jungle Satyagraha, Jhanda Satyagraha, Seoni Satyagraha</td><td><span class="badge b-very">V.IMP</span></td><td>SA</td></tr>
+        <tr><td>17</td><td>MP Art & Culture — Godana, Bagh Caves, Bhimbetka, folk drama (Turra Kalangi)</td><td><span class="badge b-imp">IMP</span></td><td>SA</td></tr>
+        <tr><td>18</td><td>Vedic Period — political organisation, Rigvedic Panchjan, social system</td><td><span class="badge b-imp">IMP</span></td><td>SA</td></tr>
+        <tr><td>19</td><td>Mughal-Sikh relations / Ahom kingdom conflict with Mughals</td><td><span class="badge b-imp">IMP</span></td><td>SA</td></tr>
+        <tr><td>20</td><td>Post-independence India — first elections, Hindu Code Bill, Republic formation</td><td><span class="badge b-imp">IMP</span></td><td>SA</td></tr>
+      </table>
+    </div>
+
+    <div id="gold-geo" class="tab-pane">
+      <h3 class="sub-h">Top 20 Geography Topics — Ranked by Exam Importance</h3>
+      <table>
+        <tr><th>#</th><th>Topic</th><th>Priority</th><th>Likely Format</th></tr>
+        <tr><td>1</td><td>Remote Sensing — principles, elements, process, types of platforms, applications</td><td><span class="badge b-must">MUST</span></td><td>VSA + SA + LA</td></tr>
+        <tr><td>2</td><td>GIS — elements, applications, importance, computer role</td><td><span class="badge b-must">MUST</span></td><td>VSA + SA + LA</td></tr>
+        <tr><td>3</td><td>GPS — working, segments, applications, uses and limitations</td><td><span class="badge b-must">MUST</span></td><td>VSA + SA + LA</td></tr>
+        <tr><td>4</td><td>Disaster Management — principles, relief, rehabilitation, types, NDMA, Bhopal</td><td><span class="badge b-must">MUST</span></td><td>VSA + SA + LA</td></tr>
+        <tr><td>5</td><td>Tropical Cyclones — origin, characteristics, distribution, named cyclones</td><td><span class="badge b-must">MUST</span></td><td>SA + LA</td></tr>
+        <tr><td>6</td><td>Monsoon — origin, Jet Stream contribution, SW monsoon, India's climate</td><td><span class="badge b-must">MUST</span></td><td>SA + LA</td></tr>
+        <tr><td>7</td><td>Malwa Plateau — topography, physical features, geographical characteristics</td><td><span class="badge b-must">MUST</span></td><td>SA + LA</td></tr>
+        <tr><td>8</td><td>Soils of India — black, red, laterite, alluvial types, distribution</td><td><span class="badge b-must">MUST</span></td><td>SA + LA</td></tr>
+        <tr><td>9</td><td>Water pollution and conservation — sources, control, National Water Policy 2012</td><td><span class="badge b-must">MUST</span></td><td>SA + LA</td></tr>
+        <tr><td>10</td><td>MP Industries — coal, cement, agro-based, Bina Refinery, Amarkantak</td><td><span class="badge b-must">MUST</span></td><td>VSA + SA + LA</td></tr>
+        <tr><td>11</td><td>Indian Drainage — Northern vs Peninsular comparison, Himalayan rivers</td><td><span class="badge b-very">V.IMP</span></td><td>SA + LA</td></tr>
+        <tr><td>12</td><td>MP Agriculture — soyabean, cotton, sugarcane, wheat, major crops by area</td><td><span class="badge b-very">V.IMP</span></td><td>VSA + SA + LA</td></tr>
+        <tr><td>13</td><td>Volcanoes — types (active/dormant/extinct), distribution in world, topography</td><td><span class="badge b-very">V.IMP</span></td><td>SA + LA</td></tr>
+        <tr><td>14</td><td>Earthquakes — seismic waves, epicentre, major earthquake-prone areas in India</td><td><span class="badge b-very">V.IMP</span></td><td>VSA + SA</td></tr>
+        <tr><td>15</td><td>MP Forests — types (3 types), characteristics, forest resources, tribal dependence</td><td><span class="badge b-very">V.IMP</span></td><td>VSA + SA + LA</td></tr>
+        <tr><td>16</td><td>Physiographic divisions of India — Northern plains, plateau, Himalayan ranges</td><td><span class="badge b-very">V.IMP</span></td><td>SA + LA</td></tr>
+        <tr><td>17</td><td>MP Tribes — Saharia, Gond, Bhil; distribution, shifting cultivation, PVTG</td><td><span class="badge b-very">V.IMP</span></td><td>VSA + SA + LA</td></tr>
+        <tr><td>18</td><td>Agriculture of India — wheat, rice, cotton, dry farming, irrigation, Green Revolution</td><td><span class="badge b-very">V.IMP</span></td><td>SA + LA</td></tr>
+        <tr><td>19</td><td>Minerals and energy — coal (India + MP), petroleum, copper, manganese, iron ore</td><td><span class="badge b-imp">IMP</span></td><td>VSA + SA + LA</td></tr>
+        <tr><td>20</td><td>Population of India/MP — density, growth rate, migration, urbanisation impact</td><td><span class="badge b-imp">IMP</span></td><td>SA + LA</td></tr>
+      </table>
+    </div>
+
+    <div id="gold-mp" class="tab-pane">
+      <h3 class="sub-h">Top 15 MP-Specific Topics (History + Geography Combined)</h3>
+      <table>
+        <tr><th>#</th><th>MP Topic</th><th>Category</th><th>Priority</th></tr>
+        <tr><td>1</td><td>Holkar Dynasty — complete history from Malhar Rao to pre-independence</td><td><span class="badge b-mp">MP History</span></td><td><span class="badge b-must">MUST</span></td></tr>
+        <tr><td>2</td><td>1857 in MP — Shankar Shah, Raghunath Shah, Bhima Nayak, Tantya Bhil, Avanti Bai</td><td><span class="badge b-mp">MP History</span></td><td><span class="badge b-must">MUST</span></td></tr>
+        <tr><td>3</td><td>Malwa Plateau — topography, features, geographical characteristics</td><td><span class="badge b-geo">MP Geography</span></td><td><span class="badge b-must">MUST</span></td></tr>
+        <tr><td>4</td><td>MP Agriculture — soyabean, cotton, sugarcane, major crops, area distribution</td><td><span class="badge b-geo">MP Geography</span></td><td><span class="badge b-must">MUST</span></td></tr>
+        <tr><td>5</td><td>Gondwana Kingdom / Rani Durgawati / Gondwana genealogy</td><td><span class="badge b-mp">MP History</span></td><td><span class="badge b-must">MUST</span></td></tr>
+        <tr><td>6</td><td>MP Industries — coal mining, cement industry, agro-based industries, Bina Refinery</td><td><span class="badge b-geo">MP Geography</span></td><td><span class="badge b-must">MUST</span></td></tr>
+        <tr><td>7</td><td>Freedom Movement in MP — Jhanda, Jungle, Seoni Satyagraha; non-cooperation in Mahakaushal</td><td><span class="badge b-mp">MP History</span></td><td><span class="badge b-must">MUST</span></td></tr>
+        <tr><td>8</td><td>MP Tribes — Gond, Bhil, Saharia; distribution, PVTG, shifting cultivation districts</td><td><span class="badge b-geo">MP Geography</span></td><td><span class="badge b-must">MUST</span></td></tr>
+        <tr><td>9</td><td>Chandela / Paramara / Kalchuri / Raja Bhoj — temples, arts, architecture, achievements</td><td><span class="badge b-mp">MP History</span></td><td><span class="badge b-very">V.IMP</span></td></tr>
+        <tr><td>10</td><td>MP Forests — types (3 types), forest resources, characteristics, tribal dependence</td><td><span class="badge b-geo">MP Geography</span></td><td><span class="badge b-very">V.IMP</span></td></tr>
+        <tr><td>11</td><td>Scindia / Bhopal State — history, merger, third Maratha war impact, Madhya Bharat</td><td><span class="badge b-mp">MP History</span></td><td><span class="badge b-very">V.IMP</span></td></tr>
+        <tr><td>12</td><td>MP Rivers — Narmada (lifeline), Chambal (soil erosion), Tapti, Son characteristics</td><td><span class="badge b-geo">MP Geography</span></td><td><span class="badge b-very">V.IMP</span></td></tr>
+        <tr><td>13</td><td>MP Art & Culture — Godana folk art, Bagh Caves, Bhimbetka, Bhojpur Shiva Temple</td><td><span class="badge b-mp">MP History/Culture</span></td><td><span class="badge b-very">V.IMP</span></td></tr>
+        <tr><td>14</td><td>MP Minerals — coal (Kanhan Valley, Singrauli), manganese (Balaghat), diamond, iron ore</td><td><span class="badge b-geo">MP Geography</span></td><td><span class="badge b-very">V.IMP</span></td></tr>
+        <tr><td>15</td><td>MP Physical Divisions — Satpura, Vindhya, Narmada Valley; population density pattern</td><td><span class="badge b-geo">MP Geography</span></td><td><span class="badge b-imp">IMP</span></td></tr>
+      </table>
+    </div>
+
+    <div id="gold-q" class="tab-pane">
+      <h3 class="sub-h">🏆 Top 10 Golden Questions — Most Likely to Appear in Next Exam</h3>
+      <div class="golden-q">
+        <div class="qnum">GOLDEN Q #1 — History (LA/SA)</div>
+        <div class="qtext">Discuss the role of Holkar dynasty / Ahilyabai Holkar in the history of Madhya Pradesh OR Explain the contribution of Malhar Rao Holkar.</div>
+        <div class="qmeta">Asked 6 years consecutively in different forms | Appeared 2019–2024 | Every format</div>
+      </div>
+      <div class="golden-q">
+        <div class="qnum">GOLDEN Q #2 — History (SA/LA)</div>
+        <div class="qtext">Evaluate the contribution of freedom fighters of Madhya Pradesh in the 1857 revolt (Shankar Shah, Raghunath Shah, Bhima Nayak, Tantya Bhil).</div>
+        <div class="qmeta">Every year in VSA + appeared as LA multiple times | Highest MP History priority</div>
+      </div>
+      <div class="golden-q">
+        <div class="qnum">GOLDEN Q #3 — Geography (LA)</div>
+        <div class="qtext">Explain the elements and process of Remote Sensing. What are its main applications in resource management? OR Explain the principles of GIS and its significance.</div>
+        <div class="qmeta">Appeared every single year 2019–2024 | LA-level topic | Non-negotiable</div>
+      </div>
+      <div class="golden-q">
+        <div class="qnum">GOLDEN Q #4 — Geography (LA/SA)</div>
+        <div class="qtext">Describe the geographical characteristics of the Malwa Plateau. OR Divide Madhya Pradesh into physical divisions and discuss the topography of Malwa Plateau.</div>
+        <div class="qmeta">Appeared 5 of 6 years | Essential MP geography topic | Always prepare all angles</div>
+      </div>
+      <div class="golden-q">
+        <div class="qnum">GOLDEN Q #5 — Geography (LA)</div>
+        <div class="qtext">Discuss the origin and characteristics of tropical cyclones. OR Explain the stages in the life cycle of temperate cyclones.</div>
+        <div class="qmeta">Appeared 5 of 6 years | Both tropical and temperate versions asked</div>
+      </div>
+      <div class="golden-q">
+        <div class="qnum">GOLDEN Q #6 — History (LA)</div>
+        <div class="qtext">Critically examine the economic impact of British rule on India. OR "British rule increased poverty in India" — Review this statement with facts.</div>
+        <div class="qmeta">Appeared 5 of 6 years in various phrasings | Statement-based format common</div>
+      </div>
+      <div class="golden-q">
+        <div class="qnum">GOLDEN Q #7 — Geography (LA)</div>
+        <div class="qtext">Describe the principles of Disaster Management and explain the measures for relief and rehabilitation. OR Explain man-made disasters with the example of Bhopal Gas Tragedy.</div>
+        <div class="qmeta">Every year 2019–2024 | DM is guaranteed in Paper-1 | Prepare all subtopics</div>
+      </div>
+      <div class="golden-q">
+        <div class="qnum">GOLDEN Q #8 — History (SA)</div>
+        <div class="qtext">Write a short note on: Jungle Satyagraha in Madhya Pradesh / Jhanda Satyagraha / Seoni Satyagraha (Turia) — Freedom struggle in MP.</div>
+        <div class="qmeta">Appears every 2 years alternating | 2022 and 2024 both had Jungle Satyagraha</div>
+      </div>
+      <div class="golden-q">
+        <div class="qnum">GOLDEN Q #9 — History (LA)</div>
+        <div class="qtext">Describe the Harappan Civilisation — was it an urban civilisation? OR Describe the terracotta figurines / economic condition / Great Bath of Harappan Civilisation.</div>
+        <div class="qmeta">5 years out of 6 | Different subtopics each time — prepare ALL angles</div>
+      </div>
+      <div class="golden-q">
+        <div class="qnum">GOLDEN Q #10 — Geography (LA)</div>
+        <div class="qtext">Describe the production and distribution of coal / cement industry in Madhya Pradesh. OR Give a brief account of agro-based industries in MP.</div>
+        <div class="qmeta">Appears every 2 years | MP-specific industrialization is a guaranteed topic</div>
+      </div>
+    </div>
+
+    <div id="wild" class="tab-pane">
+      <h3 class="sub-h">🎰 Top 5 Wild Card Topics — Low Frequency, High Potential</h3>
+      <div class="wildcard">
+        <strong>Wild Card #1 — History: Vijayanagara Empire</strong><br>
+        <small>Never asked in 6 years despite being major syllabus topic. Major medieval empire with rich culture and administration. UPSC asks this regularly. High risk of appearing in 2025.</small>
+      </div>
+      <div class="wildcard">
+        <strong>Wild Card #2 — History: Partition of India (1947)</strong><br>
+        <small>Socially relevant, anniversary-based topic. Never asked as main LA question. Could appear in statement format: "Partition was inevitable — discuss".</small>
+      </div>
+      <div class="wildcard">
+        <strong>Wild Card #3 — Geography: Ocean Currents and Climate</strong><br>
+        <small>El Nino / La Nina asked as VSA but detailed ocean currents never in LA. A full question on this could appear as Geography LA.</small>
+      </div>
+      <div class="wildcard">
+        <strong>Wild Card #4 — Geography: Biodiversity Hotspots of India</strong><br>
+        <small>Environment and ecology section — never properly tested. Growing importance due to climate change narrative. High risk for 2025 onward.</small>
+      </div>
+      <div class="wildcard">
+        <strong>Wild Card #5 — History: Bhakti Movement (detailed)</strong><br>
+        <small>Only appeared as VSA (Siddha Sahitya). Full LA on Bhakti/Sufi movement's role in social reform never asked. UPSC standard topic. Watch for 2025.</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 15: DASHBOARD ===== -->
+<div class="section" id="s15">
+  <div class="section-header">
+    <div class="section-number">15</div>
+    <h2>Final Summary Dashboard</h2>
+  </div>
+  <div class="section-body">
+    <table class="dashboard-table">
+      <tr>
+        <th>Parameter</th>
+        <th style="color:var(--hist-color)">History (Sec-A)</th>
+        <th style="color:var(--geo-color)">Geography (Sec-B)</th>
+        <th style="color:var(--mp-color)">Combined Paper-I</th>
+      </tr>
+      <tr>
+        <td class="param">Total Questions Analyzed (6 years)</td>
+        <td class="hist-val">~180 (VSA+SA+LA)</td>
+        <td class="geo-val">~180 (VSA+SA+LA)</td>
+        <td class="combo-val">~360 total</td>
+      </tr>
+      <tr>
+        <td class="param">Total Marks Analyzed</td>
+        <td class="hist-val">150 × 6 = 900</td>
+        <td class="geo-val">150 × 6 = 900</td>
+        <td class="combo-val">300 × 6 = 1800</td>
+      </tr>
+      <tr>
+        <td class="param">MP-Specific Questions (approx)</td>
+        <td class="hist-val">~55 questions</td>
+        <td class="geo-val">~60 questions</td>
+        <td class="combo-val">~115 questions</td>
+      </tr>
+      <tr>
+        <td class="param">MP-Specific Marks %</td>
+        <td class="hist-val">~42% of History</td>
+        <td class="geo-val">~35% of Geography</td>
+        <td class="combo-val">~38% overall</td>
+      </tr>
+      <tr>
+        <td class="param">Most Repeated Single Topic</td>
+        <td class="hist-val">Holkar Dynasty (6/6 years)</td>
+        <td class="geo-val">Remote Sensing/GIS/GPS (6/6 years)</td>
+        <td class="combo-val">DM + RS/GIS/GPS (Geography)</td>
+      </tr>
+      <tr>
+        <td class="param">Highest Weightage Broad Area</td>
+        <td class="hist-val">MP History (~42%)</td>
+        <td class="geo-val">MP Geography + Physical Geo (~47%)</td>
+        <td class="combo-val">MP-specific topics overall</td>
+      </tr>
+      <tr>
+        <td class="param">Static vs Dynamic Ratio</td>
+        <td class="hist-val">85% Static : 15% Dynamic</td>
+        <td class="geo-val">70% Static : 30% Dynamic</td>
+        <td class="combo-val">78% Static : 22% Dynamic</td>
+      </tr>
+      <tr>
+        <td class="param">Short vs Long Answer Ratio (marks)</td>
+        <td class="hist-val">VSA 30% + SA 33% + LA 37%</td>
+        <td class="geo-val">VSA 30% + SA 33% + LA 37%</td>
+        <td class="combo-val">SA section = highest marks in 2024</td>
+      </tr>
+      <tr>
+        <td class="param">Most Used Directive Word</td>
+        <td class="hist-val">"Write a short note on..."</td>
+        <td class="geo-val">"Describe / Explain..."</td>
+        <td class="combo-val">"Write a short note on..."</td>
+      </tr>
+      <tr>
+        <td class="param">Top Priority Topic #1</td>
+        <td class="hist-val">Holkar Dynasty (all aspects)</td>
+        <td class="geo-val">Remote Sensing + GIS + GPS</td>
+        <td class="combo-val">MP History + RS/GIS/GPS</td>
+      </tr>
+      <tr>
+        <td class="param">Top Priority Topic #2</td>
+        <td class="hist-val">1857 in MP + Freedom Fighters</td>
+        <td class="geo-val">Disaster Management (all)</td>
+        <td class="combo-val">1857 MP + DM</td>
+      </tr>
+      <tr>
+        <td class="param">Top Priority Topic #3</td>
+        <td class="hist-val">Freedom Movement + British Impact</td>
+        <td class="geo-val">Cyclones + Monsoon + Malwa Plateau</td>
+        <td class="combo-val">British Impact + Cyclones</td>
+      </tr>
+      <tr>
+        <td class="param">Biggest 2024 Change</td>
+        <td class="hist-val" colspan="2">SA increased to 7 marks; NO internal options in LA; VSA reduced to 2 marks</td>
+        <td class="combo-val">SA is now MOST important section</td>
+      </tr>
+      <tr>
+        <td class="param">Trend: Rising Topics</td>
+        <td class="hist-val">Gondwana, Maratha, MP princely states</td>
+        <td class="geo-val">Water Policy, Agriculture, Petroleum</td>
+        <td class="combo-val">MP-specific depth increasing</td>
+      </tr>
+      <tr>
+        <td class="param">Trend: Declining Topics</td>
+        <td class="hist-val">World History (WWI/WWII)</td>
+        <td class="geo-val">World Geography details</td>
+        <td class="combo-val">Focus shifting to India + MP</td>
+      </tr>
+    </table>
+
+    <div class="section-divider"></div>
+    <div class="tip-box">
+      <h4>🏆 Final Exam Strategy Recommendations</h4>
+      <ul>
+        <li><strong>MP topics = 38–42% of marks</strong> — this is your biggest differentiator. Invest 40% of study time in MP-specific content.</li>
+        <li><strong>Remote Sensing + GIS + GPS</strong> = appears EVERY year in multiple formats (VSA + SA + LA). Master this completely — it alone can give 25–35 marks.</li>
+        <li><strong>2024 format is likely here to stay</strong> — SA (7 marks, 60 words) is now the most marks-heavy section. Prioritize crisp, analytical SA writing practice.</li>
+        <li><strong>MP's Holkar Dynasty + 1857 MP</strong> = prepare exhaustive notes covering every family member, freedom fighter, and event. VSA can ask any name.</li>
+        <li><strong>Disaster Management</strong> = easy full-scoring topic. All 6 years it appeared. Study thoroughly — always gives 11–22 marks if prepared well.</li>
+        <li><strong>Golden Questions #1–10</strong> = if you prepare only these 10 topics as full essays, you can score ~120–140 marks. These are the backbone.</li>
+        <li><strong>Wild cards</strong> = 10–15% study time on these. Vijayanagara and Bhakti Movement are most likely to appear in 2025.</li>
+        <li><strong>Never-asked Geography topics</strong> = Ocean currents and Biodiversity hotspots deserve 1 full reading at minimum.</li>
+      </ul>
+    </div>
+
+    <div style="text-align:center; margin-top:20px; padding:16px; background:var(--light-bg); border-radius:8px; font-size:12px; color:var(--muted)">
+      Analysis based on MPPSC Mains GS Paper-I PYQs: 2019, 2020, 2021, 2022, 2023, 2024<br>
+      Marks estimates are indicative based on question format and frequency analysis<br>
+      <strong>Best of luck for your MPPSC Mains preparation! 🎯</strong>
+    </div>
+  </div>
+</div>
+
+</div><!-- end container -->
+
+<script>
+function scrollTo(id) {
+  const el = document.querySelector(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function switchTab(btn, id) {
+  const parent = btn.closest('.section-body') || btn.parentElement.parentElement;
+  parent.querySelectorAll('.tab-btn, .tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  parent.querySelectorAll('.tab-pane, .tab-content').forEach(p => p.classList.remove('active'));
+  const pane = parent.querySelector('#' + id);
+  if (pane) pane.classList.add('active');
+}
+
+function switchTab2(btn, id) { switchTab(btn, id); }
+function switchTab3(btn, id) { switchTab(btn, id); }
+function switchTab4(btn, id) { switchTab(btn, id); }
+</script>
+</body>
+</html>
