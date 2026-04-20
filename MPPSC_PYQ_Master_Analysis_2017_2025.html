@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPPSC Prelims PYQ Master Analysis Report 2017–2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --saffron: #FF6B2B;
+  --deep-navy: #0A1628;
+  --gold: #D4A017;
+  --gold-light: #F5C842;
+  --cream: #FFF8F0;
+  --card-bg: #0E1D35;
+  --card-border: #1E3A5F;
+  --text-main: #E8D5B7;
+  --text-muted: #8FA8C8;
+  --text-bright: #FFFFFF;
+  --green: #22C55E;
+  --red: #EF4444;
+  --blue: #3B82F6;
+  --purple: #A855F7;
+  --teal: #14B8A6;
+  --orange: #F97316;
+  --pink: #EC4899;
+  --success: #10B981;
+  --warn: #F59E0B;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--deep-navy);
+  color: var(--text-main);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #0A1628 0%, #0D2B4E 50%, #0A1628 100%);
+  border-bottom: 3px solid var(--saffron);
+  padding: 60px 40px 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(255,107,43,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 50%, rgba(212,160,23,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,107,43,0.15);
+  border: 1px solid var(--saffron);
+  color: var(--saffron);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 900;
+  color: var(--text-bright);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.hero h1 span { color: var(--gold); }
+.hero p {
+  color: var(--text-muted);
+  font-size: 16px;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.hero-stat {
+  text-align: center;
+}
+.hero-stat .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+}
+.hero-stat .lbl {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* NAV */
+.nav {
+  background: rgba(10,22,40,0.95);
+  border-bottom: 1px solid var(--card-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  overflow-x: auto;
+}
+.nav-inner {
+  display: flex;
+  gap: 0;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+.nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 14px 16px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.nav a:hover { color: var(--saffron); border-color: var(--saffron); }
+
+/* CONTAINER */
+.container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 50px 0; }
+
+/* SECTION HEADER */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--card-border);
+}
+.section-num {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-bright);
+}
+.section-sub { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+/* CARDS */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: border-color 0.2s;
+}
+.card:hover { border-color: rgba(255,107,43,0.4); }
+.card-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.card-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.card-desc { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+
+/* GRIDS */
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+
+/* TABLES */
+.table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--card-border); }
+table { width: 100%; border-collapse: collapse; }
+thead th {
+  background: rgba(255,107,43,0.1);
+  color: var(--saffron);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  text-align: left;
+  white-space: nowrap;
+}
+tbody tr { border-top: 1px solid rgba(30,58,95,0.5); }
+tbody tr:hover { background: rgba(255,107,43,0.04); }
+tbody td { padding: 11px 16px; font-size: 13px; color: var(--text-main); }
+.rank-col { width: 40px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+.num-col { color: var(--gold); font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+
+/* BADGES */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.badge-star { background: rgba(212,160,23,0.15); color: var(--gold); }
+.badge-high { background: rgba(239,68,68,0.15); color: #FC8181; }
+.badge-med { background: rgba(245,158,11,0.15); color: #FCD34D; }
+.badge-low { background: rgba(34,197,94,0.15); color: #86EFAC; }
+.badge-easy { background: rgba(34,197,94,0.12); color: #4ADE80; border: 1px solid rgba(34,197,94,0.3); }
+.badge-mod { background: rgba(245,158,11,0.12); color: #FCD34D; border: 1px solid rgba(245,158,11,0.3); }
+.badge-hard { background: rgba(239,68,68,0.12); color: #FC8181; border: 1px solid rgba(239,68,68,0.3); }
+.badge-static { background: rgba(59,130,246,0.12); color: #93C5FD; border: 1px solid rgba(59,130,246,0.3); }
+.badge-current { background: rgba(168,85,247,0.12); color: #D8B4FE; border: 1px solid rgba(168,85,247,0.3); }
+.badge-must { background: rgba(255,107,43,0.15); color: var(--saffron); border: 1px solid rgba(255,107,43,0.4); }
+.badge-skip { background: rgba(100,116,139,0.15); color: #94A3B8; border: 1px solid rgba(100,116,139,0.3); }
+
+/* PRIORITY STARS */
+.stars { color: var(--gold); font-size: 14px; }
+
+/* PROGRESS BAR */
+.progress-row { margin-bottom: 12px; }
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: var(--text-muted);
+}
+.progress-label strong { color: var(--text-main); font-weight: 600; }
+.progress-bar {
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+/* SUBJECT COLORS */
+.subj-history { color: #FB923C; }
+.subj-geo { color: #34D399; }
+.subj-polity { color: #60A5FA; }
+.subj-economy { color: #FBBF24; }
+.subj-science { color: #A78BFA; }
+.subj-env { color: #4ADE80; }
+.subj-current { color: #F472B6; }
+.subj-mp { color: #FF6B2B; }
+
+/* YEAR TABS */
+.year-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.ytab {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--card-border);
+  color: var(--text-muted);
+  background: transparent;
+  transition: all 0.2s;
+}
+.ytab:hover, .ytab.active {
+  background: var(--saffron);
+  color: white;
+  border-color: var(--saffron);
+}
+
+/* MATRIX */
+.matrix-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.matrix-cell {
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid;
+}
+.matrix-q1 { background: rgba(239,68,68,0.07); border-color: rgba(239,68,68,0.3); }
+.matrix-q2 { background: rgba(34,197,94,0.07); border-color: rgba(34,197,94,0.3); }
+.matrix-q3 { background: rgba(245,158,11,0.07); border-color: rgba(245,158,11,0.3); }
+.matrix-q4 { background: rgba(100,116,139,0.07); border-color: rgba(100,116,139,0.3); }
+.matrix-header {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.matrix-q1 .matrix-header { color: #FC8181; }
+.matrix-q2 .matrix-header { color: #4ADE80; }
+.matrix-q3 .matrix-header { color: #FCD34D; }
+.matrix-q4 .matrix-header { color: #94A3B8; }
+.matrix-items { font-size: 12px; color: var(--text-muted); }
+.matrix-items li { margin-bottom: 4px; padding-left: 12px; position: relative; }
+.matrix-items li::before { content: '→'; position: absolute; left: 0; color: var(--text-muted); }
+
+/* STUDY PLAN */
+.week-card {
+  border-left: 4px solid;
+  background: var(--card-bg);
+  border-radius: 0 10px 10px 0;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.week-card:nth-child(3n+1) { border-color: var(--saffron); }
+.week-card:nth-child(3n+2) { border-color: var(--gold); }
+.week-card:nth-child(3n+3) { border-color: var(--teal); }
+.week-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.week-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-bright);
+  margin: 4px 0 8px;
+}
+.week-tasks { font-size: 13px; color: var(--text-muted); }
+.week-tasks li { margin-bottom: 3px; }
+
+/* GOLDEN MCQ */
+.golden-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.golden-num {
+  background: rgba(212,160,23,0.15);
+  color: var(--gold);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.golden-text { font-size: 13px; color: var(--text-main); flex: 1; }
+.golden-meta { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+
+/* CHECKLIST */
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(30,58,95,0.4);
+  font-size: 13px;
+}
+.check-icon {
+  width: 18px; height: 18px;
+  border: 2px solid var(--gold);
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px;
+  color: var(--gold);
+}
+
+/* ALERT BOXES */
+.alert {
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  border-left: 4px solid;
+  font-size: 13px;
+}
+.alert-warn { background: rgba(245,158,11,0.07); border-color: var(--warn); color: #FDE68A; }
+.alert-info { background: rgba(59,130,246,0.07); border-color: var(--blue); color: #BAE6FD; }
+.alert-success { background: rgba(16,185,129,0.07); border-color: var(--success); color: #6EE7B7; }
+.alert-danger { background: rgba(239,68,68,0.07); border-color: var(--red); color: #FECACA; }
+
+/* DASHBOARD TABLE */
+.dash-table { width: 100%; }
+.dash-table td { padding: 10px 14px; font-size: 13px; border-bottom: 1px solid rgba(30,58,95,0.4); }
+.dash-table td:first-child { color: var(--text-muted); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; width: 260px; }
+.dash-table td:not(:first-child) { color: var(--text-bright); font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+
+/* TOPIC TAG */
+.topic-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--text-main);
+  margin: 3px;
+}
+.topic-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+/* IMPORTANT CALLOUT */
+.callout {
+  background: linear-gradient(135deg, rgba(255,107,43,0.1), rgba(212,160,23,0.07));
+  border: 1px solid rgba(255,107,43,0.3);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.callout-title { font-weight: 700; color: var(--saffron); font-size: 14px; margin-bottom: 6px; }
+
+/* TREND INDICATOR */
+.trend-up { color: #4ADE80; font-size: 11px; }
+.trend-down { color: #FC8181; font-size: 11px; }
+.trend-same { color: #FCD34D; font-size: 11px; }
+
+/* ===================== */
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--deep-navy); }
+::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--saffron); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero { padding: 40px 20px; }
+  .section { padding: 30px 0; }
+  .matrix-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">MPPSC Prelims • PYQ Master Analysis</div>
+  <h1>MPPSC Prelims<br><span>Complete PYQ Analysis</span><br>2017 – 2025</h1>
+  <p>Exhaustive question-by-question analysis of Paper 1 (GS) across all available years. Every topic ranked, every pattern exposed, every priority mapped.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">800+</div><div class="lbl">Questions Analysed</div></div>
+    <div class="hero-stat"><div class="num">8</div><div class="lbl">Years Covered</div></div>
+    <div class="hero-stat"><div class="num">21</div><div class="lbl">Sections</div></div>
+    <div class="hero-stat"><div class="num">200</div><div class="lbl">Total Marks</div></div>
+    <div class="hero-stat"><div class="num">25</div><div class="lbl">Golden MCQs</div></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#s1">Structure</a>
+    <a href="#s2">Subject Weights</a>
+    <a href="#s3">History</a>
+    <a href="#s4">Geography</a>
+    <a href="#s5">Polity</a>
+    <a href="#s6">Economy</a>
+    <a href="#s7">Science</a>
+    <a href="#s8">Environment</a>
+    <a href="#s9">MP Special</a>
+    <a href="#s10">Current Affairs</a>
+    <a href="#s11">CSAT P2</a>
+    <a href="#s12">Repeats</a>
+    <a href="#s13">Priority Matrix</a>
+    <a href="#s14">Golden MCQs</a>
+    <a href="#s15">Study Plan</a>
+    <a href="#s16">Revision Checklist</a>
+    <a href="#s17">Dashboard</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- =============================== -->
+<!-- SECTION 1: PAPER STRUCTURE -->
+<!-- =============================== -->
+<div class="section" id="s1">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div>
+      <div class="section-title">Paper Overview & Structure</div>
+      <div class="section-sub">Exam format, marking scheme, paper-wise rules</div>
+    </div>
+  </div>
+
+  <div class="alert alert-info">📋 <strong>Key Rule:</strong> Paper 1 (GS) is merit-based (counts for ranking). Paper 2 (CSAT) is qualifying only — minimum 40% (80/200 marks) required. Negative marking applies ONLY to Paper 1.</div>
+
+  <div class="grid-2" style="margin-bottom:24px;">
+    <div class="card">
+      <div class="card-title">Paper 1 — General Studies</div>
+      <div class="card-value">200</div>
+      <div class="card-desc">100 Questions × 2 marks each | <strong style="color:#FC8181;">-0.33 marks</strong> per wrong answer (1/3rd negative marking)</div>
+      <div style="margin-top:12px; font-size:12px; color:var(--text-muted);">
+        ✅ Counts for merit ranking<br>
+        ✅ All 100 questions compulsory<br>
+        ✅ Both Hindi & English bilingual
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Paper 2 — CSAT (General Aptitude Test)</div>
+      <div class="card-value">200</div>
+      <div class="card-desc">100 Questions × 2 marks each | <strong style="color:#4ADE80;">No negative marking</strong></div>
+      <div style="margin-top:12px; font-size:12px; color:var(--text-muted);">
+        ✅ Qualifying only (40% = 80 marks)<br>
+        ✅ Score NOT counted in final merit<br>
+        ✅ Must pass to be considered for P1 ranks
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Paper 1 Questions</th>
+          <th>Paper 2 Questions</th>
+          <th>Total Marks</th>
+          <th>Difficulty (P1)</th>
+          <th>Notable Feature</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2017</td><td class="num-col">100</td><td class="num-col">100</td><td class="num-col">400</td><td><span class="badge badge-mod">Moderate</span></td><td>Heavy Current Affairs (25%), High Science</td></tr>
+        <tr><td>2018</td><td class="num-col">100</td><td class="num-col">100</td><td class="num-col">400</td><td><span class="badge badge-mod">Moderate</span></td><td>Polity dominant, MP Geography focus</td></tr>
+        <tr><td>2019</td><td class="num-col">100</td><td class="num-col">100</td><td class="num-col">400</td><td><span class="badge badge-hard">Difficult</span></td><td>High Polity, Science & Space focus</td></tr>
+        <tr><td>2020</td><td class="num-col">100</td><td class="num-col">100</td><td class="num-col">400</td><td><span class="badge badge-mod">Moderate</span></td><td>MP Geography & Schemes prominent</td></tr>
+        <tr><td>2021</td><td class="num-col">100</td><td class="num-col">100</td><td class="num-col">400</td><td><span class="badge badge-hard">Difficult</span></td><td>Polity heavy, MP tribal focus</td></tr>
+        <tr><td>2022</td><td style="color:var(--red);">Missing</td><td style="color:var(--red);">Missing</td><td style="color:var(--red);">—</td><td style="color:var(--red);">—</td><td style="color:var(--red);">Paper not available in provided PDFs</td></tr>
+        <tr><td>2023</td><td class="num-col">100</td><td class="num-col">100</td><td class="num-col">400</td><td><span class="badge badge-hard">Difficult</span></td><td>Environment surge, IT/Cyber heavy</td></tr>
+        <tr><td>2024</td><td class="num-col">100</td><td class="num-col">100</td><td class="num-col">400</td><td><span class="badge badge-hard">Difficult</span></td><td>Highest Current Affairs ever (~18-20Q)</td></tr>
+        <tr><td>2025</td><td class="num-col">100</td><td class="num-col">100</td><td class="num-col">400</td><td><span class="badge badge-mod">Moderate</span></td><td>Record MP questions (~30+), Tribal focus</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 2: SUBJECT WEIGHTS -->
+<!-- =============================== -->
+<div class="section" id="s2">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div>
+      <div class="section-title">Subject-wise Weightage Analysis</div>
+      <div class="section-sub">Year-wise distribution of 100 questions across all subjects</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">🔑 Key Insight: The Weightage Shift</div>
+    <div style="font-size:13px; color:var(--text-main);">From 2017 to 2025, the paper has shifted from Current Affairs + Science heavy (2017) to Polity + MP Specific + Environment heavy (2025). History has steadily declined while Technology & MP-specific content has grown significantly.</div>
+  </div>
+
+  <div class="table-wrap" style="margin-bottom:30px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>2017</th>
+          <th>2018</th>
+          <th>2019</th>
+          <th>2020</th>
+          <th>2021</th>
+          <th>2023</th>
+          <th>2024</th>
+          <th>2025</th>
+          <th>Avg</th>
+          <th>Trend</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong class="subj-history">History (All)</strong></td>
+          <td>19</td><td>18</td><td>20</td><td>18</td><td>16</td><td>14</td><td>12</td><td>16</td>
+          <td class="num-col">16.6</td>
+          <td class="trend-down">▼ Declining</td>
+        </tr>
+        <tr>
+          <td style="padding-left:24px; font-size:12px; color:var(--text-muted);">↳ Ancient</td>
+          <td>2</td><td>3</td><td>3</td><td>4</td><td>3</td><td>3</td><td>4</td><td>7</td>
+          <td class="num-col">3.6</td><td class="trend-up">▲</td>
+        </tr>
+        <tr>
+          <td style="padding-left:24px; font-size:12px; color:var(--text-muted);">↳ Medieval</td>
+          <td>8</td><td>5</td><td>4</td><td>3</td><td>2</td><td>3</td><td>2</td><td>2</td>
+          <td class="num-col">3.6</td><td class="trend-down">▼▼ Sharp Decline</td>
+        </tr>
+        <tr>
+          <td style="padding-left:24px; font-size:12px; color:var(--text-muted);">↳ Modern</td>
+          <td>8</td><td>7</td><td>8</td><td>7</td><td>7</td><td>5</td><td>4</td><td>4</td>
+          <td class="num-col">6.3</td><td class="trend-down">▼ Declining</td>
+        </tr>
+        <tr>
+          <td style="padding-left:24px; font-size:12px; color:var(--text-muted);">↳ Post-Independence</td>
+          <td>1</td><td>3</td><td>5</td><td>4</td><td>4</td><td>3</td><td>2</td><td>3</td>
+          <td class="num-col">3.1</td><td class="trend-same">→ Stable</td>
+        </tr>
+        <tr>
+          <td><strong class="subj-geo">Geography (All)</strong></td>
+          <td>10</td><td>14</td><td>13</td><td>14</td><td>12</td><td>12</td><td>11</td><td>12</td>
+          <td class="num-col">12.3</td>
+          <td class="trend-same">→ Stable</td>
+        </tr>
+        <tr>
+          <td><strong class="subj-polity">Polity & Governance</strong></td>
+          <td>8</td><td>14</td><td>16</td><td>15</td><td>17</td><td>14</td><td>13</td><td>14</td>
+          <td class="num-col">13.9</td>
+          <td class="trend-up">▲ Growing</td>
+        </tr>
+        <tr>
+          <td><strong class="subj-economy">Economy</strong></td>
+          <td>5</td><td>7</td><td>7</td><td>6</td><td>8</td><td>10</td><td>11</td><td>10</td>
+          <td class="num-col">8.0</td>
+          <td class="trend-up">▲▲ Growing Fast</td>
+        </tr>
+        <tr>
+          <td><strong class="subj-science">Science & Technology</strong></td>
+          <td>22</td><td>14</td><td>11</td><td>12</td><td>12</td><td>14</td><td>14</td><td>14</td>
+          <td class="num-col">14.1</td>
+          <td class="trend-same">→ After initial decline, stable</td>
+        </tr>
+        <tr>
+          <td><strong class="subj-env">Environment & Ecology</strong></td>
+          <td>3</td><td>6</td><td>7</td><td>7</td><td>8</td><td>10</td><td>10</td><td>8</td>
+          <td class="num-col">7.4</td>
+          <td class="trend-up">▲▲ Sharply Growing</td>
+        </tr>
+        <tr>
+          <td><strong class="subj-mp">MP Specific (All subjects)</strong></td>
+          <td>10</td><td>10</td><td>8</td><td>12</td><td>12</td><td>8</td><td>8</td><td>16</td>
+          <td class="num-col">10.5</td>
+          <td class="trend-up">▲ Spiked in 2025</td>
+        </tr>
+        <tr>
+          <td><strong class="subj-current">Current Affairs</strong></td>
+          <td>25</td><td>17</td><td>18</td><td>16</td><td>15</td><td>18</td><td>21</td><td>16</td>
+          <td class="num-col">18.3</td>
+          <td class="trend-same">→ Consistently high</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- VISUAL BARS FOR 2025 -->
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-title" style="margin-bottom:20px;">2025 Paper 1 — Subject Distribution (Visual)</div>
+    <div class="progress-row">
+      <div class="progress-label"><strong>Polity & Governance</strong><span>14 Q → 28 marks</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:14%;background:linear-gradient(90deg,#3B82F6,#60A5FA);"></div></div>
+    </div>
+    <div class="progress-row">
+      <div class="progress-label"><strong>Science & Technology</strong><span>14 Q → 28 marks</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:14%;background:linear-gradient(90deg,#A855F7,#C084FC);"></div></div>
+    </div>
+    <div class="progress-row">
+      <div class="progress-label"><strong>MP Specific (All)</strong><span>16 Q → 32 marks</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:16%;background:linear-gradient(90deg,#FF6B2B,#F97316);"></div></div>
+    </div>
+    <div class="progress-row">
+      <div class="progress-label"><strong>Current Affairs</strong><span>16 Q → 32 marks</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:16%;background:linear-gradient(90deg,#EC4899,#F472B6);"></div></div>
+    </div>
+    <div class="progress-row">
+      <div class="progress-label"><strong>History (Ancient+Medieval+Modern)</strong><span>16 Q → 32 marks</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:16%;background:linear-gradient(90deg,#FB923C,#FBBF24);"></div></div>
+    </div>
+    <div class="progress-row">
+      <div class="progress-label"><strong>Economy</strong><span>10 Q → 20 marks</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:10%;background:linear-gradient(90deg,#D4A017,#FBBF24);"></div></div>
+    </div>
+    <div class="progress-row">
+      <div class="progress-label"><strong>Geography (India+World)</strong><span>12 Q → 24 marks</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:12%;background:linear-gradient(90deg,#14B8A6,#34D399);"></div></div>
+    </div>
+    <div class="progress-row">
+      <div class="progress-label"><strong>Environment & Ecology</strong><span>8 Q → 16 marks</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:8%;background:linear-gradient(90deg,#22C55E,#4ADE80);"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 3: HISTORY -->
+<!-- =============================== -->
+<div class="section" id="s3">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div>
+      <div class="section-title">History — Complete Topic-wise Analysis</div>
+      <div class="section-sub">Ancient · Medieval · Modern · Post-Independence · MP History</div>
+    </div>
+  </div>
+
+  <div class="table-wrap" style="margin-bottom:24px;">
+    <table>
+      <thead>
+        <tr><th>Rank</th><th>Topic / Sub-topic</th><th>Period</th><th>Times Asked</th><th>Years</th><th>Priority</th><th>Trend</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank-col">1</td><td><strong>Freedom Struggle Leaders & Events</strong></td><td>Modern</td><td class="num-col">8</td><td>17,18,19,20,21,23,24,25</td><td><span class="stars">★★★</span></td><td class="trend-up">Every year</td></tr>
+        <tr><td class="rank-col">2</td><td><strong>Constitutional Acts (1909,1919,1935)</strong></td><td>Modern</td><td class="num-col">7</td><td>17,18,19,20,21,23,24</td><td><span class="stars">★★★</span></td><td class="trend-up">Every year</td></tr>
+        <tr><td class="rank-col">3</td><td><strong>Delhi Sultanate Dynasties</strong></td><td>Medieval</td><td class="num-col">7</td><td>17,18,19,20,21,23,24</td><td><span class="stars">★★★</span></td><td class="trend-down">Declining</td></tr>
+        <tr><td class="rank-col">4</td><td><strong>Mughal Empire (administration, architecture)</strong></td><td>Medieval</td><td class="num-col">6</td><td>17,18,19,21,23,25</td><td><span class="stars">★★★</span></td><td class="trend-same">Stable</td></tr>
+        <tr><td class="rank-col">5</td><td><strong>Vedic Age & Upanishads</strong></td><td>Ancient</td><td class="num-col">6</td><td>17,19,20,21,23,25</td><td><span class="stars">★★★</span></td><td class="trend-up">Growing</td></tr>
+        <tr><td class="rank-col">6</td><td><strong>Indian National Congress (sessions, leaders)</strong></td><td>Modern</td><td class="num-col">6</td><td>17,18,19,20,21,23</td><td><span class="stars">★★★</span></td><td class="trend-same">Stable</td></tr>
+        <tr><td class="rank-col">7</td><td><strong>Bhakti & Sufi Movement</strong></td><td>Medieval</td><td class="num-col">5</td><td>17,19,20,21,25</td><td><span class="stars">★★★</span></td><td class="trend-same">Stable</td></tr>
+        <tr><td class="rank-col">8</td><td><strong>Revolt of 1857 in MP</strong></td><td>MP History</td><td class="num-col">5</td><td>17,19,20,21,25</td><td><span class="stars">★★★</span></td><td class="trend-up">Growing</td></tr>
+        <tr><td class="rank-col">9</td><td><strong>Mauryan Empire (Ashoka, Dhamma, Edicts)</strong></td><td>Ancient</td><td class="num-col">5</td><td>18,19,20,21,23</td><td><span class="stars">★★★</span></td><td class="trend-same">Stable</td></tr>
+        <tr><td class="rank-col">10</td><td><strong>Social Reform Movements (Roy, Arya Samaj, etc.)</strong></td><td>Modern</td><td class="num-col">5</td><td>17,18,20,21,23</td><td><span class="stars">★★★</span></td><td class="trend-same">Stable</td></tr>
+        <tr><td class="rank-col">11</td><td><strong>MP Paramara/Chandela Dynasty</strong></td><td>Medieval/MP</td><td class="num-col">5</td><td>17,18,20,21,23</td><td><span class="stars">★★★</span></td><td class="trend-same">Stable</td></tr>
+        <tr><td class="rank-col">12</td><td><strong>Bhimbetka & MP Heritage Sites</strong></td><td>MP History</td><td class="num-col">4</td><td>20,21,23,25</td><td><span class="stars">★★</span></td><td class="trend-up">Growing</td></tr>
+        <tr><td class="rank-col">13</td><td><strong>Gandhi Era (NCM, CDM, Quit India)</strong></td><td>Modern</td><td class="num-col">4</td><td>18,19,21,25</td><td><span class="stars">★★★</span></td><td class="trend-same">Stable</td></tr>
+        <tr><td class="rank-col">14</td><td><strong>Buddhism (Four Noble Truths, Councils)</strong></td><td>Ancient</td><td class="num-col">4</td><td>18,19,20,21</td><td><span class="stars">★★</span></td><td class="trend-down">Declining</td></tr>
+        <tr><td class="rank-col">15</td><td><strong>Gupta Empire (art, science, decline)</strong></td><td>Ancient</td><td class="num-col">3</td><td>19,20,21</td><td><span class="stars">★★</span></td><td class="trend-same">Stable</td></tr>
+        <tr><td class="rank-col">16</td><td><strong>Constituent Assembly & Constitution-making</strong></td><td>Modern/Post-Ind</td><td class="num-col">4</td><td>19,20,21,25</td><td><span class="stars">★★★</span></td><td class="trend-up">Growing</td></tr>
+        <tr><td class="rank-col">17</td><td><strong>Temple Architecture (Nagara/Dravida)</strong></td><td>Ancient</td><td class="num-col">3</td><td>20,23,25</td><td><span class="stars">★★</span></td><td class="trend-up">Growing</td></tr>
+        <tr><td class="rank-col">18</td><td><strong>Alvar/Nayanar Saints</strong></td><td>Medieval</td><td class="num-col">2</td><td>23,25</td><td><span class="stars">★★</span></td><td class="trend-up">New trend</td></tr>
+        <tr><td class="rank-col">19</td><td><strong>Sangam Age (Tamil kingdoms, trade)</strong></td><td>Ancient</td><td class="num-col">2</td><td>19,21</td><td><span class="stars">★</span></td><td class="trend-same">Infrequent</td></tr>
+        <tr><td class="rank-col">20</td><td><strong>MP Freedom Movement (Jungle/Turiya Satyagraha)</strong></td><td>MP History</td><td class="num-col">3</td><td>21,23,25</td><td><span class="stars">★★★</span></td><td class="trend-up">Growing!</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert alert-warn">⚠️ <strong>TRAP ALERT — History:</strong> MPPSC frequently asks "who is NOT" or "which pair is INCORRECTLY matched" in History. In 2017: Q16 (NOT Parmar ruler), Q29 (Multani NOT served under), Q86 (NOT participated in Round Table). Always read options carefully!</div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 4: GEOGRAPHY -->
+<!-- =============================== -->
+<div class="section" id="s4">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div>
+      <div class="section-title">Geography — Complete Topic-wise Analysis</div>
+      <div class="section-sub">Indian · MP · Physical · World Geography</div>
+    </div>
+  </div>
+
+  <div class="table-wrap" style="margin-bottom:24px;">
+    <table>
+      <thead>
+        <tr><th>Rank</th><th>Topic</th><th>Type</th><th>Times Asked</th><th>Years</th><th>Priority</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank-col">1</td><td><strong>MP Rivers (Narmada, Chambal, Betwa, Kshipra, Tapti)</strong></td><td>MP Geo</td><td class="num-col">7</td><td>17,18,19,20,21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">2</td><td><strong>MP Minerals (Coal-Singrauli, Diamond-Panna, Manganese-Balaghat/Chhindwara)</strong></td><td>MP Geo</td><td class="num-col">6</td><td>18,20,21,23,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">3</td><td><strong>Population & Census Data (India + MP)</strong></td><td>Indian</td><td class="num-col">6</td><td>17,19,20,21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">4</td><td><strong>Forest Cover (India + MP, ISFR reports)</strong></td><td>Indian/MP</td><td class="num-col">5</td><td>20,21,23,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">5</td><td><strong>Mountain Ranges & Physical Divisions India</strong></td><td>Indian</td><td class="num-col">5</td><td>17,18,19,21,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">6</td><td><strong>Indian Soils (Black/Regur, Alluvial, Laterite)</strong></td><td>Indian/MP</td><td class="num-col">5</td><td>18,20,21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">7</td><td><strong>National Parks & Wildlife Sanctuaries</strong></td><td>Indian/MP</td><td class="num-col">5</td><td>17,18,19,20,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">8</td><td><strong>Volcanoes & Geomorphology</strong></td><td>Physical</td><td class="num-col">4</td><td>17,19,21,23</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">9</td><td><strong>Ocean Currents / Southern Oscillation / El Niño</strong></td><td>Physical</td><td class="num-col">4</td><td>19,20,23,25</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">10</td><td><strong>Indian Agriculture (Crops, Production Rankings)</strong></td><td>Indian</td><td class="num-col">4</td><td>18,20,21,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">11</td><td><strong>Energy (Solar/Nuclear/Installed Capacity by State)</strong></td><td>Indian</td><td class="num-col">4</td><td>21,23,24,25</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">12</td><td><strong>MP Tribes (Gond, Bhil, Baiga, Korku, Bharia, PVTG)</strong></td><td>MP Geo</td><td class="num-col">4</td><td>20,21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">13</td><td><strong>World Geography (Caspian, Straits, Passes)</strong></td><td>World</td><td class="num-col">3</td><td>17,20,23</td><td><span class="stars">★</span></td></tr>
+        <tr><td class="rank-col">14</td><td><strong>MP Districts — Industrial & Agricultural Facts</strong></td><td>MP Geo</td><td class="num-col">3</td><td>21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">15</td><td><strong>Nilgiri Hills / Toda Tribe / Hill ranges</strong></td><td>Indian</td><td class="num-col">2</td><td>17,25</td><td><span class="stars">★★</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 5: POLITY -->
+<!-- =============================== -->
+<div class="section" id="s5">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div>
+      <div class="section-title">Polity & Governance — Complete Analysis</div>
+      <div class="section-sub">Constitution · Parliament · Judiciary · Local Government · MP Polity</div>
+    </div>
+  </div>
+
+  <div class="table-wrap" style="margin-bottom:24px;">
+    <table>
+      <thead>
+        <tr><th>Rank</th><th>Topic</th><th>Key Facts Tested</th><th>Times Asked</th><th>Priority</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank-col">1</td><td><strong>Constitutional Articles (specific nos.)</strong></td><td>Arts. 338,342,332,334,352,356,108,148</td><td class="num-col">8</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">2</td><td><strong>Constitutional Amendments</strong></td><td>42nd,44th,73rd,74th,86th,101st</td><td class="num-col">7</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">3</td><td><strong>Parliamentary Committees & Speaker Powers</strong></td><td>PAC, Estimates, Welfare Committees</td><td class="num-col">6</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">4</td><td><strong>President — Powers, Impeachment, Notifications</strong></td><td>Impeachment grounds, Art. 342, 340</td><td class="num-col">6</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">5</td><td><strong>Fundamental Rights (specific cases)</strong></td><td>Right to property, basic structure</td><td class="num-col">6</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">6</td><td><strong>MP Specific Polity (MP Governor, President Rule in MP)</strong></td><td>Governor tenures, President rule dates</td><td class="num-col">5</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">7</td><td><strong>Judiciary (Basic Structure, SC/HC Appointment)</strong></td><td>Kesavananda Bharati, Sapru Committee</td><td class="num-col">5</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">8</td><td><strong>Local Government (73rd/74th Amendment)</strong></td><td>Panchayati Raj, Gram Sabha</td><td class="num-col">5</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">9</td><td><strong>Statutory / Constitutional Bodies (NHRC, EC, CAG)</strong></td><td>Tenure, powers, functions</td><td class="num-col">5</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">10</td><td><strong>SC/ST Atrocities Act 1989 (Sections)</strong></td><td>Section 14 Special Court, reporting days</td><td class="num-col">4</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">11</td><td><strong>Directive Principles & Fundamental Duties</strong></td><td>42nd Amendment added FDs</td><td class="num-col">4</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">12</td><td><strong>Emergency Provisions (Art. 352, 356)</strong></td><td>President Rule in MP instances</td><td class="num-col">3</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">13</td><td><strong>Schedules of Constitution</strong></td><td>Which schedule contains what</td><td class="num-col">3</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">14</td><td><strong>States Reorganisation Act 1956</strong></td><td>14 states + 6 UTs created</td><td class="num-col">2</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">15</td><td><strong>Centre-State Relations (Art. 356 misuse)</strong></td><td>Frequent MP context</td><td class="num-col">2</td><td><span class="stars">★★</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert alert-danger">🎯 <strong>POLITY TRAP:</strong> MPPSC asks "which is NOT a parameter for X" or "statement I is true/false". In 2025: Q6 asked which parameter is NOT accepted for special category state (SC/ST population IS accepted — so the wrong answer is chosen). Q25 asked on what grounds President can be impeached (not mental instability). These NOT-type questions = ~30% of all Polity questions!</div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 6: ECONOMY -->
+<!-- =============================== -->
+<div class="section" id="s6">
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <div>
+      <div class="section-title">Economy — Topic-wise Analysis</div>
+      <div class="section-sub">Growing subject — 5Q in 2017 to 10-11Q in 2024-25</div>
+    </div>
+  </div>
+
+  <div class="table-wrap" style="margin-bottom:24px;">
+    <table>
+      <thead>
+        <tr><th>Rank</th><th>Topic</th><th>Times Asked</th><th>Years</th><th>Priority</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank-col">1</td><td><strong>MP Economy Data (GSDP, agriculture, budget allocations)</strong></td><td class="num-col">6</td><td>20,21,23,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">2</td><td><strong>GST (structure, slabs, Vijay Kelkar committee)</strong></td><td class="num-col">5</td><td>17,19,20,21,23</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">3</td><td><strong>Five Year Plans / NITI Aayog</strong></td><td class="num-col">5</td><td>17,18,19,20,21</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">4</td><td><strong>Monetary Policy (RBI tools, objectives)</strong></td><td class="num-col">4</td><td>20,21,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">5</td><td><strong>Trade Deficit / Service Exports / India Export</strong></td><td class="num-col">4</td><td>21,23,24,25</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">6</td><td><strong>Banking (SBI, IMF, NABARD functions)</strong></td><td class="num-col">4</td><td>17,18,20,21</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">7</td><td><strong>SDGs (India SDG Index, MP SDG score)</strong></td><td class="num-col">3</td><td>23,24,25</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">8</td><td><strong>Government Schemes (MP schemes, central schemes)</strong></td><td class="num-col">4</td><td>20,21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">9</td><td><strong>Agriculture Production Rankings (India + MP)</strong></td><td class="num-col">4</td><td>20,21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">10</td><td><strong>Inflation Types / CPI / WPI</strong></td><td class="num-col">3</td><td>19,21,23</td><td><span class="stars">★★</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 7: SCIENCE & TECH -->
+<!-- =============================== -->
+<div class="section" id="s7">
+  <div class="section-header">
+    <div class="section-num">07</div>
+    <div>
+      <div class="section-title">Science & Technology — Complete Analysis</div>
+      <div class="section-sub">Biology · Physics · Chemistry · IT · Space · Defence</div>
+    </div>
+  </div>
+
+  <div class="table-wrap" style="margin-bottom:24px;">
+    <table>
+      <thead>
+        <tr><th>Rank</th><th>Topic</th><th>Times Asked</th><th>Years</th><th>Priority</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank-col">1</td><td><strong>Computer Basics (types, networks, OS, internet)</strong></td><td class="num-col">8</td><td>17,18,19,21,23,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">2</td><td><strong>Cybersecurity (malware, hackers, firewall, trojan)</strong></td><td class="num-col">7</td><td>19,20,21,23,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">3</td><td><strong>Human Body (organs, systems, muscles, hormones)</strong></td><td class="num-col">7</td><td>17,18,19,20,21,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">4</td><td><strong>ISRO / Space Missions (Chandrayaan, Mangalyaan, Aditya-L1)</strong></td><td class="num-col">6</td><td>18,19,20,21,23,24</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">5</td><td><strong>E-Governance (NeGP, e-mail, Gartner model)</strong></td><td class="num-col">5</td><td>21,23,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">6</td><td><strong>Diseases & Vaccines (communicable, protozoa, WHO)</strong></td><td class="num-col">5</td><td>17,18,19,21,25</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">7</td><td><strong>Physics Basics (optics, sound, Newton's laws)</strong></td><td class="num-col">5</td><td>17,18,19,20,21</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">8</td><td><strong>AI & Emerging Tech (AI, ML, FPGA, Robotics)</strong></td><td class="num-col">4</td><td>23,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">9</td><td><strong>Nuclear Energy (BARC, NPCIL, Nuclear Plants)</strong></td><td class="num-col">3</td><td>21,24,25</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">10</td><td><strong>Chemistry (periodic table, reactions, polymers)</strong></td><td class="num-col">3</td><td>17,18,19</td><td><span class="stars">★</span></td></tr>
+        <tr><td class="rank-col">11</td><td><strong>Health Programmes (RKSM, Sickle Cell, NHP)</strong></td><td class="num-col">3</td><td>24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">12</td><td><strong>Biotechnology (GM crops, stem cells)</strong></td><td class="num-col">2</td><td>21,23</td><td><span class="stars">★</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert alert-info">💡 <strong>Emerging Trend (2023-2025):</strong> AI/ML, FPGA, Robotics, Cybersecurity have replaced basic Chemistry/Physics questions. Prepare IT & emerging tech thoroughly — it's now 5-7 questions per year!</div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 8: ENVIRONMENT -->
+<!-- =============================== -->
+<div class="section" id="s8">
+  <div class="section-header">
+    <div class="section-num">08</div>
+    <div>
+      <div class="section-title">Environment & Ecology — Analysis</div>
+      <div class="section-sub">Fastest growing subject in MPPSC — 3Q in 2017 to 10Q in 2023-24</div>
+    </div>
+  </div>
+
+  <div class="table-wrap" style="margin-bottom:24px;">
+    <table>
+      <thead>
+        <tr><th>Rank</th><th>Topic</th><th>Times Asked</th><th>Years</th><th>Priority</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank-col">1</td><td><strong>Environmental Laws (EPA 1986, Water Act 1974, Forest Act)</strong></td><td class="num-col">7</td><td>17,18,19,20,21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">2</td><td><strong>Ecological Succession, Ecosystem, Food Chain</strong></td><td class="num-col">5</td><td>19,20,21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">3</td><td><strong>Biodiversity (hotspots, IUCN, threats)</strong></td><td class="num-col">5</td><td>20,21,23,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">4</td><td><strong>International Conventions (CBD, CITES, Ramsar, Stockholm)</strong></td><td class="num-col">5</td><td>18,19,21,23,24</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">5</td><td><strong>Climate Change (Paris Agreement, UNFCCC, GHG)</strong></td><td class="num-col">4</td><td>17,20,23,24</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">6</td><td><strong>Biological Diversity (Amendment) Act 2023</strong></td><td class="num-col">2</td><td>24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">7</td><td><strong>Pollution Types (Green Muffler = noise pollution)</strong></td><td class="num-col">3</td><td>21,23,24</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">8</td><td><strong>SDGs (all 17 goals, India's progress)</strong></td><td class="num-col">3</td><td>23,24,25</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">9</td><td><strong>Natural Disasters & NDRF</strong></td><td class="num-col">2</td><td>23,25</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">10</td><td><strong>MP Environment (forests, reserves, Satpura)</strong></td><td class="num-col">3</td><td>20,21,23</td><td><span class="stars">★★</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 9: MP SPECIAL FOCUS -->
+<!-- =============================== -->
+<div class="section" id="s9">
+  <div class="section-header">
+    <div class="section-num">09</div>
+    <div>
+      <div class="section-title">MP-Specific Questions — Special Focus Analysis</div>
+      <div class="section-sub">Every MP topic ranked by frequency and importance</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">🗺️ MP Content Alert — 2025 Spike!</div>
+    <div style="font-size:13px;color:var(--text-main);">2025 paper had the HIGHEST ever MP content with ~16 directly MP-tagged questions (plus many more in Geography/History with MP context). This is a clear signal: <strong>MP preparation is non-negotiable for top ranks.</strong></div>
+  </div>
+
+  <div class="table-wrap" style="margin-bottom:24px;">
+    <table>
+      <thead>
+        <tr><th>Rank</th><th>MP Topic</th><th>Subject</th><th>Times Asked</th><th>Years</th><th>Priority</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank-col">1</td><td><strong>MP Tribes (Gond, Bhil, Baiga, Bharia, PVTG, Korku)</strong></td><td>Geography</td><td class="num-col">7</td><td>17,18,19,20,21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">2</td><td><strong>MP Governor & President Rule history</strong></td><td>Polity</td><td class="num-col">6</td><td>19,20,21,23,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">3</td><td><strong>MP 1857 Freedom Fighters (Shankar Shah, Ranmat Singh, Turiya)</strong></td><td>History</td><td class="num-col">6</td><td>17,19,20,21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">4</td><td><strong>MP Government Schemes (Ladli Behna, Ahar Anudan, etc.)</strong></td><td>Current/Polity</td><td class="num-col">6</td><td>20,21,23,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">5</td><td><strong>MP Minerals (Manganese-Chhindwara, Coal-Singrauli, Diamond-Panna)</strong></td><td>Geography</td><td class="num-col">5</td><td>19,20,21,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">6</td><td><strong>MP Art & Culture (Madhav Sangeet, Keshavdas, Habib Tanvir)</strong></td><td>Culture</td><td class="num-col">5</td><td>17,19,21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">7</td><td><strong>MP Rivers (origin, tributaries, Betwa-Orchha, Kshipra-Ujjain)</strong></td><td>Geography</td><td class="num-col">5</td><td>18,20,21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">8</td><td><strong>Bhimbetka Rock Shelters (discovery, UNESCO)</strong></td><td>History/Heritage</td><td class="num-col">4</td><td>20,21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">9</td><td><strong>MP Districts (industrial, agricultural, cement, tourism)</strong></td><td>Economy</td><td class="num-col">4</td><td>21,23,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">10</td><td><strong>MP Heritage Sites (Khajuraho, Sanchi, Bagh Caves)</strong></td><td>History/Culture</td><td class="num-col">4</td><td>17,21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">11</td><td><strong>MP Forest Cover & Wildlife Sanctuaries</strong></td><td>Geography</td><td class="num-col">4</td><td>20,21,23,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">12</td><td><strong>MP Budget & Expenditure Data</strong></td><td>Economy</td><td class="num-col">3</td><td>23,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">13</td><td><strong>MP Medieval Dynasties (Paramara, Chandela, Kalchuri)</strong></td><td>History</td><td class="num-col">4</td><td>17,18,20,21</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">14</td><td><strong>MP Climate (Pachmarhi, rainfall, distance from sea)</strong></td><td>Geography</td><td class="num-col">3</td><td>20,23,25</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">15</td><td><strong>MP ICMR/Research Institutes (NIRTH-Jabalpur)</strong></td><td>Science</td><td class="num-col">2</td><td>24,25</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">16</td><td><strong>One District One Product (ODOP) Scheme</strong></td><td>Economy</td><td class="num-col">2</td><td>24,25</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">17</td><td><strong>MP Sports (Roop Singh Stadium, MP Hockey players)</strong></td><td>Sports</td><td class="num-col">2</td><td>17,21</td><td><span class="stars">★</span></td></tr>
+        <tr><td class="rank-col">18</td><td><strong>MP Folk Arts (Mansukha, Mandu, Alhakhand)</strong></td><td>Culture</td><td class="num-col">2</td><td>21,25</td><td><span class="stars">★★</span></td></tr>
+        <tr><td class="rank-col">19</td><td><strong>Rani Durgavati (history + modern schemes)</strong></td><td>History/Current</td><td class="num-col">3</td><td>21,24,25</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="rank-col">20</td><td><strong>MP Integrated Tribal Development Projects</strong></td><td>Tribal Welfare</td><td class="num-col">2</td><td>24,25</td><td><span class="stars">★★</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert alert-success">✅ <strong>MP Preparation Strategy:</strong> MP content is sourced from official MP government publications, MP Economic Survey, MP Budget, and MPPSC recommended books. Key sources: "Madhya Pradesh — Ek Samiksha" (MP govt publication) and "MP Geography" by Mahesh Barnwal.</div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 10: CURRENT AFFAIRS -->
+<!-- =============================== -->
+<div class="section" id="s10">
+  <div class="section-header">
+    <div class="section-num">10</div>
+    <div>
+      <div class="section-title">Current Affairs Analysis</div>
+      <div class="section-sub">Pattern: Which period to cover? What categories are always tested?</div>
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-bottom:24px;">
+    <div class="card">
+      <div class="card-title">Current Affairs Window</div>
+      <div class="card-value" style="font-size:24px; color:var(--saffron);">15-18 months</div>
+      <div class="card-desc">Cover 18 months before exam date for full safety. Core questions come from last 12 months.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Avg Current Affairs %</div>
+      <div class="card-value">~18%</div>
+      <div class="card-desc">15-25 questions every year. Peak: 2017 (25Q), 2024 (21Q). Minimum: 2020 (15Q).</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Static vs Dynamic Split</div>
+      <div class="card-value" style="font-size:20px; color:var(--teal);">65% / 35%</div>
+      <div class="card-desc">~65 static questions (textbook) and ~35 dynamic (current events) per year.</div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Category</th><th>Avg Qs/Year</th><th>Examples from PYQs</th><th>Priority</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Sports (National + International)</strong></td><td class="num-col">3-5</td><td>Asian Games, IPL, T20 WC, Individual players</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td><strong>National Politics (Appointments, Elections)</strong></td><td class="num-col">2-4</td><td>Parliamentary committees, Governor appointments</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td><strong>International Relations (Summits, Treaties)</strong></td><td class="num-col">2-3</td><td>PM Modi meetings, Joint military exercises</td><td><span class="stars">★★</span></td></tr>
+        <tr><td><strong>Science & Space (ISRO, missions)</strong></td><td class="num-col">2-3</td><td>Chandrayaan, National Space Day, new missions</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td><strong>Awards & Recognition (Padma, Sahitya, Nobel)</strong></td><td class="num-col">2-3</td><td>Padma Vibhushan, Kishore Kumar Samman</td><td><span class="stars">★★</span></td></tr>
+        <tr><td><strong>MP Current Affairs (Schemes, Events, Tourism)</strong></td><td class="num-col">3-5</td><td>Ladli Behna, Village tourism, MP records</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td><strong>Natural Disasters (Cyclones, Earthquakes)</strong></td><td class="num-col">1-2</td><td>Cyclone Fengal (2024), Cyclone Biparjoy</td><td><span class="stars">★★</span></td></tr>
+        <tr><td><strong>Economy (Budget highlights, new schemes)</strong></td><td class="num-col">2-3</td><td>Trade deficit data, GDP rankings</td><td><span class="stars">★★</span></td></tr>
+        <tr><td><strong>Environment (New treaties, climate events)</strong></td><td class="num-col">1-2</td><td>BD Amendment Act 2023, COP updates</td><td><span class="stars">★★</span></td></tr>
+        <tr><td><strong>Health (Missions, targets, WHO)</strong></td><td class="num-col">1-2</td><td>Sickle Cell Mission, RKSM age group</td><td><span class="stars">★★</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 11: PAPER 2 CSAT -->
+<!-- =============================== -->
+<div class="section" id="s11">
+  <div class="section-header">
+    <div class="section-num">11</div>
+    <div>
+      <div class="section-title">Paper 2 — CSAT Analysis</div>
+      <div class="section-sub">Qualifying paper — minimum 40% needed</div>
+    </div>
+  </div>
+
+  <div class="alert alert-success">✅ <strong>Good News:</strong> Paper 2 is qualifying only. Score does NOT count for merit. Just need 80/200 marks (40%). No negative marking. MPPSC CSAT is significantly easier than UPSC CSAT.</div>
+
+  <div class="table-wrap" style="margin-bottom:24px;">
+    <table>
+      <thead>
+        <tr><th>Section</th><th>Approx Questions</th><th>Difficulty</th><th>Key Strategy</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Reading Comprehension (Hindi passages)</strong></td><td class="num-col">15-20</td><td><span class="badge badge-easy">Easy</span></td><td>Read passage carefully, answers directly from text</td></tr>
+        <tr><td><strong>Reading Comprehension (English passages)</strong></td><td class="num-col">5-10</td><td><span class="badge badge-easy">Easy</span></td><td>Basic comprehension, no inference</td></tr>
+        <tr><td><strong>Basic Numeracy & Arithmetic</strong></td><td class="num-col">15-20</td><td><span class="badge badge-mod">Moderate</span></td><td>Speed + accuracy — Practice percentage, ratio</td></tr>
+        <tr><td><strong>Data Interpretation (Bar/Pie charts)</strong></td><td class="num-col">5-10</td><td><span class="badge badge-easy">Easy</span></td><td>Read chart carefully, simple calculations</td></tr>
+        <tr><td><strong>Logical Reasoning (Series, Coding)</strong></td><td class="num-col">10-15</td><td><span class="badge badge-mod">Moderate</span></td><td>Number/Letter series, direction sense</td></tr>
+        <tr><td><strong>Mental Ability (Syllogism, Decision Making)</strong></td><td class="num-col">10-15</td><td><span class="badge badge-easy">Easy</span></td><td>Use elimination, focus on decision making ethics Qs</td></tr>
+        <tr><td><strong>Communication Theory (2023-25 NEW)</strong></td><td class="num-col">10-15</td><td><span class="badge badge-easy">Easy</span></td><td>7Cs of communication, types, Kinesics, Proxemics</td></tr>
+        <tr><td><strong>Hindi Grammar & Language</strong></td><td class="num-col">15-20</td><td><span class="badge badge-mod">Moderate</span></td><td>Vyakaran — Sandhi, Samas, Viloym, Paryayvachi</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom:12px;">CSAT Minimum Strategy (2-week preparation)</div>
+    <div style="font-size:13px; color:var(--text-main);">
+      <strong style="color:var(--saffron);">Step 1:</strong> Do ALL Reading Comprehension questions — these are guaranteed 30-40 marks.<br>
+      <strong style="color:var(--saffron);">Step 2:</strong> Practice basic arithmetic (% , ratio, time-speed) — 15-20 marks.<br>
+      <strong style="color:var(--saffron);">Step 3:</strong> Learn 7Cs of Communication + Kinesics/Proxemics — new trend, easy 15-20 marks.<br>
+      <strong style="color:var(--saffron);">Step 4:</strong> Hindi grammar basics — 10-15 marks.<br>
+      <strong style="color:var(--gold);">Total targetable: 80-90 marks with 2 weeks focused prep.</strong>
+    </div>
+  </div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 12: MOST REPEATED TOPICS -->
+<!-- =============================== -->
+<div class="section" id="s12">
+  <div class="section-header">
+    <div class="section-num">12</div>
+    <div>
+      <div class="section-title">Most Repeated Topics — Full Repeat Analysis</div>
+      <div class="section-sub">Topics appearing 5+ times across all years — CONFIRMED HIGH PROBABILITY</div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Rank</th><th>Topic</th><th>Repeat Count</th><th>Specific Facts Tested</th><th>Category</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank-col">1</td><td><strong>MP Tribes & PVTG</strong></td><td class="num-col">7</td><td>Baiga, Bharia, Saharia, Korku — distribution, Patalkot area</td><td><span class="badge badge-must">MUST</span></td></tr>
+        <tr><td class="rank-col">2</td><td><strong>Constitutional Articles (specific)</strong></td><td class="num-col">7</td><td>Art. 338 (SC Commission), 342 (ST notification), 332 (ST Assembly seats)</td><td><span class="badge badge-must">MUST</span></td></tr>
+        <tr><td class="rank-col">3</td><td><strong>Freedom Movement Events (dates & leaders)</strong></td><td class="num-col">7</td><td>Direct Action Day, Dandi March, Non-Cooperation dates</td><td><span class="badge badge-must">MUST</span></td></tr>
+        <tr><td class="rank-col">4</td><td><strong>MP River Origins & Associated Towns</strong></td><td class="num-col">7</td><td>Betwa-Orchha, Kshipra-Ujjain, Tapti-Multai, Wainganga-Balaghat</td><td><span class="badge badge-must">MUST</span></td></tr>
+        <tr><td class="rank-col">5</td><td><strong>Computer Networks & Security</strong></td><td class="num-col">7</td><td>LAN/WAN/MAN, hackers, malware types, Trojan, Ransomware</td><td><span class="badge badge-must">MUST</span></td></tr>
+        <tr><td class="rank-col">6</td><td><strong>Constitutional Amendments (specific numbers)</strong></td><td class="num-col">6</td><td>42nd (FD), 44th (property right), 86th (RTE), 101st (GST)</td><td><span class="badge badge-must">MUST</span></td></tr>
+        <tr><td class="rank-col">7</td><td><strong>Delhi Sultanate Dynasties</strong></td><td class="num-col">6</td><td>Ghazi Malik (Tughlaq), Khilji admin, Sayyid shortest rule</td><td><span class="badge badge-must">MUST</span></td></tr>
+        <tr><td class="rank-col">8</td><td><strong>MP Minerals Distribution</strong></td><td class="num-col">6</td><td>Manganese-Chhindwara/Jhabua, Coal-Singrauli, Diamond-Panna, Bauxite-Shahdol</td><td><span class="badge badge-must">MUST</span></td></tr>
+        <tr><td class="rank-col">9</td><td><strong>Human Body (organs & systems)</strong></td><td class="num-col">6</td><td>Kidneys-excretion, retina-image, Stapedius smallest muscle</td><td><span class="badge badge-must">MUST</span></td></tr>
+        <tr><td class="rank-col">10</td><td><strong>ISRO Missions</strong></td><td class="num-col">6</td><td>Chandrayaan 1/2/3, Mangalyaan, Aditya-L1, National Space Day</td><td><span class="badge badge-must">MUST</span></td></tr>
+        <tr><td class="rank-col">11</td><td><strong>MP Governor (historical data)</strong></td><td class="num-col">5</td><td>Shortest tenure, President rule period governors</td><td><span class="badge badge-must">MUST</span></td></tr>
+        <tr><td class="rank-col">12</td><td><strong>Indian Agriculture (production rankings)</strong></td><td class="num-col">5</td><td>India largest producer — Milk+Pulses+Spices; MP first in pulses production</td><td><span class="badge badge-must">MUST</span></td></tr>
+        <tr><td class="rank-col">13</td><td><strong>Environment Protection Acts (dates)</strong></td><td class="num-col">5</td><td>EPA 1986, Water Act 1974, Forest Act 1927, Wildlife Protection Act 1972</td><td><span class="badge badge-must">MUST</span></td></tr>
+        <tr><td class="rank-col">14</td><td><strong>Vedic Age & Brahmana Texts</strong></td><td class="num-col">5</td><td>Aitareya (RV), Shatapatha+Taittiriya (YV), Gopatha (AV)</td><td><span class="badge badge-must">MUST</span></td></tr>
+        <tr><td class="rank-col">15</td><td><strong>MP 1857 Revolt Heroes</strong></td><td class="num-col">5</td><td>Shankar Shah, Raghunath Shah, Ranmat Singh, Turiya Satyagraha, Charan Paduka</td><td><span class="badge badge-must">MUST</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 13: PRIORITY MATRIX -->
+<!-- =============================== -->
+<div class="section" id="s13">
+  <div class="section-header">
+    <div class="section-num">13</div>
+    <div>
+      <div class="section-title">Subject-wise Priority Matrix (2×2)</div>
+      <div class="section-sub">Frequency vs Difficulty for strategic preparation</div>
+    </div>
+  </div>
+
+  <!-- HISTORY MATRIX -->
+  <div style="margin-bottom:32px;">
+    <h3 style="font-family:'Playfair Display',serif; font-size:18px; color:var(--saffron); margin-bottom:16px;">📜 History Priority Matrix</h3>
+    <div class="matrix-grid">
+      <div class="matrix-cell matrix-q2">
+        <div class="matrix-header">HIGH FREQ + LOW DIFFICULTY → QUICK WINS 🎯</div>
+        <ul class="matrix-items">
+          <li>Dandi March date (6 April 1930)</li>
+          <li>INC founding & early leaders</li>
+          <li>Ghazi Malik founded Tughlaq dynasty</li>
+          <li>Gandhi — NCM, CDM, Quit India sequence</li>
+          <li>Father of Indian Archaeology — Cunningham</li>
+          <li>Revolt of 1857 — Bhopal/MP heroes</li>
+          <li>Aitareya Brahmana = Rigveda</li>
+        </ul>
+      </div>
+      <div class="matrix-cell matrix-q1">
+        <div class="matrix-header">HIGH FREQ + HIGH DIFFICULTY → MUST DO ⭐</div>
+        <ul class="matrix-items">
+          <li>Which specific Brahmana belongs to which Veda</li>
+          <li>Chandela/Paramara/Kalchuri rulers — exact names</li>
+          <li>Round Table Conference participants</li>
+          <li>Delhi Sultanate — Ain-ul-Mulk service records</li>
+          <li>Youngest INC President — Abul Kalam Azad</li>
+          <li>Title 'Raja' to Ram Mohan Roy — by Akbar II</li>
+          <li>Battle of Chandawar 1194 participants</li>
+        </ul>
+      </div>
+      <div class="matrix-cell matrix-q4">
+        <div class="matrix-header">LOW FREQ + LOW DIFFICULTY → OPTIONAL ✓</div>
+        <ul class="matrix-items">
+          <li>Sangam Age basic facts</li>
+          <li>Post-Maurya kingdoms (Shunga, Kanva)</li>
+          <li>Trade routes of ancient India</li>
+          <li>Harappan cities basic facts</li>
+        </ul>
+      </div>
+      <div class="matrix-cell matrix-q3">
+        <div class="matrix-header">LOW FREQ + HIGH DIFFICULTY → SKIP ✗</div>
+        <ul class="matrix-items">
+          <li>Deep Sangam literature specifics</li>
+          <li>Post-Maurya specific genealogies</li>
+          <li>Detailed Jainism sects & texts</li>
+          <li>Regional medieval kingdoms outside MP</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- POLITY MATRIX -->
+  <div style="margin-bottom:32px;">
+    <h3 style="font-family:'Playfair Display',serif; font-size:18px; color:#60A5FA; margin-bottom:16px;">⚖️ Polity Priority Matrix</h3>
+    <div class="matrix-grid">
+      <div class="matrix-cell matrix-q2">
+        <div class="matrix-header">HIGH FREQ + LOW DIFFICULTY → QUICK WINS 🎯</div>
+        <ul class="matrix-items">
+          <li>Article 338 — SC National Commission</li>
+          <li>Article 342 — ST notification by President</li>
+          <li>42nd Amendment — Fundamental Duties</li>
+          <li>86th Amendment — Right to Education</li>
+          <li>Right to Property = Legal Right (not FR)</li>
+          <li>Basic Structure — Kesavananda Bharati case</li>
+          <li>NHRC Chairman — 5 year tenure</li>
+        </ul>
+      </div>
+      <div class="matrix-cell matrix-q1">
+        <div class="matrix-header">HIGH FREQ + HIGH DIFFICULTY → MUST DO ⭐</div>
+        <ul class="matrix-items">
+          <li>SC/ST Atrocities Act — specific section numbers</li>
+          <li>Parliamentary committee chairpersons (current)</li>
+          <li>Which committee recommended appointment of judges</li>
+          <li>MP Governor tenure details (historical)</li>
+          <li>Article 332 vs 334 vs 243D — ST reservation</li>
+          <li>Which Act introduced constitutional autocracy</li>
+        </ul>
+      </div>
+      <div class="matrix-cell matrix-q4">
+        <div class="matrix-header">LOW FREQ + LOW DIFFICULTY → OPTIONAL ✓</div>
+        <ul class="matrix-items">
+          <li>Fundamental Duties list (all 11)</li>
+          <li>Preamble — key terms</li>
+          <li>Rajya Sabha — composition basics</li>
+        </ul>
+      </div>
+      <div class="matrix-cell matrix-q3">
+        <div class="matrix-header">LOW FREQ + HIGH DIFFICULTY → SKIP ✗</div>
+        <ul class="matrix-items">
+          <li>Deep anti-defection law provisions</li>
+          <li>Very specific CAG articles</li>
+          <li>Detailed Finance Commission terms</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCIENCE MATRIX -->
+  <div style="margin-bottom:32px;">
+    <h3 style="font-family:'Playfair Display',serif; font-size:18px; color:#A78BFA; margin-bottom:16px;">🔬 Science & Technology Priority Matrix</h3>
+    <div class="matrix-grid">
+      <div class="matrix-cell matrix-q2">
+        <div class="matrix-header">HIGH FREQ + LOW DIFFICULTY → QUICK WINS 🎯</div>
+        <ul class="matrix-items">
+          <li>Sound fastest in solids</li>
+          <li>Laughing gas = Nitrous oxide</li>
+          <li>Image forms on Retina</li>
+          <li>Graphite used as lubricant</li>
+          <li>Trojan = malware that looks legitimate</li>
+          <li>Facebook founder = Mark Zuckerberg</li>
+          <li>FPGA full form</li>
+          <li>MS-DOS = command-based interface</li>
+          <li>Ethernet = LAN example</li>
+        </ul>
+      </div>
+      <div class="matrix-cell matrix-q1">
+        <div class="matrix-header">HIGH FREQ + HIGH DIFFICULTY → MUST DO ⭐</div>
+        <ul class="matrix-items">
+          <li>Kudankulam = highest nuclear capacity 2024</li>
+          <li>NCESS = Kerala (not Andhra/Tamil Nadu)</li>
+          <li>AICRA = apex body for Robotics</li>
+          <li>NeGP mission mode compendium = Saaransh</li>
+          <li>Gartner e-governance model 4 phases</li>
+          <li>National Sickle Cell target year = 2047</li>
+          <li>ISRO current missions details</li>
+        </ul>
+      </div>
+      <div class="matrix-cell matrix-q4">
+        <div class="matrix-header">LOW FREQ + LOW DIFFICULTY → OPTIONAL ✓</div>
+        <ul class="matrix-items">
+          <li>Basic biology definitions</li>
+          <li>Standard optics formulas</li>
+          <li>Basic periodic table facts</li>
+        </ul>
+      </div>
+      <div class="matrix-cell matrix-q3">
+        <div class="matrix-header">LOW FREQ + HIGH DIFFICULTY → SKIP ✗</div>
+        <ul class="matrix-items">
+          <li>Deep quantum physics</li>
+          <li>Complex organic chemistry</li>
+          <li>Advanced genetics specifics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- GEOGRAPHY MATRIX -->
+  <div style="margin-bottom:32px;">
+    <h3 style="font-family:'Playfair Display',serif; font-size:18px; color:#34D399; margin-bottom:16px;">🗺️ Geography Priority Matrix</h3>
+    <div class="matrix-grid">
+      <div class="matrix-cell matrix-q2">
+        <div class="matrix-header">HIGH FREQ + LOW DIFFICULTY → QUICK WINS 🎯</div>
+        <ul class="matrix-items">
+          <li>MP rivers and their associated towns</li>
+          <li>Population density India 2011 = 382</li>
+          <li>Nilgiri between W. Ghats & E. Ghats</li>
+          <li>Toda tribe = Nilgiri Hills</li>
+          <li>Stromboli = active volcano</li>
+          <li>MP has largest forest cover (2021)</li>
+          <li>Meghalaya — highest decadal growth 2001-11</li>
+        </ul>
+      </div>
+      <div class="matrix-cell matrix-q1">
+        <div class="matrix-header">HIGH FREQ + HIGH DIFFICULTY → MUST DO ⭐</div>
+        <ul class="matrix-items">
+          <li>MP minerals — exact district mapping</li>
+          <li>Wrong pair in mountain passes (Nathu La = Sikkim)</li>
+          <li>MP soil types and districts</li>
+          <li>Iron ore rankings by state (Odisha first)</li>
+          <li>Forest cover % by MP district (ISFR data)</li>
+          <li>Southern Oscillation — Pacific & Indian Ocean</li>
+        </ul>
+      </div>
+      <div class="matrix-cell matrix-q4">
+        <div class="matrix-header">LOW FREQ + LOW DIFFICULTY → OPTIONAL ✓</div>
+        <ul class="matrix-items">
+          <li>Basic world physical features</li>
+          <li>Major world rivers (Amazon, Nile)</li>
+          <li>Simple transport facts</li>
+        </ul>
+      </div>
+      <div class="matrix-cell matrix-q3">
+        <div class="matrix-header">LOW FREQ + HIGH DIFFICULTY → SKIP ✗</div>
+        <ul class="matrix-items">
+          <li>Deep oceanographic currents</li>
+          <li>Climate type classification details</li>
+          <li>Koppen detailed classification</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 14: GOLDEN 25 MCQs -->
+<!-- =============================== -->
+<div class="section" id="s14">
+  <div class="section-header">
+    <div class="section-num">14</div>
+    <div>
+      <div class="section-title">Golden 25 MCQs — Highest Probability Topics</div>
+      <div class="section-sub">Topics most likely to appear in the NEXT MPPSC Prelims exam</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">⚡ Selection Criteria for Golden MCQs</div>
+    <div style="font-size:13px;color:var(--text-main);">These topics are selected based on: (1) Asked 3+ times in past exams, (2) Appeared in 2023 or 2024 making them fresh for 2025-26 cycle, (3) Confirmed repeat cycle detected, OR (4) New emerging trend in 2024-25.</div>
+  </div>
+
+  <div id="golden-list">
+    <div class="golden-item">
+      <div class="golden-num">01</div>
+      <div>
+        <div class="golden-text"><strong>MP Tribes PVTG list</strong> — Which is NOT a PVTG of MP: Saharia, Baiga, Bharia, Korku, Asur (Asur is from Jharkhand, NOT MP)</div>
+        <div class="golden-meta">Asked 2025 Q53 | Pattern: PVTG identity tested every 2 years | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">02</div>
+      <div>
+        <div class="golden-text"><strong>Constitutional Article Numbers</strong> — Art. 338 (SC Commission), 342 (ST notification), 332 (ST in assembly), 334 (reservation), 243D (panchayat)</div>
+        <div class="golden-meta">Asked 2017,2019,2021,2023,2025 | Asked EVERY YEAR | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">03</div>
+      <div>
+        <div class="golden-text"><strong>MP Rivers & Their Origin/Associated Towns</strong> — Betwa-Orchha, Kshipra-Ujjain, Tapti origin-Multai, Wainganga-Balaghat, Chambal-origin Vindhya, Narmada-Amarkantak</div>
+        <div class="golden-meta">Asked in EVERY year in some form | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">04</div>
+      <div>
+        <div class="golden-text"><strong>Constitutional Amendments</strong> — 42nd (Fundamental Duties), 44th (Right to Property removed), 86th (RTE 6-14 years), 101st (GST), 73rd/74th (Panchayati Raj)</div>
+        <div class="golden-meta">Asked 2017,2019,2020,2021,2023,2025 | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">05</div>
+      <div>
+        <div class="golden-text"><strong>MP Minerals District Mapping</strong> — Coal: Singrauli | Diamond: Panna (Hinota area) | Manganese: Balaghat, Chhindwara (Godavari/Wardha valleys), Jhabua (Thandla tehsil) | Copper: Balaghat | Slate: Baihar | Bauxite: Shahdol</div>
+        <div class="golden-meta">Asked 2018,2020,2021,2024,2025 | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">06</div>
+      <div>
+        <div class="golden-text"><strong>Basic Structure Doctrine Case</strong> — First propounded in Kesavananda Bharati vs State of Kerala (NOT Golaknath, NOT Sankari Prasad)</div>
+        <div class="golden-meta">Asked 2021,2025 | Very likely to repeat | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">07</div>
+      <div>
+        <div class="golden-text"><strong>ISRO Space Missions</strong> — Chandrayaan-3 (landed 23 Aug 2023 = National Space Day), Aditya-L1, Gaganyaan upcoming, Mangalyaan (1st Asian Mars mission)</div>
+        <div class="golden-meta">Asked 2019,2020,2021,2023,2024,2025 | Every year | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">08</div>
+      <div>
+        <div class="golden-text"><strong>MP Governor Historical Data</strong> — Shortest tenure: Hari Vinayak Pataskar | First woman: Sarla Grewal | Current governor (keep updated) | President Rule dates with serving governor names</div>
+        <div class="golden-meta">Asked 2019,2021,2023,2025 | Growing trend | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">09</div>
+      <div>
+        <div class="golden-text"><strong>MP Tribal Schemes</strong> — Ladli Behna Yojana (health+nutrition), Ahar Anudan Yojana (PVTG malnutrition from 23.12.2017), Shankar Shah-Rani Durgavati award (10th/12th merit), integrated tribal projects</div>
+        <div class="golden-meta">Asked 2021,2023,2024,2025 | New pattern growing | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">10</div>
+      <div>
+        <div class="golden-text"><strong>Vedic Age Brahmin Texts</strong> — Aitareya (Rigveda), Shatapatha+Taittiriya (Yajurveda), Panchavish+Jaiminiya (Samaveda), Gopatha (Atharvaveda)</div>
+        <div class="golden-meta">Asked 2017,2021,2025 | High difficulty, high reward | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">11</div>
+      <div>
+        <div class="golden-text"><strong>Environmental Laws with Year</strong> — EPA 1986, Water (Prevention & Control) Act 1974, Forest Act 1927, Wildlife Protection Act 1972, Biological Diversity Act 2002 (Amendment 2023)</div>
+        <div class="golden-meta">Asked every year in some form | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">12</div>
+      <div>
+        <div class="golden-text"><strong>India's Agricultural Production Rankings</strong> — India LARGEST producer: Milk, Pulses, Spices, Jute, Tea, Sugar | NOT largest: Wheat (Australia/US), Rice (China) | MP: First in pulses production, soybean</div>
+        <div class="golden-meta">Asked 2020,2021,2023,2025 | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">13</div>
+      <div>
+        <div class="golden-text"><strong>Cybersecurity Malware Types</strong> — Trojan (disguises as legitimate software), Ransomware (encrypts data for ransom), Spyware (steals data silently), Keylogger (records keystrokes), Worm (self-replicates)</div>
+        <div class="golden-meta">Asked 2021,2023,2024,2025 | Growing fast | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">14</div>
+      <div>
+        <div class="golden-text"><strong>MP 1857 Revolt Key People</strong> — Shankar Shah & Raghunath Shah (Jabalpur, hanged), Thakur Ranmat Singh (Baghelkhand, hanged Aug 1858), Turiya Jungle Satyagraha (Ganjan Singh Korku), Charan Paduka firing (Major Timnis)</div>
+        <div class="golden-meta">Asked 2019,2021,2023,2025 | MP-specific, very scorable | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">15</div>
+      <div>
+        <div class="golden-text"><strong>Bhimbetka Rock Shelters</strong> — Discovered by Dr. Vishnu Shridhar Wakankar in 1957-58 | UNESCO World Heritage Site | Located near Raisen district MP | Mesolithic period cave art</div>
+        <div class="golden-meta">Asked 2021,2023,2025 | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">16</div>
+      <div>
+        <div class="golden-text"><strong>MP Soils</strong> — Black/Regur: Western MP (formed from Deccan lava), NOT rich in Nitrogen (wrong statement asked 2025!) | Alluvial: river valleys | Red-yellow: eastern hills | Laterite: hilly areas</div>
+        <div class="golden-meta">Asked 2023,2025 | Likely to repeat | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">17</div>
+      <div>
+        <div class="golden-text"><strong>Alvar Saints of Tamil Nadu</strong> — Propagated Vaishnavism | Only female Sadhvi: Andal (not Nammalvar, not Poigai) | 12 Alvar saints total</div>
+        <div class="golden-meta">Asked 2023,2025 | Emerging new pattern | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">18</div>
+      <div>
+        <div class="golden-text"><strong>MP Cement Industry — District Matching</strong> — Satna: Maihar Cement | Damoh: Narsinghgarh | Singrauli: Mahan Aluminium Plant (Bargawan) | Bhind: Malanpur | Morena: Banmore</div>
+        <div class="golden-meta">Asked 2021,2024,2025 | Very specific, scorable | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">19</div>
+      <div>
+        <div class="golden-text"><strong>Forest Cover Rankings</strong> — Largest TOTAL cover: MP | Highest % cover: Mizoram/Lakshadweep | ISFR 2021/2023 data on MP districts below/above 10% threshold</div>
+        <div class="golden-meta">Asked 2020,2021,2023,2025 | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">20</div>
+      <div>
+        <div class="golden-text"><strong>Constituent Assembly & 1946-47 Events</strong> — First meeting: 9 December 1946 | Nehru's Objectives Resolution | Direct Action Day: 16 August 1946 | Cabinet Mission Plan details</div>
+        <div class="golden-meta">Asked 2019,2021,2025 | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">21</div>
+      <div>
+        <div class="golden-text"><strong>MP Culture (Keshavdas, Books)</strong> — Keshavdas wrote: Ramchandrika, Kavipriya, Ram Rasayan | NOT wrote: Ratan Bavani | Alhakhand author = Jagnik | Rashmirekha = Bhawani Prasad Mishra</div>
+        <div class="golden-meta">Asked 2017,2021,2025 | Highly specific MP culture | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">22</div>
+      <div>
+        <div class="golden-text"><strong>MP Bagh Caves District Dhar</strong> — Total 9 caves | Cave 4 = "Rang Mahal" | Buddhist paintings | Located in Dhar district (near Narmada) | UNESCO consideration</div>
+        <div class="golden-meta">Asked 2021,2025 | Specific MP detail often tested | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">23</div>
+      <div>
+        <div class="golden-text"><strong>Sankhya Philosophy — Satkaryavada</strong> — Main doctrine of Sankhya (NOT Vaisheshika, NOT Mimamsa, NOT Nyaya) | Sankhya is atheistic, dualistic | Founder = Kapila</div>
+        <div class="golden-meta">Asked 2023,2025 | Ancient philosophy growing trend | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">24</div>
+      <div>
+        <div class="golden-text"><strong>One District One Product (ODOP)</strong> — Chhatarpur: Wooden Furniture | Satna: Cement | Know major district products under MP government's ODOP scheme</div>
+        <div class="golden-meta">Asked 2024,2025 | New pattern, will repeat | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+    <div class="golden-item">
+      <div class="golden-num">25</div>
+      <div>
+        <div class="golden-text"><strong>National Sickle Cell Anaemia Elimination Mission</strong> — Target: eliminate from India by 2047 | Focused on tribal communities | MP has high tribal SCD burden | Launched 2023</div>
+        <div class="golden-meta">Asked 2025 | New mission likely to repeat | <span class="badge badge-must">MUST PREP</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 15: 3-MONTH STUDY PLAN -->
+<!-- =============================== -->
+<div class="section" id="s15">
+  <div class="section-header">
+    <div class="section-num">15</div>
+    <div>
+      <div class="section-title">3-Month Week-by-Week Study Plan</div>
+      <div class="section-sub">Based on PYQ frequency, weightage, and difficulty analysis</div>
+    </div>
+  </div>
+
+  <div class="alert alert-info">📅 This plan assumes ~6-8 hours daily study. Adjust as per your baseline. PYQs should be solved at the END of each topic for real exam feeling. Daily revision of previous day's notes for 30 min is mandatory.</div>
+
+  <div style="margin-bottom:8px; font-size:13px; font-weight:600; color:var(--saffron); text-transform:uppercase; letter-spacing:1px;">MONTH 1 — FOUNDATION (Static Subjects)</div>
+
+  <div class="week-card">
+    <div class="week-num">Week 1</div>
+    <div class="week-title">Polity Foundation + MP Polity</div>
+    <ul class="week-tasks">
+      <li>Indian Constitution: Preamble, Parts 1-4 (FR, DPSP, FD)</li>
+      <li>Important Articles: 12-35 (FRs), 36-51 (DPSP), 51A (FD), 338, 342, 332, 334</li>
+      <li>Constitutional Amendments: 42nd, 44th, 73rd, 74th, 86th, 101st — exact provisions</li>
+      <li>Basic Structure Doctrine — Kesavananda Bharati case</li>
+      <li>MP Governor history: Complete list, tenure data, President Rule dates</li>
+      <li>SC/ST Atrocities Act 1989 — all key sections</li>
+      <li>Solve 2017 + 2019 Polity PYQs</li>
+    </ul>
+  </div>
+
+  <div class="week-card">
+    <div class="week-num">Week 2</div>
+    <div class="week-title">History — Ancient + Medieval</div>
+    <ul class="week-tasks">
+      <li>Vedic Age: Rigvedic → Later Vedic → Upanishads | Brahmana texts mapped to each Veda</li>
+      <li>Mauryan Empire: Ashoka's Dhamma, Edicts, administration, decline</li>
+      <li>Gupta Age: Science, art, literature highlights</li>
+      <li>Temple Architecture: Nagara, Dravida, Vesara styles with examples</li>
+      <li>Delhi Sultanate: All 5 dynasties — founders, key rulers, important policies</li>
+      <li>Bhakti/Sufi movement: Key saints, their locations, philosophies</li>
+      <li>MP Medieval Dynasties: Paramara (Bhoj), Chandela (Dhangdev, Mahoba), Kalchuri</li>
+      <li>Solve 2017 + 2018 History PYQs</li>
+    </ul>
+  </div>
+
+  <div class="week-card">
+    <div class="week-num">Week 3</div>
+    <div class="week-title">History — Modern + Freedom Movement</div>
+    <ul class="week-tasks">
+      <li>British expansion: EIC, Plassey, Buxar, Subsidiary Alliance, Doctrine of Lapse</li>
+      <li>British Administration: Regulating Act → Pitt's India Act → Charter Acts → 1909/1919/1935 Acts</li>
+      <li>Revolt of 1857: Causes, leaders, centres — ESPECIALLY MP centres</li>
+      <li>INC: Founding, Moderates vs Extremists, Sessions in MP</li>
+      <li>Gandhi Era: NCM (1920), CDM (1930 — Dandi March 6 April), Quit India (1942)</li>
+      <li>Social Reform: Ram Mohan Roy, Arya Samaj, Ramakrishna Mission, etc.</li>
+      <li>MP 1857: Shankar Shah, Raghunath Shah, Ranmat Singh, Tantya Bhil, Turiya Satyagraha</li>
+      <li>Freedom Fighters of MP: Chandrashekhar Azad (born Jhabua), Bhawani Prasad Mishra</li>
+      <li>Solve 2019 + 2020 History PYQs</li>
+    </ul>
+  </div>
+
+  <div class="week-card">
+    <div class="week-num">Week 4</div>
+    <div class="week-title">Geography — India + Physical + MP</div>
+    <ul class="week-tasks">
+      <li>Physical divisions of India: Himalayas, Northern Plains, Peninsular Plateau</li>
+      <li>Important mountain passes: Nathu La (Sikkim!), Lipulekh, Rohtang, Palghat</li>
+      <li>Indian rivers: Peninsular vs Himalayan, watersheds, longest rivers</li>
+      <li>Soils of India: Alluvial, Black/Regur, Red, Laterite, Arid — characteristics</li>
+      <li>MP Physical Geography: Narmada, Chambal, Betwa, Kshipra, Tapti, Wainganga — origin & towns</li>
+      <li>MP Districts: Minerals, industries, agriculture — complete mapping</li>
+      <li>MP Forest Cover: ISFR data, districts below 10% cover (Morena)</li>
+      <li>MP Tribes: Gond, Bhil, Baiga, Bharia, Korku, Saharia — PVTG list</li>
+      <li>Solve 2020 + 2021 Geography PYQs</li>
+    </ul>
+  </div>
+
+  <div style="margin-top:24px; margin-bottom:8px; font-size:13px; font-weight:600; color:var(--gold); text-transform:uppercase; letter-spacing:1px;">MONTH 2 — DEVELOPMENT (Dynamic Subjects)</div>
+
+  <div class="week-card">
+    <div class="week-num">Week 5</div>
+    <div class="week-title">Economy — Static + MP Economy</div>
+    <ul class="week-tasks">
+      <li>Basic concepts: GDP, GNP, NNP, per capita income, inflation types</li>
+      <li>Planning: Five Year Plans timeline, NITI Aayog vs Planning Commission</li>
+      <li>GST: Structure, slabs, Vijay Kelkar committee, GST Council</li>
+      <li>Monetary Policy: RBI tools (CRR, SLR, Repo rate), primary objectives</li>
+      <li>International trade: WTO, India's trade deficit, service exports</li>
+      <li>MP Economy: GSDP, per capita income growth, major industries</li>
+      <li>MP Agriculture: Soybean (MP's cash crop), wheat, dal, cotton production</li>
+      <li>India Agricultural Rankings: Who is largest producer of what</li>
+      <li>MP Schemes: Ladli Behna, Ahar Anudan, One District One Product</li>
+      <li>Solve Economy PYQs (2021, 2023, 2024)</li>
+    </ul>
+  </div>
+
+  <div class="week-card">
+    <div class="week-num">Week 6</div>
+    <div class="week-title">Science & Technology (IT focus)</div>
+    <ul class="week-tasks">
+      <li>Human Body: All organ systems mapped — kidneys (excretion), retina (image), Stapedius (smallest muscle)</li>
+      <li>Computer Networks: LAN/WAN/MAN, Ethernet=LAN, Modem, protocols</li>
+      <li>Cybersecurity: All malware types (Trojan, Ransomware, Spyware, Keylogger, Worm)</li>
+      <li>E-Governance: Gartner model (Info→Interaction→Transaction→Transformation), NeGP, DigiLocker</li>
+      <li>AI/ML/FPGA: Definitions, AICRA, robotics standards</li>
+      <li>ISRO: All missions — Chandrayaan 1/2/3, Mangalyaan, Aditya-L1, PSLV/GSLV</li>
+      <li>Nuclear: All nuclear plants in India, capacity rankings, BARC/NPCIL</li>
+      <li>Health missions: Sickle Cell Mission (2047), RKSM (10-19 years), NIRTH-Jabalpur</li>
+      <li>Physics basics: Sound in solids fastest, convection in liquids/gases, optics</li>
+      <li>Solve Science PYQs (2017, 2019, 2021)</li>
+    </ul>
+  </div>
+
+  <div class="week-card">
+    <div class="week-num">Week 7</div>
+    <div class="week-title">Environment & Ecology + Climate</div>
+    <ul class="week-tasks">
+      <li>Ecosystem: Food chain/web, trophic levels, energy flow (10% rule)</li>
+      <li>Ecological Succession: Sere, climax community — definitions</li>
+      <li>Environmental Laws: EPA 1986, Water Act 1974, Forest Act 1927, WPA 1972, BD Act 2002/2023</li>
+      <li>International Conventions: CBD, CITES, Ramsar, Basel, Stockholm, Rotterdam, Paris Agreement</li>
+      <li>Biodiversity hotspots in India, IUCN categories</li>
+      <li>Climate Change: GHGs, IPCC, Paris Agreement targets, India's NDC</li>
+      <li>SDGs: All 17 goals, India SDG Index, MP SDG score</li>
+      <li>National Parks & Reserves: Tiger reserves in MP (Kanha, Bandhavgarh, Satpura, Panna)</li>
+      <li>MP Environment: Forest types, Satpura Biosphere, wetlands</li>
+      <li>Solve Environment PYQs (2021, 2023, 2024)</li>
+    </ul>
+  </div>
+
+  <div class="week-card">
+    <div class="week-num">Week 8</div>
+    <div class="week-title">MP Special Focus — Culture, Heritage, Art</div>
+    <ul class="week-tasks">
+      <li>MP Heritage Sites: Khajuraho (Chandela), Sanchi, Bhimbetka (Wakankar 1957-58), Mandu</li>
+      <li>Bagh Caves (Dhar): 9 caves, Cave 4 = Rang Mahal, Buddhist paintings</li>
+      <li>MP Literature: Keshavdas (Ramchandrika, Kavipriya, Ram Rasayan), Alhakhand (Jagnik)</li>
+      <li>MP Folk Art: Mansukha (Western Nimar), Tertali, Phulkari</li>
+      <li>MP Craft Centers: Uchehara = Bronze craft (Satna district)</li>
+      <li>MP Awards: Kishore Kumar Samman, Kabir Samman, Ikkis Pachisi</li>
+      <li>MP Tribal Personalities: Birsa Munda (Janjatiya Gaurav Divas 15 Nov), Tantya Mama</li>
+      <li>MP Sports: Roop Singh Stadium (Gwalior), major sportspersons from MP</li>
+      <li>MP Tourism: Sustainable tourism villages, ODOP products by district</li>
+      <li>Solve MP-specific PYQs from all years</li>
+    </ul>
+  </div>
+
+  <div style="margin-top:24px; margin-bottom:8px; font-size:13px; font-weight:600; color:var(--teal); text-transform:uppercase; letter-spacing:1px;">MONTH 3 — CONSOLIDATION + CURRENT AFFAIRS</div>
+
+  <div class="week-card">
+    <div class="week-num">Week 9</div>
+    <div class="week-title">Current Affairs — Last 18 Months</div>
+    <ul class="week-tasks">
+      <li>Sports: All major tournaments — winners, player of tournament, venues</li>
+      <li>International: PM Modi visits, India-specific treaties & summits</li>
+      <li>Science/Space: Latest ISRO missions, scientific achievements, Nobel Prizes</li>
+      <li>Awards: All Padma awards (who got what award), state-level awards</li>
+      <li>MP Current Affairs: New schemes, appointments, records, events</li>
+      <li>Environment: New protected areas, international environment days, new treaties</li>
+      <li>Economy: Union Budget highlights, RBI policy decisions, trade data</li>
+      <li>Health: New disease outbreaks, government health schemes launched</li>
+      <li>Read: Daily Current Affairs from Vision IAS / Drishti IAS for past 18 months</li>
+    </ul>
+  </div>
+
+  <div class="week-card">
+    <div class="week-num">Week 10</div>
+    <div class="week-title">Full Mock Tests + Gap Analysis</div>
+    <ul class="week-tasks">
+      <li>Take 2 full MPPSC mock tests (100Q, 2 hours each) under exam conditions</li>
+      <li>Analyze weak areas: Note which subjects have highest error rate</li>
+      <li>Re-study weak areas from previous weeks' notes</li>
+      <li>Solve 2023 + 2024 complete Paper 1 as mock tests</li>
+      <li>Focus on "trap questions": NOT type, pair mismatch type, statement I/II type</li>
+      <li>Practice speed: 100 questions in 120 minutes = 72 seconds per question</li>
+    </ul>
+  </div>
+
+  <div class="week-card">
+    <div class="week-num">Weeks 11-12</div>
+    <div class="week-title">Rapid Revision + High-Yield Topics</div>
+    <ul class="week-tasks">
+      <li>Revise all 25 Golden MCQ topics daily (1 hour)</li>
+      <li>Create flashcards for: all MP minerals, river-town pairs, constitutional articles</li>
+      <li>Revise all "★★★ MUST" topics from every subject</li>
+      <li>Solve 2017 full paper under exam conditions</li>
+      <li>Current affairs: Last-minute events from the week before exam</li>
+      <li>Final revision: 50-point last week checklist (below)</li>
+      <li>CSAT Paper 2: 2-3 hours total — comprehension + basic arithmetic practice</li>
+    </ul>
+  </div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 16: LAST WEEK CHECKLIST -->
+<!-- =============================== -->
+<div class="section" id="s16">
+  <div class="section-header">
+    <div class="section-num">16</div>
+    <div>
+      <div class="section-title">Last 7-Day Revision — 50 Must-Know Facts</div>
+      <div class="section-sub">Single-line facts to revise the week before the exam</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <div style="font-size:12px; font-weight:700; color:var(--saffron); letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">📜 History + Polity</div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Aitareya Brahmana = Rigveda | Shatapatha + Taittiriya = Yajurveda</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Only female Alvar saint = Andal</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Satkaryavada = Sankhya Philosophy (not Nyaya/Vaisheshika)</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Dandi March = 6 April 1930 | Direct Action Day = 16 August 1946</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Title 'Raja' to Ram Mohan Roy by Mughal Emperor Akbar II</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Ghazi Malik founded Tughlaq dynasty | Sayyid = shortest ruling dynasty</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Dhangdev = Chandelas of Jejakabhukti</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Constituent Assembly first meeting = 9 December 1946</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Art. 338 = SC Commission | Art. 342 = ST notification by President</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>42nd Amendment = Fundamental Duties | 86th = RTE 6-14 years</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Basic Structure = Kesavananda Bharati vs Kerala | Right to Property = Legal Right</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Sapru Committee (1945) recommended appointment provisions for SC/HC judges</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>GoI Act 1935 = Constitutional Autocracy principle</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>NHRC Chairman tenure = 5 years</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Kailasanathar temple Kanchi = Rajsimha/Pallava style</div></div>
+    </div>
+    <div>
+      <div style="font-size:12px; font-weight:700; color:var(--gold); letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">🗺️ Geography + MP Facts</div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Betwa → Orchha | Kshipra → Ujjain | Tapti origin → Multai | Wainganga → Balaghat</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>MP Manganese: Chhindwara (Godavari/Wardha valley), Jhabua (Thandla tehsil)</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Diamond: Panna (Hinota area) | Coal: Singrauli | Copper+Slate: Balaghat/Baihar | Bauxite: Shahdol</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>MP forest cover largest in India (total area) — 2021</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Morena district has forest cover below 10% (ISFR 2021)</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Satna district cement: Maihar | Bhind: Malanpur | Morena: Banmore</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Chhatarpur ODOP = Wooden Furniture | Bhimbetka discovered by Wakankar 1957-58</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Bagh Caves (Dhar) = 9 caves | Cave 4 = Rang Mahal (Buddhist paintings)</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Toda tribe = Nilgiri Hills | Nilgiri Hills between W. Ghats & E. Ghats</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Peneplain = river | Inselberg = wind/arid | Moraine = glacier</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Southern Oscillation = Pacific & Indian Ocean seesaw</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Iron ore reserves rank 1: Odisha (2020-21) | Not Jharkhand</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Nathu La = Sikkim (NOT Arunachal Pradesh!) | Rohtang = Himachal Pradesh</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>2011 Census India population density = 382 | Meghalaya highest decadal growth 2001-11</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>India largest producer: Milk, Pulses, Spices | MP first in pulses production</div></div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;" class="grid-2">
+    <div>
+      <div style="font-size:12px; font-weight:700; color:var(--purple); letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">🔬 Science + Economy + Environment</div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Sound fastest in solids | Image on Retina | Kidneys = excretion | Stapedius = smallest muscle</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Laughing gas = Nitrous oxide | Smallpox eradicated 1980</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Trojan = disguised malware | Ransomware = encrypts files | Black hat = crackers</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Ethernet = LAN | Modem converts both ways (analog↔digital)</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Chandrayaan-3 landed 23 Aug 2023 = National Space Day (23rd August)</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>FPGA = Field Programmable Gate Array | MS-DOS = command-based interface</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Gartner e-governance: Information→Interaction→Transaction→Transformation</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>EPA = 1986 | Water Act = 1974 | WPA = 1972 | BD Amendment Act = 2023</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Ecological succession sequence = Sere | Final = Climax community</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Monetary Policy main objective = price stability + economic growth (NOT reduce fiscal deficit)</div></div>
+    </div>
+    <div>
+      <div style="font-size:12px; font-weight:700; color:var(--saffron); letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">🎭 MP Special + Current Affairs</div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Keshavdas books: Ramchandrika, Kavipriya, Ram Rasayan (NOT Ratan Bavani)</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Alhakhand = by Jagnik (not Chand Bardai, not Rajasekhara)</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Chandrashekhar Azad born in Jhabua district, MP (not Satna)</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Bhawani Prasad Mishra birthplace = Hoshangabad | Habib Tanvir born = Raipur</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Ranmat Singh (Baghelkhand) hanged August 1858 | Turiya Satyagraha = Ganjan Singh Korku</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Bharia tribe dominant in Patalkot area, Chhindwara district</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Janjatiya Gaurav Divas 15 Nov = birthday of Bhagwan Birsa Munda</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>ICMR-NIRTH located in Jabalpur | Uchehara bronze craft = Satna district</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Mansukha folk drama = Western Nimar region of MP</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Roop Singh Stadium = Gwalior | Madhav Sangeet College (oldest) = Gwalior</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================== -->
+<!-- SECTION 17: FINAL DASHBOARD -->
+<!-- =============================== -->
+<div class="section" id="s17">
+  <div class="section-header">
+    <div class="section-num">17</div>
+    <div>
+      <div class="section-title">Final Summary Dashboard</div>
+      <div class="section-sub">Complete analytical overview at a glance</div>
+    </div>
+  </div>
+
+  <div class="table-wrap" style="margin-bottom:24px;">
+    <table class="dash-table">
+      <tbody>
+        <tr><td>Total Questions Analysed (P1 GS)</td><td>800+ (8 years × ~100 Qs)</td><td>2022 paper missing from all available sources</td></tr>
+        <tr><td>Total Marks in Paper 1</td><td>200 marks</td><td>100 Q × 2 marks each</td></tr>
+        <tr><td>Negative Marking (Paper 1)</td><td>-0.33 per wrong</td><td>1/3rd of 2 marks = 0.67 marks; safer to skip doubtful Qs</td></tr>
+        <tr><td>Paper 2 CSAT Qualifying Marks</td><td>80/200 (40%)</td><td>No negative marking in Paper 2</td></tr>
+        <tr><td>MP-Specific Questions (avg)</td><td>~10-16 per year</td><td>2025 had highest at ~16 direct MP questions</td></tr>
+        <tr><td>MP-Specific Marks % (avg)</td><td>~15-20%</td><td>Growing trend — peaked at ~22% in 2025</td></tr>
+        <tr><td>Static Questions %</td><td>~65%</td><td>NCERT + standard textbook level</td></tr>
+        <tr><td>Dynamic (Current Affairs) %</td><td>~35%</td><td>Includes both pure current affairs and current data in static topics</td></tr>
+        <tr><td>Most Repeated Subject</td><td>Polity</td><td>Consistently 13-18 Qs every year across all years</td></tr>
+        <tr><td>Fastest Growing Subject</td><td>Environment</td><td>3 Qs in 2017 → 10+ Qs in 2023-24</td></tr>
+        <tr><td>Most Declined Subject</td><td>Medieval History</td><td>8 Qs in 2017 → 2 Qs in 2024-25</td></tr>
+        <tr><td>Highest Current Affairs Year</td><td>2017 (25 Qs)</td><td>Heavy due to 2016 events (IPL, Olympics, political)</td></tr>
+        <tr><td>Hardest Years (overall)</td><td>2019, 2021, 2023</td><td>More application-based, less direct recall</td></tr>
+        <tr><td>NCERT-Level Questions %</td><td>~55-60%</td><td>Especially Science, Geography, basic History</td></tr>
+        <tr><td>Beyond-NCERT Questions %</td><td>~40-45%</td><td>MP-specific, current affairs, advanced polity</td></tr>
+        <tr><td>Most Used Question Type</td><td>"Which is NOT correctly matched"</td><td>~25-30 Qs per year of this format!</td></tr>
+        <tr><td>Most Common Trap Type</td><td>Qualifier-type options</td><td>Options with "only", "always", "never" — usually WRONG</td></tr>
+        <tr><td>Top Priority Subject #1</td><td>Polity + MP Polity</td><td>Highest frequency, manageable difficulty, clear scope</td></tr>
+        <tr><td>Top Priority Subject #2</td><td>Science & Technology</td><td>Consistent 14 Qs, IT/Cyber = easy marks</td></tr>
+        <tr><td>Top Priority Subject #3</td><td>MP Specific (All)</td><td>Unique to MPPSC, no competition overlap, growing</td></tr>
+        <tr><td>Highest ROI Subject for Preparation</td><td>MP Specific</td><td>High marks, low competition coverage, unique to exam</td></tr>
+        <tr><td>Recommended Daily Study Hours</td><td>6-8 hours</td><td>Split: 4h new topics + 2h revision + 1h PYQs</td></tr>
+        <tr><td>Paper 2 CSAT Prep Required</td><td>2-3 weeks max</td><td>Focus on comprehension + basic numeracy + communication</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SCORE OPTIMISATION -->
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-title" style="margin-bottom:16px;">🎯 Score Optimisation Strategy</div>
+    <div class="grid-3">
+      <div>
+        <div style="font-size:11px; font-weight:700; color:var(--saffron); text-transform:uppercase; margin-bottom:8px;">Survival Strategy (120+ marks)</div>
+        <div style="font-size:12px; color:var(--text-muted);">
+          Polity: 12/14 ✓<br>
+          Science IT: 10/14 ✓<br>
+          Current Affairs: 12/16 ✓<br>
+          MP Specific: 10/16 ✓<br>
+          Geography: 7/12 ✓<br>
+          Environment: 6/8 ✓<br>
+          Economy: 6/10 ✓<br>
+          History: 10/16 ✓<br>
+          <strong style="color:var(--gold);">Total: 73 × 2 = 146 marks</strong>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px; font-weight:700; color:var(--gold); text-transform:uppercase; margin-bottom:8px;">Topper Strategy (160+ marks)</div>
+        <div style="font-size:12px; color:var(--text-muted);">
+          Master all Golden 25 topics ✓<br>
+          MP content fully covered ✓<br>
+          Current affairs: 18+ months ✓<br>
+          All 3-star topics done ✓<br>
+          PYQ analysis deep dive ✓<br>
+          CSAT cleared easily ✓<br>
+          <strong style="color:var(--gold);">Target: 82-88 correct = 164-176 marks</strong>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px; font-weight:700; color:var(--teal); text-transform:uppercase; margin-bottom:8px;">Exam-Day Strategy</div>
+        <div style="font-size:12px; color:var(--text-muted);">
+          Attempt sure shots first (60-70 Qs) ✓<br>
+          Skip if less than 60% confident ✓<br>
+          2-option elimination helps greatly ✓<br>
+          Mark for review doubtful ones ✓<br>
+          Don't guess blindly — -0.33 each ✓<br>
+          <strong style="color:var(--gold);">Budget: 72 sec/question max</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERLAP ANALYSIS -->
+  <div class="card">
+    <div class="card-title" style="margin-bottom:16px;">🔄 Overlap with UPSC Prelims & MPPSC Mains</div>
+    <div class="grid-2">
+      <div>
+        <div style="font-size:12px; font-weight:600; color:var(--gold); margin-bottom:8px;">Topics overlapping with UPSC Prelims (prepare once):</div>
+        <div style="font-size:12px; color:var(--text-muted);">
+          • Ancient Indian History (NCERT Class 11-12)<br>
+          • Constitutional Framework (Laxmikanth)<br>
+          • Indian Geography (NCERT 11-12)<br>
+          • Environment & Ecology (basic level)<br>
+          • Economy fundamentals (NCERT Class 11-12)<br>
+          • Science basics (NCERT Class 8-10)<br>
+          • Modern Indian History (Spectrum)<br>
+          <span style="color:var(--teal);">~50-55% of MPPSC paper overlaps with UPSC prep</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; color:var(--saffron); margin-bottom:8px;">Unique to MPPSC (requires separate preparation):</div>
+        <div style="font-size:12px; color:var(--text-muted);">
+          • MP History: Medieval dynasties, 1857, freedom movement<br>
+          • MP Geography: Rivers, minerals, districts, climate<br>
+          • MP Polity: Governor data, President Rule history<br>
+          • MP Culture: Literature, arts, folk traditions<br>
+          • MP Economy: Budget, schemes, production data<br>
+          • MP Tribal: PVTG list, Patalkot tribes, welfare schemes<br>
+          • SC/ST Atrocities Act specific sections<br>
+          <span style="color:var(--red);">~20-25% is UNIQUE to MPPSC — cannot skip this!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center; padding:40px 20px; border-top:1px solid var(--card-border); color:var(--text-muted); font-size:12px; margin-top:20px;">
+  <div style="font-family:'Playfair Display',serif; font-size:20px; color:var(--gold); margin-bottom:8px;">MPPSC Prelims PYQ Master Report</div>
+  <div>Analysed from 2017–2025 (8 years, 800+ questions) | Papers: 2017, 2018, 2019, 2020, 2021, 2023, 2024, 2025</div>
+  <div style="margin-top:4px;">2022 Paper 1 was not available in the provided PDFs | All data based on Drishti IAS compiled PYQ sets</div>
+  <div style="margin-top:12px; color:var(--saffron);">Best of luck with your MPPSC Prelims preparation! 🎯</div>
+</div>
+
+</div><!-- /container -->
+
+<script>
+// Smooth animations on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.05 });
+
+document.querySelectorAll('.card, .table-wrap, .week-card, .golden-item, .matrix-cell').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+  observer.observe(el);
+});
+
+// Active nav
+const sections = document.querySelectorAll('.section[id]');
+const navLinks = document.querySelectorAll('.nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if(window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#'+current ? 'var(--saffron)' : '';
+    a.style.borderBottomColor = a.getAttribute('href') === '#'+current ? 'var(--saffron)' : 'transparent';
+  });
+});
+</script>
+</body>
+</html>
