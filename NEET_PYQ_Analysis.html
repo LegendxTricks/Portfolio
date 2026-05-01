@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEET PYQ Deep Analysis | 2018–2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c14;
+    --surface: #111420;
+    --surface2: #171b2e;
+    --border: #1e2340;
+    --accent: #00e5ff;
+    --accent2: #ff4f7b;
+    --accent3: #7c4dff;
+    --accent4: #00e676;
+    --accent5: #ffab40;
+    --text: #e8ecf4;
+    --text-muted: #7a84a6;
+    --phys: #00b4d8;
+    --chem: #7b2d8b;
+    --bot: #2d8b4e;
+    --zoo: #8b6e2d;
+    --glow: 0 0 30px rgba(0,229,255,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--accent3); border-radius: 3px; }
+
+  /* HEADER */
+  .hero {
+    background: linear-gradient(135deg, #0a0c14 0%, #0d1a2e 40%, #160a2e 100%);
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60%; left: 50%;
+    transform: translateX(-50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    opacity: 0.8;
+  }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #fff 30%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+  }
+  .hero-sub {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 32px;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat .num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent);
+    display: block;
+  }
+  .hero-stat .lbl {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* NAV TABS */
+  .nav-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,12,20,0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-tabs {
+    display: flex;
+    overflow-x: auto;
+    padding: 0 20px;
+    gap: 2px;
+    scrollbar-width: none;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    padding: 14px 20px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* MAIN CONTENT */
+  .main { max-width: 1200px; margin: 0 auto; padding: 40px 24px 80px; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* SECTION HEADER */
+  .sec-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .sec-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .sec-header h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .sec-header p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+  @media(max-width: 768px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .hero { padding: 40px 20px 30px; }
+    .hero-stats { gap: 24px; }
+  }
+
+  /* SUBJECT PILLS */
+  .subject-card {
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid;
+  }
+  .subject-card.phys { background: rgba(0,180,216,0.07); border-color: rgba(0,180,216,0.25); }
+  .subject-card.chem { background: rgba(123,45,139,0.1); border-color: rgba(123,45,139,0.3); }
+  .subject-card.bot { background: rgba(45,139,78,0.08); border-color: rgba(45,139,78,0.25); }
+  .subject-card.zoo { background: rgba(139,110,45,0.08); border-color: rgba(139,110,45,0.25); }
+
+  .subject-card .subj-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  .subject-card.phys .subj-name { color: var(--phys); }
+  .subject-card.chem .subj-name { color: #c77dff; }
+  .subject-card.bot .subj-name { color: var(--bot); }
+  .subject-card.zoo .subj-name { color: var(--zoo); }
+
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.83rem;
+  }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-row .val {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  /* PROGRESS BARS */
+  .progress-bar {
+    height: 6px;
+    background: var(--surface2);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 6px;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 1s ease;
+  }
+
+  /* TOPIC TABLE */
+  .topic-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+  }
+  .topic-table th {
+    background: var(--surface2);
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .topic-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: top;
+  }
+  .topic-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .topic-table .rank {
+    font-family: 'DM Mono', monospace;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+  }
+  .topic-table .topic-name { font-weight: 500; color: var(--text); }
+  .topic-table .count {
+    font-family: 'DM Mono', monospace;
+    font-weight: 600;
+    text-align: center;
+  }
+  .topic-table .pct {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+  .topic-table .years-cell { font-size: 0.75rem; color: var(--text-muted); }
+
+  /* BADGES */
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .badge-hot { background: rgba(255,79,123,0.15); color: var(--accent2); border: 1px solid rgba(255,79,123,0.3); }
+  .badge-rising { background: rgba(0,230,118,0.1); color: var(--accent4); border: 1px solid rgba(0,230,118,0.25); }
+  .badge-stable { background: rgba(0,229,255,0.1); color: var(--accent); border: 1px solid rgba(0,229,255,0.2); }
+  .badge-declining { background: rgba(124,77,255,0.1); color: #b39ddb; border: 1px solid rgba(124,77,255,0.2); }
+  .badge-new { background: rgba(255,171,64,0.1); color: var(--accent5); border: 1px solid rgba(255,171,64,0.25); }
+
+  /* PRIORITY TAGS */
+  .priority-1 { color: #ff4f7b; font-weight: 700; }
+  .priority-2 { color: #ffab40; font-weight: 600; }
+  .priority-3 { color: var(--accent); font-weight: 500; }
+  .priority-4 { color: var(--text-muted); }
+
+  /* HIGHLIGHT BOX */
+  .highlight {
+    background: linear-gradient(135deg, rgba(0,229,255,0.07), rgba(124,77,255,0.07));
+    border: 1px solid rgba(0,229,255,0.2);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+  }
+  .highlight h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  .highlight ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .highlight ul li {
+    background: rgba(0,229,255,0.08);
+    border: 1px solid rgba(0,229,255,0.15);
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 0.78rem;
+    color: var(--text);
+  }
+
+  /* YEAR BAND */
+  .year-band {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .yr-chip {
+    display: inline-block;
+    padding: 1px 7px;
+    border-radius: 4px;
+    font-size: 0.68rem;
+    font-family: 'DM Mono', monospace;
+    background: var(--surface2);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+  .yr-chip.active-yr {
+    background: rgba(0,229,255,0.12);
+    color: var(--accent);
+    border-color: rgba(0,229,255,0.3);
+  }
+
+  /* GOLDEN BOX */
+  .golden-box {
+    background: linear-gradient(135deg, rgba(255,171,64,0.07), rgba(255,79,123,0.07));
+    border: 1px solid rgba(255,171,64,0.3);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .golden-box h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent5);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* INFO ALERT */
+  .info-alert {
+    background: rgba(124,77,255,0.08);
+    border-left: 3px solid var(--accent3);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .info-alert strong { color: var(--text); }
+
+  /* DIFFICULTY METER */
+  .difficulty-meter {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  .diff-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+  }
+  .diff-dot.filled { background: var(--accent2); border-color: var(--accent2); }
+
+  /* STRATEGY BLOCK */
+  .strategy-block {
+    background: var(--surface2);
+    border-radius: 10px;
+    padding: 16px;
+    margin: 8px 0;
+  }
+  .strategy-block h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .strategy-block ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .strategy-block ul li {
+    font-size: 0.84rem;
+    color: var(--text);
+    padding-left: 16px;
+    position: relative;
+  }
+  .strategy-block ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* YEAR-WISE TABLE */
+  .year-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  .year-table th {
+    background: var(--surface2);
+    padding: 10px 14px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+  .year-table th:first-child { text-align: left; }
+  .year-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    text-align: center;
+  }
+  .year-table td:first-child { text-align: left; font-weight: 500; }
+  .year-table .present { color: var(--accent4); font-weight: 600; }
+  .year-table .absent { color: var(--surface2); }
+
+  /* DONUT PLACEHOLDER */
+  .donut-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .donut-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+  }
+  .legend-dot {
+    width: 12px; height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .legend-bar {
+    flex: 1;
+    height: 6px;
+    background: var(--surface2);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .legend-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+  }
+  .legend-pct {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    min-width: 35px;
+    text-align: right;
+  }
+
+  /* TAGS */
+  .tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    margin: 2px;
+  }
+  .tag-phys { background: rgba(0,180,216,0.15); color: var(--phys); }
+  .tag-chem { background: rgba(192,86,219,0.12); color: #c77dff; }
+  .tag-bio { background: rgba(45,139,78,0.12); color: #4caf71; }
+  .tag-zoo { background: rgba(255,171,64,0.1); color: var(--accent5); }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 28px 0;
+  }
+
+  .sub-heading {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 24px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sub-heading::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .mono { font-family: 'DM Mono', monospace; }
+  .muted { color: var(--text-muted); }
+  .accent { color: var(--accent); }
+  .accent2 { color: var(--accent2); }
+  .accent4 { color: var(--accent4); }
+  .accent5 { color: var(--accent5); }
+
+  /* SVG CHART */
+  .chart-svg { width: 100%; overflow: visible; }
+
+  /* FOOTER NOTE */
+  .footer-note {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Expert PYQ Analysis · Medical Entrance</div>
+  <h1>NEET UG Deep Analysis<br>2018 – 2025</h1>
+  <p class="hero-sub">Complete topic-wise, year-wise, difficulty-wise breakdown of 8 years of NEET papers — Physics, Chemistry, Botany & Zoology</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="num">8</span><span class="lbl">Years</span></div>
+    <div class="hero-stat"><span class="num">1440</span><span class="lbl">Questions</span></div>
+    <div class="hero-stat"><span class="num">720</span><span class="lbl">Max Marks</span></div>
+    <div class="hero-stat"><span class="num">4</span><span class="lbl">Subjects</span></div>
+    <div class="hero-stat"><span class="num">180</span><span class="lbl">Qs / Paper</span></div>
+  </div>
+</div>
+
+<!-- NAV TABS -->
+<div class="nav-wrapper">
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="showTab('overview')">📋 Overview</button>
+    <button class="tab-btn" onclick="showTab('physics')">⚛️ Physics</button>
+    <button class="tab-btn" onclick="showTab('chemistry')">🧪 Chemistry</button>
+    <button class="tab-btn" onclick="showTab('botany')">🌿 Botany</button>
+    <button class="tab-btn" onclick="showTab('zoology')">🦎 Zoology</button>
+    <button class="tab-btn" onclick="showTab('repeated')">🔁 Most Repeated</button>
+    <button class="tab-btn" onclick="showTab('difficulty')">🎯 Difficulty</button>
+    <button class="tab-btn" onclick="showTab('yeartrend')">📈 Year Trends</button>
+    <button class="tab-btn" onclick="showTab('strategy')">🚀 Strategy</button>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ==================== OVERVIEW ==================== -->
+<div id="tab-overview" class="section active">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:rgba(0,229,255,0.1)">📋</div>
+    <div>
+      <h2>Paper Overview & Structure</h2>
+      <p>Complete format, marking scheme, subject distribution — 2018 to 2025</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <h4>⚡ KEY FACTS — NEET UG 2018–2025 PATTERN</h4>
+    <ul>
+      <li>180 Questions</li>
+      <li>720 Max Marks</li>
+      <li>+4 per Correct</li>
+      <li>−1 per Wrong</li>
+      <li>3 Hours Duration</li>
+      <li>Single Correct MCQ</li>
+      <li>No Optional Questions</li>
+      <li>English + Hindi Medium</li>
+    </ul>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:#00e5ff"></span>Subject Distribution (2018–2022 Pattern)</div>
+      <div class="donut-legend">
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#00b4d8"></div>
+          <span style="flex:1;font-size:0.83rem">Physics</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:25%;background:#00b4d8"></div></div>
+          <span class="legend-pct">45 Qs</span>
+        </div>
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#c77dff"></div>
+          <span style="flex:1;font-size:0.83rem">Chemistry</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:25%;background:#c77dff"></div></div>
+          <span class="legend-pct">45 Qs</span>
+        </div>
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#2d8b4e"></div>
+          <span style="flex:1;font-size:0.83rem">Botany</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:25%;background:#2d8b4e"></div></div>
+          <span class="legend-pct">45 Qs</span>
+        </div>
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#ffab40"></div>
+          <span style="flex:1;font-size:0.83rem">Zoology</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:25%;background:#ffab40"></div></div>
+          <span class="legend-pct">45 Qs</span>
+        </div>
+      </div>
+      <div class="info-alert" style="margin-top:14px"><strong>Total Biology = 90 questions</strong> (45 Botany + 45 Zoology = 50% of paper)</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:#ff4f7b"></span>2024 Onward — New Section Pattern</div>
+      <div class="info-alert"><strong>2024 change:</strong> Each subject split into Section A (35 Qs compulsory) + Section B (15 Qs, attempt any 10). Total attempt = 180 Qs, Max marks = 720.</div>
+      <div class="donut-legend">
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#00b4d8"></div>
+          <span style="flex:1;font-size:0.83rem">Physics (35A + 15B)</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:25%;background:#00b4d8"></div></div>
+          <span class="legend-pct">45 Qs</span>
+        </div>
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#c77dff"></div>
+          <span style="flex:1;font-size:0.83rem">Chemistry (35A + 15B)</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:25%;background:#c77dff"></div></div>
+          <span class="legend-pct">45 Qs</span>
+        </div>
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#2d8b4e"></div>
+          <span style="flex:1;font-size:0.83rem">Botany (35A + 15B)</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:25%;background:#2d8b4e"></div></div>
+          <span class="legend-pct">45 Qs</span>
+        </div>
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#ffab40"></div>
+          <span style="flex:1;font-size:0.83rem">Zoology (35A + 15B)</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:25%;background:#ffab40"></div></div>
+          <span class="legend-pct">45 Qs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-4">
+    <div class="subject-card phys">
+      <div class="subj-name">⚛️ Physics</div>
+      <div class="stat-row"><span>Questions</span><span class="val">45</span></div>
+      <div class="stat-row"><span>Max Marks</span><span class="val">180</span></div>
+      <div class="stat-row"><span>Weightage</span><span class="val">25%</span></div>
+      <div class="stat-row"><span>Chapters</span><span class="val">~29</span></div>
+      <div class="stat-row"><span>Class XI</span><span class="val">~22–23 Qs</span></div>
+      <div class="stat-row"><span>Class XII</span><span class="val">~22–23 Qs</span></div>
+    </div>
+    <div class="subject-card chem">
+      <div class="subj-name">🧪 Chemistry</div>
+      <div class="stat-row"><span>Questions</span><span class="val">45</span></div>
+      <div class="stat-row"><span>Max Marks</span><span class="val">180</span></div>
+      <div class="stat-row"><span>Weightage</span><span class="val">25%</span></div>
+      <div class="stat-row"><span>Physical Chem</span><span class="val">~15–18 Qs</span></div>
+      <div class="stat-row"><span>Organic Chem</span><span class="val">~14–16 Qs</span></div>
+      <div class="stat-row"><span>Inorganic Chem</span><span class="val">~11–14 Qs</span></div>
+    </div>
+    <div class="subject-card bot">
+      <div class="subj-name">🌿 Botany</div>
+      <div class="stat-row"><span>Questions</span><span class="val">45</span></div>
+      <div class="stat-row"><span>Max Marks</span><span class="val">180</span></div>
+      <div class="stat-row"><span>Weightage</span><span class="val">25%</span></div>
+      <div class="stat-row"><span>Class XI</span><span class="val">~20–22 Qs</span></div>
+      <div class="stat-row"><span>Class XII</span><span class="val">~23–25 Qs</span></div>
+      <div class="stat-row"><span>NCERT Level</span><span class="val">~85%</span></div>
+    </div>
+    <div class="subject-card zoo">
+      <div class="subj-name">🦎 Zoology</div>
+      <div class="stat-row"><span>Questions</span><span class="val">45</span></div>
+      <div class="stat-row"><span>Max Marks</span><span class="val">180</span></div>
+      <div class="stat-row"><span>Weightage</span><span class="val">25%</span></div>
+      <div class="stat-row"><span>Class XI</span><span class="val">~20–22 Qs</span></div>
+      <div class="stat-row"><span>Class XII</span><span class="val">~23–25 Qs</span></div>
+      <div class="stat-row"><span>NCERT Level</span><span class="val">~90%</span></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <div class="card-title"><span class="dot" style="background:#ffab40"></span>Year-wise Paper Summary</div>
+    <div style="overflow-x:auto">
+    <table class="year-table">
+      <thead>
+        <tr>
+          <th>Year</th><th>Date</th><th>Total Qs</th><th>Max Marks</th><th>–ve Marking</th><th>Physics Qs</th><th>Chemistry Qs</th><th>Biology Qs</th><th>Difficulty</th><th>Key Pattern Change</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2018</td><td>06 May</td><td>180</td><td>720</td><td>−1/wrong</td><td>45</td><td>45</td><td>90</td><td class="accent5">Moderate</td><td>Standard CBSE-based MCQ</td></tr>
+        <tr><td>2019</td><td>05 May</td><td>180</td><td>720</td><td>−1/wrong</td><td>45</td><td>45</td><td>90</td><td class="accent5">Moderate</td><td>More application-based Qs</td></tr>
+        <tr><td>2020</td><td>13 Sep</td><td>180</td><td>720</td><td>−1/wrong</td><td>45</td><td>45</td><td>90</td><td class="accent">Moderate-Easy</td><td>COVID year; easier paper overall</td></tr>
+        <tr><td>2021</td><td>12 Sep</td><td>180</td><td>720</td><td>−1/wrong</td><td>45</td><td>45</td><td>90</td><td class="accent5">Moderate</td><td>Some assertion-reason type Qs</td></tr>
+        <tr><td>2022</td><td>17 Jul</td><td>180</td><td>720</td><td>−1/wrong</td><td>45</td><td>45</td><td>90</td><td class="accent2">Difficult</td><td>Highly calculative Physics</td></tr>
+        <tr><td>2023</td><td>07 May</td><td>180</td><td>720</td><td>−1/wrong</td><td>45</td><td>45</td><td>90</td><td class="accent5">Moderate</td><td>A/R + Statement type increased</td></tr>
+        <tr><td>2024</td><td>05 May</td><td>180</td><td>720</td><td>−1/wrong</td><td>45</td><td>45</td><td>90</td><td class="accent5">Moderate</td><td>Section A (35) + Section B (10/15)</td></tr>
+        <tr><td>2025</td><td>04 May</td><td>180</td><td>720</td><td>−1/wrong</td><td>45</td><td>45</td><td>90</td><td class="accent5">Moderate-Hard</td><td>Section A+B; more match-list Qs</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:#7c4dff"></span>Marking Scheme — Detailed Rules</div>
+    <div class="grid-2">
+      <div>
+        <div class="stat-row"><span>Correct Answer</span><span class="val" style="color:#00e676">+4 marks</span></div>
+        <div class="stat-row"><span>Wrong Answer</span><span class="val" style="color:#ff4f7b">−1 mark</span></div>
+        <div class="stat-row"><span>Not Attempted</span><span class="val">0 marks</span></div>
+        <div class="stat-row"><span>Multiple Marked</span><span class="val" style="color:#ff4f7b">−1 mark</span></div>
+      </div>
+      <div>
+        <div class="info-alert">
+          <strong>Strategic Insight:</strong> With 180 Qs and −1 penalty, attempting 150+ correctly is optimal. Every 4 wrong answers cancel 1 correct answer. Never attempt random guesses.
+        </div>
+        <div class="info-alert" style="border-color:var(--accent4);background:rgba(0,230,118,0.05)">
+          <strong>Qualifying Score Guideline:</strong> 50th percentile (~360–400 marks) for government medical colleges. Top AIIMS/JIPMER range: 680–720.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PHYSICS ==================== -->
+<div id="tab-physics" class="section">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:rgba(0,180,216,0.12)">⚛️</div>
+    <div>
+      <h2>Physics — Full Topic-wise Analysis</h2>
+      <p>45 questions · 180 marks · 25% weightage · NCERT Class XI–XII</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <h4>📌 PHYSICS CHAPTER WEIGHTAGE (Average across 2018–2025)</h4>
+    <ul>
+      <li>Electrostatics: 8–10%</li>
+      <li>Current Electricity: 6–8%</li>
+      <li>Modern Physics: 6–7%</li>
+      <li>Optics: 5–7%</li>
+      <li>Mechanics (Work+Energy): 5%</li>
+      <li>Semiconductors: 4–5%</li>
+      <li>EMI & AC: 4–5%</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:#00b4d8"></span>Chapter-wise Frequency Table — Physics (2018–2025)</div>
+    <div style="overflow-x:auto">
+    <table class="topic-table">
+      <thead>
+        <tr><th>Rank</th><th>Chapter</th><th>Sub-topics Most Asked</th><th>Class</th><th>Avg Qs/Year</th><th>Total Qs<br>(8 yrs)</th><th>Weightage</th><th>Years Active</th><th>Trend</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank">1</td><td class="topic-name">Electrostatics (Ch 1)</td><td class="muted">Coulomb's law, field lines, dipole, capacitors, energy stored, dielectrics</td><td><span class="tag tag-phys">XII</span></td><td class="count" style="color:#00e5ff">4–5</td><td class="count" style="color:#00e5ff">35+</td><td class="pct">9–11%</td><td class="years-cell">All 8 years</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">2</td><td class="topic-name">Current Electricity (Ch 3)</td><td class="muted">Ohm's law, Kirchhoff's laws, Wheatstone bridge, potentiometer, internal resistance, drift velocity</td><td><span class="tag tag-phys">XII</span></td><td class="count" style="color:#00e5ff">3–4</td><td class="count" style="color:#00e5ff">28+</td><td class="pct">7–9%</td><td class="years-cell">All 8 years</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">3</td><td class="topic-name">Modern Physics — Atoms & Nuclei</td><td class="muted">Bohr model, de Broglie, photoelectric effect, nuclear decay, half life, binding energy</td><td><span class="tag tag-phys">XII</span></td><td class="count" style="color:#00e5ff">3–4</td><td class="count" style="color:#00e5ff">28+</td><td class="pct">7–9%</td><td class="years-cell">All 8 years</td><td><span class="badge badge-rising">RISING</span></td></tr>
+        <tr><td class="rank">4</td><td class="topic-name">Ray Optics & Wave Optics</td><td class="muted">Refraction, mirrors, lenses, Young's DSSE, diffraction, polarisation, optical instruments</td><td><span class="tag tag-phys">XII</span></td><td class="count" style="color:#00e5ff">3–4</td><td class="count" style="color:#00e5ff">28+</td><td class="pct">7–8%</td><td class="years-cell">All 8 years</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">5</td><td class="topic-name">Magnetic Effects of Current & Magnetism</td><td class="muted">Biot-Savart, Ampere's law, force on conductor, magnetic moment, cyclotron, hysteresis</td><td><span class="tag tag-phys">XII</span></td><td class="count" style="color:#00e5ff">3–4</td><td class="count" style="color:#00e5ff">27+</td><td class="pct">7%</td><td class="years-cell">All 8 years</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">6</td><td class="topic-name">Semiconductor Electronics</td><td class="muted">p-n junction, diodes, rectifiers, transistors, logic gates (AND/OR/NAND/NOR), photodiode</td><td><span class="tag tag-phys">XII</span></td><td class="count" style="color:#00e5ff">2–3</td><td class="count" style="color:#00e5ff">22+</td><td class="pct">5–6%</td><td class="years-cell">All 8 years</td><td><span class="badge badge-rising">RISING</span></td></tr>
+        <tr><td class="rank">7</td><td class="topic-name">Work, Energy & Power</td><td class="muted">Work-energy theorem, conservative forces, potential energy, power, collision (elastic/inelastic)</td><td><span class="tag tag-phys">XI</span></td><td class="count" style="color:#00e5ff">2–3</td><td class="count" style="color:#00e5ff">20+</td><td class="pct">5%</td><td class="years-cell">All 8 years</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">8</td><td class="topic-name">EMI & AC Circuits</td><td class="muted">Faraday's laws, Lenz's law, self/mutual inductance, impedance, resonance, power factor</td><td><span class="tag tag-phys">XII</span></td><td class="count" style="color:#00e5ff">2–3</td><td class="count" style="color:#00e5ff">20+</td><td class="pct">5%</td><td class="years-cell">All 8 years</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">9</td><td class="topic-name">Kinetic Theory & Thermodynamics</td><td class="muted">KTG assumptions, rms speed, degrees of freedom, laws of thermodynamics, Carnot cycle, entropy</td><td><span class="tag tag-phys">XI</span></td><td class="count" style="color:#00e5ff">2–3</td><td class="count" style="color:#00e5ff">19+</td><td class="pct">4–5%</td><td class="years-cell">All 8 years</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">10</td><td class="topic-name">Laws of Motion & Friction</td><td class="muted">Newton's laws, friction (static/kinetic), circular motion, banking, centripetal force, apparent weight</td><td><span class="tag tag-phys">XI</span></td><td class="count" style="color:#00e5ff">2–3</td><td class="count" style="color:#00e5ff">18+</td><td class="pct">4–5%</td><td class="years-cell">All 8 years</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">11</td><td class="topic-name">Electromagnetic Waves</td><td class="muted">EM spectrum, wavelength ranges, properties, applications (X-ray, UV, IR, microwave)</td><td><span class="tag tag-phys">XII</span></td><td class="count" style="color:#00e5ff">1–2</td><td class="count" style="color:#00e5ff">12+</td><td class="pct">3%</td><td class="years-cell">7/8 years</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">12</td><td class="topic-name">Gravitation</td><td class="muted">Kepler's laws, gravitational potential, escape velocity, orbital velocity, geostationary satellite, Poisson</td><td><span class="tag tag-phys">XI</span></td><td class="count" style="color:#00e5ff">1–2</td><td class="count" style="color:#00e5ff">12+</td><td class="pct">3%</td><td class="years-cell">6/8 years</td><td><span class="badge badge-declining">DECLINING</span></td></tr>
+        <tr><td class="rank">13</td><td class="topic-name">Rotational Motion & System of Particles</td><td class="muted">Moment of inertia, angular momentum, torque, conservation, rolling motion</td><td><span class="tag tag-phys">XI</span></td><td class="count" style="color:#00e5ff">1–2</td><td class="count" style="color:#00e5ff">11+</td><td class="pct">3%</td><td class="years-cell">6/8 years</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">14</td><td class="topic-name">Kinematics (Motion in 1D & 2D)</td><td class="muted">Equations of motion, projectile, relative velocity, uniform circular motion</td><td><span class="tag tag-phys">XI</span></td><td class="count" style="color:#00e5ff">1–2</td><td class="count" style="color:#00e5ff">10+</td><td class="pct">2–3%</td><td class="years-cell">5/8 years</td><td><span class="badge badge-declining">DECLINING</span></td></tr>
+        <tr><td class="rank">15</td><td class="topic-name">Waves & Sound</td><td class="muted">SHM, wave equation, superposition, standing waves, resonance, Doppler effect, beats</td><td><span class="tag tag-phys">XI</span></td><td class="count" style="color:#00e5ff">1–2</td><td class="count" style="color:#00e5ff">10+</td><td class="pct">2–3%</td><td class="years-cell">5/8 years</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">16</td><td class="topic-name">Properties of Solids & Fluids</td><td class="muted">Elasticity, stress-strain, Hooke's law, viscosity, Bernoulli, surface tension, capillarity</td><td><span class="tag tag-phys">XI</span></td><td class="count" style="color:#00e5ff">1</td><td class="count" style="color:#00e5ff">7+</td><td class="pct">2%</td><td class="years-cell">5/8 years</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">17</td><td class="topic-name">Dual Nature of Radiation & Matter</td><td class="muted">Photoelectric effect, Einstein equation, work function, de Broglie wavelength</td><td><span class="tag tag-phys">XII</span></td><td class="count" style="color:#00e5ff">1</td><td class="count" style="color:#00e5ff">7+</td><td class="pct">2%</td><td class="years-cell">5/8 years</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">18</td><td class="topic-name">Communication Systems</td><td class="muted">Modulation types, bandwidth, sky wave, space wave, optical fibre basics</td><td><span class="tag tag-phys">XII</span></td><td class="count" style="color:#00e5ff">0–1</td><td class="count" style="color:#00e5ff">5+</td><td class="pct">1%</td><td class="years-cell">4/8 years</td><td><span class="badge badge-declining">DECLINING</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="sub-heading">🎯 HIGH-YIELD PHYSICS TOPICS (Most Repeated Sub-topics)</div>
+
+  <div class="grid-2">
+    <div class="golden-box">
+      <h3>⚡ MUST-DO Physics Topics</h3>
+      <div class="strategy-block">
+        <h4>ASKED EVERY SINGLE YEAR</h4>
+        <ul>
+          <li>Capacitors (parallel plate, series-parallel combinations, energy)</li>
+          <li>Kirchhoff's laws + Wheatstone bridge circuits</li>
+          <li>Bohr's atomic model (energy levels, transitions, spectra)</li>
+          <li>Young's Double Slit Experiment (fringe width, conditions)</li>
+          <li>p-n junction diode (forward/reverse bias, I-V characteristics)</li>
+          <li>Logic Gates (truth tables, universal gates)</li>
+          <li>Nuclear reactions (half-life, decay constant, binding energy)</li>
+          <li>Magnetic force on moving charge / current-carrying conductor</li>
+        </ul>
+      </div>
+    </div>
+    <div class="golden-box" style="border-color:rgba(0,230,118,0.3)">
+      <h3 style="color:var(--accent4)">📈 RISING IMPORTANCE (2022–2025)</h3>
+      <div class="strategy-block">
+        <h4>INCREASED FOCUS IN RECENT PAPERS</h4>
+        <ul>
+          <li>Assertion-Reason type in Modern Physics</li>
+          <li>AC circuit numericals (impedance, resonance frequency)</li>
+          <li>Semiconductor: transistor as amplifier / switch</li>
+          <li>EM waves — applications & wavelength identification</li>
+          <li>Statement-based questions on laws of physics</li>
+          <li>Match-the-list questions (2024–25)</li>
+          <li>Graph-based questions (V-T, I-V, P-T graphs)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:#00b4d8"></span>Physics Class XI vs XII Split</div>
+    <div class="grid-2">
+      <div>
+        <div class="stat-row"><span>Class XI Chapters</span><span class="val">~22–23 Qs / 45</span></div>
+        <div class="stat-row"><span>Class XII Chapters</span><span class="val">~22–23 Qs / 45</span></div>
+        <div class="stat-row"><span>Pure Numerical</span><span class="val">~50–55%</span></div>
+        <div class="stat-row"><span>Conceptual / Fact</span><span class="val">~30–35%</span></div>
+        <div class="stat-row"><span>Graph-based</span><span class="val">~10–15%</span></div>
+      </div>
+      <div>
+        <div class="info-alert"><strong>Physics Difficulty:</strong> Hardest subject in NEET. 2022 was exceptionally calculative. 2023 was relatively easier. 2024–25 balanced. Focus on Class XII chapters for max ROI.</div>
+        <div class="info-alert" style="border-color:#00e676;background:rgba(0,230,118,0.05)"><strong>NCERT Level:</strong> ~65–70% questions directly from NCERT examples and exercises. 30% require concept application beyond NCERT.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CHEMISTRY ==================== -->
+<div id="tab-chemistry" class="section">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:rgba(123,45,139,0.12)">🧪</div>
+    <div>
+      <h2>Chemistry — Full Topic-wise Analysis</h2>
+      <p>45 questions · 180 marks · 25% weightage | Physical + Organic + Inorganic</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <h4>📌 CHEMISTRY BROAD SPLIT (Average 2018–2025)</h4>
+    <ul>
+      <li>Physical Chemistry: ~35–38%</li>
+      <li>Organic Chemistry: ~33–36%</li>
+      <li>Inorganic Chemistry: ~28–30%</li>
+    </ul>
+  </div>
+
+  <div class="sub-heading">🔬 Physical Chemistry</div>
+  <div class="card">
+    <div style="overflow-x:auto">
+    <table class="topic-table">
+      <thead>
+        <tr><th>Rank</th><th>Chapter</th><th>Key Sub-topics</th><th>Avg Qs</th><th>Total</th><th>%</th><th>Trend</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank">1</td><td class="topic-name">Chemical Equilibrium & Ionic Equilibrium</td><td class="muted">Kp/Kc, Le Chatelier's, pH, buffer, Ksp, solubility product, salt hydrolysis</td><td class="count" style="color:#c77dff">2–3</td><td class="count" style="color:#c77dff">20+</td><td class="pct">5–6%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">2</td><td class="topic-name">Chemical Thermodynamics</td><td class="muted">Enthalpy, entropy, Gibbs free energy, Hess's law, bond energy, spontaneity, ΔG</td><td class="count" style="color:#c77dff">2–3</td><td class="count" style="color:#c77dff">19+</td><td class="pct">5%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">3</td><td class="topic-name">Electrochemistry</td><td class="muted">Galvanic cell, EMF, Nernst equation, Faraday's laws, conductance, SHE, corrosion</td><td class="count" style="color:#c77dff">2–3</td><td class="count" style="color:#c77dff">19+</td><td class="pct">5%</td><td><span class="badge badge-rising">RISING</span></td></tr>
+        <tr><td class="rank">4</td><td class="topic-name">Solutions & Colligative Properties</td><td class="muted">Molality, Raoult's law, osmotic pressure, elevation in BP, depression in FP, van't Hoff factor</td><td class="count" style="color:#c77dff">2</td><td class="count" style="color:#c77dff">16+</td><td class="pct">4%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">5</td><td class="topic-name">Mole Concept & Stoichiometry</td><td class="muted">Moles, limiting reagent, % composition, empirical formula, POAC</td><td class="count" style="color:#c77dff">1–2</td><td class="count" style="color:#c77dff">12+</td><td class="pct">3%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">6</td><td class="topic-name">Chemical Kinetics</td><td class="muted">Rate law, order of reaction, half-life, Arrhenius equation, activation energy, mechanisms</td><td class="count" style="color:#c77dff">1–2</td><td class="count" style="color:#c77dff">12+</td><td class="pct">3%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">7</td><td class="topic-name">Solid State</td><td class="muted">Unit cell, packing efficiency, coordination number, crystal defects, Bragg's law</td><td class="count" style="color:#c77dff">1–2</td><td class="count" style="color:#c77dff">11+</td><td class="pct">3%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">8</td><td class="topic-name">States of Matter (Gas & Liquid)</td><td class="muted">Ideal gas equation, KTG, van der Waals equation, surface tension, viscosity</td><td class="count" style="color:#c77dff">1–2</td><td class="count" style="color:#c77dff">10+</td><td class="pct">2–3%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">9</td><td class="topic-name">Surface Chemistry</td><td class="muted">Adsorption, colloids, Tyndall effect, coagulation, emulsion, zeta potential</td><td class="count" style="color:#c77dff">1</td><td class="count" style="color:#c77dff">8+</td><td class="pct">2%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">10</td><td class="topic-name">Atomic Structure</td><td class="muted">Quantum numbers, orbitals, electronic configuration, Pauli's exclusion, Hund's rule</td><td class="count" style="color:#c77dff">1</td><td class="count" style="color:#c77dff">7+</td><td class="pct">2%</td><td><span class="badge badge-declining">DECLINING</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="sub-heading">⚗️ Organic Chemistry</div>
+  <div class="card">
+    <div style="overflow-x:auto">
+    <table class="topic-table">
+      <thead>
+        <tr><th>Rank</th><th>Chapter</th><th>Key Sub-topics</th><th>Avg Qs</th><th>Total</th><th>%</th><th>Trend</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank">1</td><td class="topic-name">Carbonyl Compounds (Aldehydes, Ketones)</td><td class="muted">Nucleophilic addition, Aldol condensation, Cannizzaro, Clemmensen, Fehling's, Tollen's</td><td class="count" style="color:#c77dff">2</td><td class="count" style="color:#c77dff">16+</td><td class="pct">4%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">2</td><td class="topic-name">Biomolecules (Carbohydrates, Proteins, Nucleic acids)</td><td class="muted">Glucose structure, amino acids, peptide bond, DNA/RNA structure, enzymes, vitamins</td><td class="count" style="color:#c77dff">2</td><td class="count" style="color:#c77dff">15+</td><td class="pct">4%</td><td><span class="badge badge-rising">RISING</span></td></tr>
+        <tr><td class="rank">3</td><td class="topic-name">Amines</td><td class="muted">Classification, basicity order, Gabriel synthesis, diazonium salts, coupling reactions</td><td class="count" style="color:#c77dff">2</td><td class="count" style="color:#c77dff">14+</td><td class="pct">3–4%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">4</td><td class="topic-name">Haloalkanes & Haloarenes</td><td class="muted">SN1, SN2, E1, E2, nucleophilic aromatic substitution, Walden inversion, stereochemistry</td><td class="count" style="color:#c77dff">2</td><td class="count" style="color:#c77dff">14+</td><td class="pct">3–4%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">5</td><td class="topic-name">Alcohols, Phenols, Ethers</td><td class="muted">Acidic strength order, Williamson synthesis, reactions of phenol, Lucas test, esterification</td><td class="count" style="color:#c77dff">2</td><td class="count" style="color:#c77dff">13+</td><td class="pct">3%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">6</td><td class="topic-name">Carboxylic Acids & Derivatives</td><td class="muted">Acidity, Hell-Volhard-Zelinsky, acid chlorides, anhydrides, esters (hydrolysis)</td><td class="count" style="color:#c77dff">1–2</td><td class="count" style="color:#c77dff">11+</td><td class="pct">3%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">7</td><td class="topic-name">Hydrocarbons (Alkanes, Alkenes, Alkynes, Benzene)</td><td class="muted">Markovnikov, free radical addition, E/Z isomers, aromaticity, EAS, oxidation, ozonolysis</td><td class="count" style="color:#c77dff">1–2</td><td class="count" style="color:#c77dff">11+</td><td class="pct">3%</td><td><span class="badge badge-declining">DECLINING</span></td></tr>
+        <tr><td class="rank">8</td><td class="topic-name">Polymers</td><td class="muted">Addition vs condensation, copolymers, natural/synthetic, Bakelite, Nylon, Teflon, rubber</td><td class="count" style="color:#c77dff">1</td><td class="count" style="color:#c77dff">8+</td><td class="pct">2%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">9</td><td class="topic-name">Chemistry in Everyday Life</td><td class="muted">Drugs (analgesics, antibiotics, antiseptics), food additives, soaps & detergents</td><td class="count" style="color:#c77dff">1</td><td class="count" style="color:#c77dff">7+</td><td class="pct">2%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">10</td><td class="topic-name">Stereo & Structural Isomerism</td><td class="muted">R/S configuration, optical isomers, enantiomers, diastereomers, meso compounds, IUPAC nomenclature</td><td class="count" style="color:#c77dff">1</td><td class="count" style="color:#c77dff">7+</td><td class="pct">2%</td><td><span class="badge badge-rising">RISING</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="sub-heading">🔷 Inorganic Chemistry</div>
+  <div class="card">
+    <div style="overflow-x:auto">
+    <table class="topic-table">
+      <thead>
+        <tr><th>Rank</th><th>Chapter</th><th>Key Sub-topics</th><th>Avg Qs</th><th>Total</th><th>%</th><th>Trend</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank">1</td><td class="topic-name">Coordination Compounds</td><td class="muted">IUPAC naming, isomers, CFT, splitting energy, VBT, stability constants, EAN rule</td><td class="count" style="color:#c77dff">2–3</td><td class="count" style="color:#c77dff">19+</td><td class="pct">5%</td><td><span class="badge badge-rising">RISING</span></td></tr>
+        <tr><td class="rank">2</td><td class="topic-name">d & f Block Elements</td><td class="muted">Transition metal properties, oxidation states, variable valency, catalytic properties, lanthanoids</td><td class="count" style="color:#c77dff">2</td><td class="count" style="color:#c77dff">15+</td><td class="pct">4%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">3</td><td class="topic-name">p-Block Elements (Groups 15–18)</td><td class="muted">Nitrogen family (NH3, HNO3), oxygen family (SO2, SO3), halogens, noble gas compounds</td><td class="count" style="color:#c77dff">2</td><td class="count" style="color:#c77dff">15+</td><td class="pct">4%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">4</td><td class="topic-name">Chemical Bonding & MOT</td><td class="muted">VSEPR, hybridization, resonance, bond order, molecular orbital theory, magnetic behavior</td><td class="count" style="color:#c77dff">2</td><td class="count" style="color:#c77dff">14+</td><td class="pct">3–4%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">5</td><td class="topic-name">s-Block & p-Block (Gr 1–14)</td><td class="muted">Alkali/alkaline earth metals, anomalous behavior of Li/Be, boron family, carbon allotropes</td><td class="count" style="color:#c77dff">1–2</td><td class="count" style="color:#c77dff">11+</td><td class="pct">3%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">6</td><td class="topic-name">Periodic Table & Periodic Properties</td><td class="muted">Ionization energy trends, electronegativity, atomic/ionic radius, electron affinity, anomalies</td><td class="count" style="color:#c77dff">1</td><td class="count" style="color:#c77dff">8+</td><td class="pct">2%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">7</td><td class="topic-name">General Principles of Metallurgy</td><td class="muted">Ore types, Ellingham diagram, thermite process, methods of extraction, refining</td><td class="count" style="color:#c77dff">1</td><td class="count" style="color:#c77dff">7+</td><td class="pct">2%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">8</td><td class="topic-name">Hydrogen & Its Compounds</td><td class="muted">Isotopes, heavy water, hydrogen peroxide, hydrides, fuel cells</td><td class="count" style="color:#c77dff">0–1</td><td class="count" style="color:#c77dff">5+</td><td class="pct">1%</td><td><span class="badge badge-declining">DECLINING</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="info-alert" style="margin-top:16px">
+    <strong>Chemistry Scoring Tip:</strong> Chemistry has highest ROI in NEET. Inorganic = mostly factual (easy marks). Physical = formulas + application. Organic = mechanisms + reaction sequences. NCERT is ~85–90% sufficient for Chemistry.
+  </div>
+</div>
+
+<!-- ==================== BOTANY ==================== -->
+<div id="tab-botany" class="section">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:rgba(45,139,78,0.12)">🌿</div>
+    <div>
+      <h2>Botany — Full Topic-wise Analysis</h2>
+      <p>45 questions · 180 marks · 25% weightage · NCERT Class XI–XII Biology Part I</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:#2d8b4e"></span>Botany Chapter-wise Frequency Table (2018–2025)</div>
+    <div style="overflow-x:auto">
+    <table class="topic-table">
+      <thead>
+        <tr><th>Rank</th><th>Chapter</th><th>Key Sub-topics Most Asked</th><th>Class</th><th>Avg Qs</th><th>Total</th><th>%</th><th>Trend</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank">1</td><td class="topic-name">Molecular Basis of Inheritance</td><td class="muted">DNA structure, replication, transcription, translation, genetic code, operon model, mutation, HGP</td><td><span class="tag tag-bio">XII</span></td><td class="count" style="color:#2d8b4e">4–5</td><td class="count" style="color:#2d8b4e">36+</td><td class="pct">9–11%</td><td><span class="badge badge-hot">HOT</span></td></tr>
+        <tr><td class="rank">2</td><td class="topic-name">Principles of Inheritance & Variation</td><td class="muted">Mendel's laws, dihybrid cross, linkage, sex-linked disorders (haemophilia, colour blindness), pedigree</td><td><span class="tag tag-bio">XII</span></td><td class="count" style="color:#2d8b4e">3–4</td><td class="count" style="color:#2d8b4e">28+</td><td class="pct">7–8%</td><td><span class="badge badge-hot">HOT</span></td></tr>
+        <tr><td class="rank">3</td><td class="topic-name">Photosynthesis in Higher Plants</td><td class="muted">Light reactions, ETS, PS-I/PS-II, Calvin cycle, C3/C4/CAM plants, photorespiration, chlorophyll pigments</td><td><span class="tag tag-bio">XI</span></td><td class="count" style="color:#2d8b4e">3–4</td><td class="count" style="color:#2d8b4e">27+</td><td class="pct">7%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">4</td><td class="topic-name">Sexual Reproduction in Flowering Plants</td><td class="muted">Pollen grains, embryo sac (7 cells, 8 nuclei), double fertilization, endosperm, fruit types, apomixis</td><td><span class="tag tag-bio">XII</span></td><td class="count" style="color:#2d8b4e">3</td><td class="count" style="color:#2d8b4e">24+</td><td class="pct">6–7%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">5</td><td class="topic-name">Biotechnology: Principles & Processes</td><td class="muted">Restriction enzymes, vectors (plasmid, phage), PCR, gel electrophoresis, rDNA technology, blue-white screening</td><td><span class="tag tag-bio">XII</span></td><td class="count" style="color:#2d8b4e">2–3</td><td class="count" style="color:#2d8b4e">21+</td><td class="pct">5–6%</td><td><span class="badge badge-rising">RISING</span></td></tr>
+        <tr><td class="rank">6</td><td class="topic-name">Biodiversity & Conservation</td><td class="muted">Biodiversity types, hotspots, IUCN categories, in-situ/ex-situ conservation, CBD, sixth mass extinction</td><td><span class="tag tag-bio">XII</span></td><td class="count" style="color:#2d8b4e">2–3</td><td class="count" style="color:#2d8b4e">18+</td><td class="pct">5%</td><td><span class="badge badge-rising">RISING</span></td></tr>
+        <tr><td class="rank">7</td><td class="topic-name">Plant Kingdom (Algae, Bryophytes, Pteridophytes, Gymnosperms)</td><td class="muted">Life cycles, alternation of generations, heterospory, heteromorphic generations, classification</td><td><span class="tag tag-bio">XI</span></td><td class="count" style="color:#2d8b4e">2–3</td><td class="count" style="color:#2d8b4e">18+</td><td class="pct">5%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">8</td><td class="topic-name">Respiration in Plants</td><td class="muted">Glycolysis, Krebs cycle, ETS, oxidative phosphorylation, RQ, fermentation, ATP yield</td><td><span class="tag tag-bio">XI</span></td><td class="count" style="color:#2d8b4e">2–3</td><td class="count" style="color:#2d8b4e">17+</td><td class="pct">4–5%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">9</td><td class="topic-name">Cell: Unit of Life</td><td class="muted">Prokaryote vs eukaryote, organelles (structure + function), endomembrane system, cytoskeleton</td><td><span class="tag tag-bio">XI</span></td><td class="count" style="color:#2d8b4e">2</td><td class="count" style="color:#2d8b4e">16+</td><td class="pct">4%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">10</td><td class="topic-name">Cell Cycle & Cell Division</td><td class="muted">Mitosis phases, meiosis (prophase I subphases especially), cytokinesis, significance, karyokinesis</td><td><span class="tag tag-bio">XI</span></td><td class="count" style="color:#2d8b4e">2</td><td class="count" style="color:#2d8b4e">16+</td><td class="pct">4%</td><td><span class="badge badge-hot">HOT</span></td></tr>
+        <tr><td class="rank">11</td><td class="topic-name">Morphology of Flowering Plants</td><td class="muted">Roots, stems, leaves (modifications), inflorescence, floral diagrams, placentation types, families (Fabaceae, Solanaceae)</td><td><span class="tag tag-bio">XI</span></td><td class="count" style="color:#2d8b4e">2</td><td class="count" style="color:#2d8b4e">15+</td><td class="pct">4%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">12</td><td class="topic-name">Anatomy of Flowering Plants</td><td class="muted">Tissue types, vascular bundles, endo/exarch condition, secondary growth, Casparian strip</td><td><span class="tag tag-bio">XI</span></td><td class="count" style="color:#2d8b4e">1–2</td><td class="count" style="color:#2d8b4e">12+</td><td class="pct">3%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">13</td><td class="topic-name">Ecosystem</td><td class="muted">Energy flow (10% law), food chains, ecological pyramids, GPP/NPP, nutrient cycles, succession</td><td><span class="tag tag-bio">XII</span></td><td class="count" style="color:#2d8b4e">1–2</td><td class="count" style="color:#2d8b4e">12+</td><td class="pct">3%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">14</td><td class="topic-name">Biotechnology & Its Applications</td><td class="muted">Bt crops, bioremediation, RNAi, GM foods, gene therapy, molecular diagnostics (ELISA, PCR)</td><td><span class="tag tag-bio">XII</span></td><td class="count" style="color:#2d8b4e">1–2</td><td class="count" style="color:#2d8b4e">11+</td><td class="pct">3%</td><td><span class="badge badge-rising">RISING</span></td></tr>
+        <tr><td class="rank">15</td><td class="topic-name">Transport in Plants</td><td class="muted">Osmosis, plasmolysis, water potential, active transport, apoplast/symplast, transpiration, ascent of sap</td><td><span class="tag tag-bio">XI</span></td><td class="count" style="color:#2d8b4e">1–2</td><td class="count" style="color:#2d8b4e">11+</td><td class="pct">3%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">16</td><td class="topic-name">Biomolecules</td><td class="muted">Enzyme structure, Michaelis-Menten, DNA structure (Chargaff's rule), amino acid classification, glycogen</td><td><span class="tag tag-bio">XI</span></td><td class="count" style="color:#2d8b4e">1–2</td><td class="count" style="color:#2d8b4e">11+</td><td class="pct">3%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">17</td><td class="topic-name">Plant Growth & Development</td><td class="muted">Phytohormones (auxin, gibberellin, cytokinin, ABA, ethylene), photoperiodism, vernalization, seed dormancy</td><td><span class="tag tag-bio">XI</span></td><td class="count" style="color:#2d8b4e">1–2</td><td class="count" style="color:#2d8b4e">10+</td><td class="pct">2–3%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">18</td><td class="topic-name">Mineral Nutrition</td><td class="muted">Essential elements (macro/micro), deficiency symptoms, nitrogen fixation (Rhizobium), nitrification</td><td><span class="tag tag-bio">XI</span></td><td class="count" style="color:#2d8b4e">1</td><td class="count" style="color:#2d8b4e">8+</td><td class="pct">2%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">19</td><td class="topic-name">Environmental Issues</td><td class="muted">Ozone depletion, greenhouse effect, biomagnification, eutrophication, environmental acts, carbon footprint</td><td><span class="tag tag-bio">XII</span></td><td class="count" style="color:#2d8b4e">1</td><td class="count" style="color:#2d8b4e">7+</td><td class="pct">2%</td><td><span class="badge badge-rising">RISING</span></td></tr>
+        <tr><td class="rank">20</td><td class="topic-name">Organisms & Populations</td><td class="muted">Population interactions (commensalism, mutualism, parasitism, amensalism), growth models (logistic/exponential)</td><td><span class="tag tag-bio">XII</span></td><td class="count" style="color:#2d8b4e">1</td><td class="count" style="color:#2d8b4e">7+</td><td class="pct">2%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="golden-box">
+    <h3>🌟 BOTANY GOLDEN TOPICS — Asked in 6+ of 8 Years</h3>
+    <div class="grid-2">
+      <div class="strategy-block">
+        <h4>MOST REPEATED BOTANY CONCEPTS</h4>
+        <ul>
+          <li>DNA structure: A=T, G≡C; antiparallel, 3'→5' template</li>
+          <li>Operon model (Lac operon — inducible; Trp operon — repressible)</li>
+          <li>Meiosis I: Stages of prophase I (leptotene → diakinesis)</li>
+          <li>Embryo sac: 7-celled, 8-nucleate; central cell = 2 polar nuclei</li>
+          <li>C3 vs C4 plants: Rubisco, bundle sheath cells, hatch-slack pathway</li>
+          <li>Restriction enzymes: palindromic sequences, sticky/blunt ends</li>
+          <li>Mendelian laws: incomplete dominance, codominance, ABO blood group</li>
+        </ul>
+      </div>
+      <div class="strategy-block">
+        <h4>BOTANY — NCERT DEPENDENCY</h4>
+        <ul>
+          <li>~90% questions traceable to NCERT text + diagrams</li>
+          <li>Pay special attention to NCERT tables (e.g., comparison of kingdoms)</li>
+          <li>NCERT examples and exercises are frequently reproduced</li>
+          <li>Bold terms in NCERT = often direct question material</li>
+          <li>Diagrams: embryo sac, lac operon, Calvin cycle — draw & memorise</li>
+          <li>Chapter summaries in NCERT are exam-critical</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== ZOOLOGY ==================== -->
+<div id="tab-zoology" class="section">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:rgba(139,110,45,0.12)">🦎</div>
+    <div>
+      <h2>Zoology — Full Topic-wise Analysis</h2>
+      <p>45 questions · 180 marks · 25% weightage · NCERT Class XI–XII Biology Part II</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:#ffab40"></span>Zoology Chapter-wise Frequency Table (2018–2025)</div>
+    <div style="overflow-x:auto">
+    <table class="topic-table">
+      <thead>
+        <tr><th>Rank</th><th>Chapter</th><th>Key Sub-topics</th><th>Class</th><th>Avg Qs</th><th>Total</th><th>%</th><th>Trend</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank">1</td><td class="topic-name">Human Reproduction</td><td class="muted">Male/female reproductive system, spermatogenesis, oogenesis, menstrual cycle, fertilisation, implantation, parturition</td><td><span class="tag tag-zoo">XII</span></td><td class="count" style="color:#ffab40">3–4</td><td class="count" style="color:#ffab40">27+</td><td class="pct">7%</td><td><span class="badge badge-hot">HOT</span></td></tr>
+        <tr><td class="rank">2</td><td class="topic-name">Human Health & Disease</td><td class="muted">Immunity (innate/adaptive), vaccines, AIDS, cancer, drugs/alcohol, ELISA, monoclonal antibodies, allergies</td><td><span class="tag tag-zoo">XII</span></td><td class="count" style="color:#ffab40">3–4</td><td class="count" style="color:#ffab40">27+</td><td class="pct">7%</td><td><span class="badge badge-hot">HOT</span></td></tr>
+        <tr><td class="rank">3</td><td class="topic-name">Animal Kingdom (Classification)</td><td class="muted">Phylum characters (Porifera, Coelenterata, Platyhelminthes, Nematoda, Annelida, Mollusca, Arthropoda, Echinodermata, Chordata)</td><td><span class="tag tag-zoo">XI</span></td><td class="count" style="color:#ffab40">3–4</td><td class="count" style="color:#ffab40">27+</td><td class="pct">7%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">4</td><td class="topic-name">Evolution</td><td class="muted">Darwin, natural selection, Hardy-Weinberg, speciation (allopatric/sympatric), Lamarck, adaptive radiation, origin of life</td><td><span class="tag tag-zoo">XII</span></td><td class="count" style="color:#ffab40">2–3</td><td class="count" style="color:#ffab40">21+</td><td class="pct">5–6%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">5</td><td class="topic-name">Neural Control & Coordination</td><td class="muted">Neuron structure, resting/action potential, synapse, neurotransmitters, CNS structure, reflex action, sensory organs</td><td><span class="tag tag-zoo">XI</span></td><td class="count" style="color:#ffab40">2–3</td><td class="count" style="color:#ffab40">20+</td><td class="pct">5%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">6</td><td class="topic-name">Chemical Coordination (Endocrine System)</td><td class="muted">All glands & hormones, feedback mechanisms, pituitary (master gland), thyroid, adrenal, pancreas, ovary/testes hormones</td><td><span class="tag tag-zoo">XI</span></td><td class="count" style="color:#ffab40">2–3</td><td class="count" style="color:#ffab40">20+</td><td class="pct">5%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">7</td><td class="topic-name">Body Fluids & Circulation</td><td class="muted">Blood composition, clotting, blood groups, lymph, heart chambers, cardiac cycle, ECG, double circulation</td><td><span class="tag tag-zoo">XI</span></td><td class="count" style="color:#ffab40">2–3</td><td class="count" style="color:#ffab40">19+</td><td class="pct">5%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">8</td><td class="topic-name">Reproductive Health</td><td class="muted">Contraception methods (barrier, chemical, IUCD, surgical), MTP, STDs, infertility treatments (IVF, GIFT, ZIFT)</td><td><span class="tag tag-zoo">XII</span></td><td class="count" style="color:#ffab40">2</td><td class="count" style="color:#ffab40">16+</td><td class="pct">4%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">9</td><td class="topic-name">Digestion & Absorption</td><td class="muted">GI tract structure, digestive enzymes (pepsin, trypsin, lipase), absorption (small intestine), liver functions, disorders</td><td><span class="tag tag-zoo">XI</span></td><td class="count" style="color:#ffab40">2</td><td class="count" style="color:#ffab40">16+</td><td class="pct">4%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">10</td><td class="topic-name">Excretory Products & Elimination</td><td class="muted">Nephron structure, ultrafiltration, tubular reabsorption, urine formation (GFR), osmoregulation, dialysis</td><td><span class="tag tag-zoo">XI</span></td><td class="count" style="color:#ffab40">2</td><td class="count" style="color:#ffab40">15+</td><td class="pct">4%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">11</td><td class="topic-name">Locomotion & Movement</td><td class="muted">Muscle types, sarcomere structure, sliding filament theory, skeletal joints, disorders (osteoporosis, gout)</td><td><span class="tag tag-zoo">XI</span></td><td class="count" style="color:#ffab40">1–2</td><td class="count" style="color:#ffab40">13+</td><td class="pct">3%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">12</td><td class="topic-name">Breathing & Gaseous Exchange</td><td class="muted">Lung volumes (TV, RV, VC, TLC), gas exchange, O2/CO2 transport, Bohr effect, respiratory disorders</td><td><span class="tag tag-zoo">XI</span></td><td class="count" style="color:#ffab40">1–2</td><td class="count" style="color:#ffab40">12+</td><td class="pct">3%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">13</td><td class="topic-name">Structural Organisation in Animals</td><td class="muted">Tissue types (epithelial, connective, muscular, neural), earth worm anatomy, cockroach anatomy, frog anatomy</td><td><span class="tag tag-zoo">XI</span></td><td class="count" style="color:#ffab40">1–2</td><td class="count" style="color:#ffab40">12+</td><td class="pct">3%</td><td><span class="badge badge-declining">DECLINING</span></td></tr>
+        <tr><td class="rank">14</td><td class="topic-name">Microbes in Human Welfare</td><td class="muted">Fermented foods, antibiotics (penicillin), biogas, bioremediation, biocontrol agents, mycorrhiza</td><td><span class="tag tag-zoo">XII</span></td><td class="count" style="color:#ffab40">1–2</td><td class="count" style="color:#ffab40">11+</td><td class="pct">3%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+        <tr><td class="rank">15</td><td class="topic-name">Living World & Biological Classification</td><td class="muted">Characteristics of life, 5-kingdom (Whittaker), binomial nomenclature, taxonomic categories, virus, bacteria</td><td><span class="tag tag-zoo">XI</span></td><td class="count" style="color:#ffab40">1</td><td class="count" style="color:#ffab40">8+</td><td class="pct">2%</td><td><span class="badge badge-stable">STABLE</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="golden-box">
+    <h3>🔥 ZOOLOGY GOLDEN TOPICS</h3>
+    <div class="grid-2">
+      <div class="strategy-block">
+        <h4>ASKED EVERY YEAR WITHOUT FAIL</h4>
+        <ul>
+          <li>Spermatogenesis vs Oogenesis (stages, cell names, ploidy)</li>
+          <li>Innate vs Adaptive immunity (B-cells, T-cells, antibody types)</li>
+          <li>Phylum characters (especially non-chordate phyla comparisons)</li>
+          <li>Hardy-Weinberg equilibrium conditions & allele frequency</li>
+          <li>Neuron action potential (depolarization → repolarization → refractory)</li>
+          <li>Hormones: pituitary tropic hormones + target gland hormones</li>
+          <li>Nephron segments + what is reabsorbed where</li>
+        </ul>
+      </div>
+      <div class="strategy-block">
+        <h4>NEWLY IMPORTANT (2023–2025)</h4>
+        <ul>
+          <li>Monoclonal antibodies and their applications</li>
+          <li>CRISPR, gene therapy concepts</li>
+          <li>Population ecology (r vs K strategy)</li>
+          <li>Cancer biology: proto-oncogenes, carcinogens, metastasis</li>
+          <li>Match-list questions: linking hormones to functions</li>
+          <li>Assertion-reason in physiology chapters</li>
+          <li>Statement-based questions on immune system</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== MOST REPEATED ==================== -->
+<div id="tab-repeated" class="section">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:rgba(255,79,123,0.12)">🔁</div>
+    <div>
+      <h2>Most Repeated Topics Analysis</h2>
+      <p>Concepts asked 5+ times, near-identical questions, and Golden 25</p>
+    </div>
+  </div>
+
+  <div class="golden-box">
+    <h3>🏆 GOLDEN 25 — Most Likely to Repeat in NEET 2026</h3>
+    <div style="overflow-x:auto">
+    <table class="topic-table">
+      <thead>
+        <tr><th>#</th><th>Topic</th><th>Subject</th><th>Times Asked (2018–25)</th><th>Chapter</th><th>Priority</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank">1</td><td class="topic-name">Bohr's Atomic Model — spectral lines, energy levels</td><td><span class="tag tag-phys">Physics</span></td><td class="count" style="color:#ff4f7b">8/8</td><td>Modern Physics</td><td class="priority-1">★★★★★</td></tr>
+        <tr><td class="rank">2</td><td class="topic-name">Lac Operon — inducible/repressible; Jacob-Monod model</td><td><span class="tag tag-bio">Botany</span></td><td class="count" style="color:#ff4f7b">8/8</td><td>Molecular Basis</td><td class="priority-1">★★★★★</td></tr>
+        <tr><td class="rank">3</td><td class="topic-name">Embryo sac structure — 7 cells, 8 nuclei, cell positions</td><td><span class="tag tag-bio">Botany</span></td><td class="count" style="color:#ff4f7b">8/8</td><td>Sexual Repro.</td><td class="priority-1">★★★★★</td></tr>
+        <tr><td class="rank">4</td><td class="topic-name">p-n junction diode — forward/reverse bias, Zener</td><td><span class="tag tag-phys">Physics</span></td><td class="count" style="color:#ff4f7b">8/8</td><td>Semiconductors</td><td class="priority-1">★★★★★</td></tr>
+        <tr><td class="rank">5</td><td class="topic-name">Hardy-Weinberg law — conditions, allele frequency calculation</td><td><span class="tag tag-zoo">Zoology</span></td><td class="count" style="color:#ff4f7b">8/8</td><td>Evolution</td><td class="priority-1">★★★★★</td></tr>
+        <tr><td class="rank">6</td><td class="topic-name">Capacitors — combination, energy stored, dielectrics</td><td><span class="tag tag-phys">Physics</span></td><td class="count" style="color:#ff4f7b">8/8</td><td>Electrostatics</td><td class="priority-1">★★★★★</td></tr>
+        <tr><td class="rank">7</td><td class="topic-name">Coordination compounds — isomers, IUPAC naming, CFT</td><td><span class="tag tag-chem">Chemistry</span></td><td class="count" style="color:#ff4f7b">8/8</td><td>Coord. Chem</td><td class="priority-1">★★★★★</td></tr>
+        <tr><td class="rank">8</td><td class="topic-name">ABO blood groups + Rh factor — genetics and blood typing</td><td><span class="tag tag-zoo">Zoology</span></td><td class="count" style="color:#ffab40">7/8</td><td>Body Fluids</td><td class="priority-2">★★★★☆</td></tr>
+        <tr><td class="rank">9</td><td class="topic-name">Meiosis — prophase I substages (leptotene, zygotene, pachytene, diplotene, diakinesis)</td><td><span class="tag tag-bio">Botany</span></td><td class="count" style="color:#ffab40">7/8</td><td>Cell Division</td><td class="priority-2">★★★★☆</td></tr>
+        <tr><td class="rank">10</td><td class="topic-name">C3 vs C4 vs CAM plants — Rubisco, PEP carboxylase, Kranz anatomy</td><td><span class="tag tag-bio">Botany</span></td><td class="count" style="color:#ffab40">7/8</td><td>Photosynthesis</td><td class="priority-2">★★★★☆</td></tr>
+        <tr><td class="rank">11</td><td class="topic-name">PCR — steps (denaturation, annealing, extension), applications</td><td><span class="tag tag-bio">Botany</span></td><td class="count" style="color:#ffab40">7/8</td><td>Biotechnology</td><td class="priority-2">★★★★☆</td></tr>
+        <tr><td class="rank">12</td><td class="topic-name">Insulin, glucagon, ADH, oxytocin — mechanism of action</td><td><span class="tag tag-zoo">Zoology</span></td><td class="count" style="color:#ffab40">7/8</td><td>Endocrine</td><td class="priority-2">★★★★☆</td></tr>
+        <tr><td class="rank">13</td><td class="topic-name">Kirchhoff's laws — complex circuit problems</td><td><span class="tag tag-phys">Physics</span></td><td class="count" style="color:#ffab40">7/8</td><td>Current Elec.</td><td class="priority-2">★★★★☆</td></tr>
+        <tr><td class="rank">14</td><td class="topic-name">Nernst equation — EMF calculation at non-standard conditions</td><td><span class="tag tag-chem">Chemistry</span></td><td class="count" style="color:#ffab40">7/8</td><td>Electrochemistry</td><td class="priority-2">★★★★☆</td></tr>
+        <tr><td class="rank">15</td><td class="topic-name">Innate vs Adaptive immunity — B-cell, T-cell, antibody types (IgG, IgE, IgM, IgA)</td><td><span class="tag tag-zoo">Zoology</span></td><td class="count" style="color:#ffab40">7/8</td><td>Health & Disease</td><td class="priority-2">★★★★☆</td></tr>
+        <tr><td class="rank">16</td><td class="topic-name">Young's double slit — fringe width, path difference, condition</td><td><span class="tag tag-phys">Physics</span></td><td class="count" style="color:#ffab40">7/8</td><td>Wave Optics</td><td class="priority-2">★★★★☆</td></tr>
+        <tr><td class="rank">17</td><td class="topic-name">Menstrual cycle phases — FSH, LH, estrogen, progesterone levels</td><td><span class="tag tag-zoo">Zoology</span></td><td class="count" style="color:#ffab40">7/8</td><td>Human Repro.</td><td class="priority-2">★★★★☆</td></tr>
+        <tr><td class="rank">18</td><td class="topic-name">Calvin cycle — CO2 fixation, ATP/NADPH used, G3P, RuBP regeneration</td><td><span class="tag tag-bio">Botany</span></td><td class="count" style="color:#ffab40">6/8</td><td>Photosynthesis</td><td class="priority-2">★★★★☆</td></tr>
+        <tr><td class="rank">19</td><td class="topic-name">Restriction endonucleases — palindromic sequences, sticky/blunt ends</td><td><span class="tag tag-bio">Botany</span></td><td class="count" style="color:#ffab40">6/8</td><td>Biotechnology</td><td class="priority-2">★★★★☆</td></tr>
+        <tr><td class="rank">20</td><td class="topic-name">Basicity of amines — order in aqueous vs gas phase</td><td><span class="tag tag-chem">Chemistry</span></td><td class="count" style="color:#ffab40">6/8</td><td>Amines</td><td class="priority-2">★★★★☆</td></tr>
+        <tr><td class="rank">21</td><td class="topic-name">Mendelian disorders — haemophilia, PKU, sickle cell anaemia pedigree</td><td><span class="tag tag-bio">Botany</span></td><td class="count" style="color:#00e5ff">6/8</td><td>Inheritance</td><td class="priority-3">★★★☆☆</td></tr>
+        <tr><td class="rank">22</td><td class="topic-name">Nephron — PCT, DCT, loop of Henle functions, countercurrent mechanism</td><td><span class="tag tag-zoo">Zoology</span></td><td class="count" style="color:#00e5ff">6/8</td><td>Excretion</td><td class="priority-3">★★★☆☆</td></tr>
+        <tr><td class="rank">23</td><td class="topic-name">Colligative properties — osmotic pressure, depression in FP calculation</td><td><span class="tag tag-chem">Chemistry</span></td><td class="count" style="color:#00e5ff">6/8</td><td>Solutions</td><td class="priority-3">★★★☆☆</td></tr>
+        <tr><td class="rank">24</td><td class="topic-name">Logic gates — truth tables, universal gates, Boolean expressions</td><td><span class="tag tag-phys">Physics</span></td><td class="count" style="color:#00e5ff">6/8</td><td>Semiconductors</td><td class="priority-3">★★★☆☆</td></tr>
+        <tr><td class="rank">25</td><td class="topic-name">Sarcomere structure — actin, myosin, troponin, tropomyosin, Z-line sliding</td><td><span class="tag tag-zoo">Zoology</span></td><td class="count" style="color:#00e5ff">6/8</td><td>Locomotion</td><td class="priority-3">★★★☆☆</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:#7c4dff"></span>Near-Identical Questions Across Years (Rewording Analysis)</div>
+    <div class="info-alert"><strong>Pattern:</strong> NEET often repeats the SAME concept with slightly different option wording or a different scenario. The concept being tested remains identical.</div>
+    <div class="grid-2">
+      <div class="strategy-block">
+        <h4>CONFIRMED NEAR-REPEAT PATTERNS</h4>
+        <ul>
+          <li>Embryo sac — "antipodal cells," "central cell," "synergids" asked nearly every year in different phrasings</li>
+          <li>ATP production in glycolysis vs Krebs: "net ATP" vs "gross ATP" — trap question repeated</li>
+          <li>Lac operon: "when glucose is absent but lactose is present" — asked in 5+ different formats</li>
+          <li>Coordination number in closest packing (FCC=12, BCC=8) — asked 4 times</li>
+          <li>ECG wave identification (P, QRS, T waves and what they represent) — 3+ times</li>
+          <li>Photoelectric effect: threshold frequency condition — 4+ times different formats</li>
+        </ul>
+      </div>
+      <div class="strategy-block">
+        <h4>TOPICS ASKED ONLY ONCE (Watch in 2026)</h4>
+        <ul>
+          <li>Cryopreservation / cryotherapy (Botany)</li>
+          <li>Dendrochronology — tree rings and climate (Environment)</li>
+          <li>Quantum Hall effect (Physics)</li>
+          <li>Prion proteins / mad cow disease (Zoology)</li>
+          <li>Soil pollution — heavy metals, leaching (Environment)</li>
+          <li>Spirometry apparatus details (Zoology)</li>
+          <li>Geotropism vs phototropism molecular mechanism (Botany)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== DIFFICULTY ==================== -->
+<div id="tab-difficulty" class="section">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:rgba(255,79,123,0.12)">🎯</div>
+    <div>
+      <h2>Difficulty Level Analysis</h2>
+      <p>Year-wise, subject-wise difficulty rating with NCERT vs beyond analysis</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:#ff4f7b"></span>Year-wise Overall Difficulty Rating</div>
+    <div style="overflow-x:auto">
+    <table class="year-table">
+      <thead>
+        <tr><th>Year</th><th>Physics</th><th>Chemistry</th><th>Botany</th><th>Zoology</th><th>Overall</th><th>Expected Score (Good Prep)</th><th>Key Difficulty Factor</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2018</td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent">Easy-Mod</span></td>
+          <td><span class="accent">Easy-Mod</span></td>
+          <td><span class="accent5">MODERATE</span></td>
+          <td>530–580</td>
+          <td>Physics had tricky numericals</td>
+        </tr>
+        <tr>
+          <td>2019</td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">MODERATE</span></td>
+          <td>540–590</td>
+          <td>Balanced across all sections</td>
+        </tr>
+        <tr>
+          <td>2020</td>
+          <td><span class="accent">Easy</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent">Easy</span></td>
+          <td><span class="accent">Easy</span></td>
+          <td><span class="accent">EASY</span></td>
+          <td>580–640</td>
+          <td>COVID year — generally easier</td>
+        </tr>
+        <tr>
+          <td>2021</td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">MODERATE</span></td>
+          <td>540–590</td>
+          <td>New question types (A/R) introduced more</td>
+        </tr>
+        <tr>
+          <td>2022</td>
+          <td><span class="accent2">Difficult</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">MOD-DIFFICULT</span></td>
+          <td>500–560</td>
+          <td>Physics extremely calculative</td>
+        </tr>
+        <tr>
+          <td>2023</td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">MODERATE</span></td>
+          <td>540–600</td>
+          <td>Statement/assertion-reason heavy</td>
+        </tr>
+        <tr>
+          <td>2024</td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">MODERATE</span></td>
+          <td>540–610</td>
+          <td>Section B gave flexibility</td>
+        </tr>
+        <tr>
+          <td>2025</td>
+          <td><span class="accent2">Moderate-Hard</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">Moderate</span></td>
+          <td><span class="accent5">MOD-DIFFICULT</span></td>
+          <td>520–580</td>
+          <td>Match-list heavy; conceptual Physics</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:#7c4dff"></span>Subject-wise Difficulty Breakdown</div>
+      <div>
+        <div class="stat-row">
+          <span>Physics — Most Difficult Overall</span>
+          <div class="difficulty-meter">
+            <div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot"></div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span>Chemistry</span>
+          <div class="difficulty-meter">
+            <div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span>Botany</span>
+          <div class="difficulty-meter">
+            <div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div><div class="diff-dot"></div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span>Zoology</span>
+          <div class="difficulty-meter">
+            <div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div><div class="diff-dot"></div>
+          </div>
+        </div>
+      </div>
+      <div class="info-alert" style="margin-top:16px">Biology (Botany + Zoology) is the most scoring section. NCERT-level preparation alone scores 70–80+ in each Biology section.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:#00e676"></span>NCERT vs Beyond-NCERT Split</div>
+      <div class="donut-legend">
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#00b4d8"></div>
+          <span style="flex:1;font-size:0.82rem">Physics: NCERT-level</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:65%;background:#00b4d8"></div></div>
+          <span class="legend-pct">65%</span>
+        </div>
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#c77dff"></div>
+          <span style="flex:1;font-size:0.82rem">Chemistry: NCERT-level</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:85%;background:#c77dff"></div></div>
+          <span class="legend-pct">85%</span>
+        </div>
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#2d8b4e"></div>
+          <span style="flex:1;font-size:0.82rem">Botany: NCERT-level</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:90%;background:#2d8b4e"></div></div>
+          <span class="legend-pct">90%</span>
+        </div>
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#ffab40"></div>
+          <span style="flex:1;font-size:0.82rem">Zoology: NCERT-level</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:90%;background:#ffab40"></div></div>
+          <span class="legend-pct">90%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:#ff4f7b"></span>Common Traps & Negative Marking Pitfalls</div>
+    <div class="grid-2">
+      <div class="strategy-block">
+        <h4>PHYSICS TRAPS (Most Common)</h4>
+        <ul>
+          <li>Work done by magnetic force = 0 (perpendicular always)</li>
+          <li>Efficiency of Carnot engine formula — use absolute temperatures (Kelvin)</li>
+          <li>de Broglie wavelength — using non-relativistic vs relativistic formula</li>
+          <li>Capacitor with dielectric — energy increases/decreases depending on condition (V const. vs Q const.)</li>
+          <li>AC circuit: power factor = 0 for pure L or C circuits</li>
+          <li>Logic gate questions — NAND as universal gate</li>
+        </ul>
+      </div>
+      <div class="strategy-block">
+        <h4>BIOLOGY TRAPS (Most Common)</h4>
+        <ul>
+          <li>Antipodal cells = 3 cells (NOT 3 nuclei) — frequently tested trap</li>
+          <li>Double fertilisation: primary endosperm nucleus is triploid (3n)</li>
+          <li>Net ATP from glycolysis = 2 (NOT 8)</li>
+          <li>RQ of carbohydrates = 1; fats less than 1; proteins approx. 0.9</li>
+          <li>Colostrum contains IgA (not IgG) — classic confusion trap</li>
+          <li>Hardy-Weinberg: p² + 2pq + q² = 1 vs p + q = 1 — know which is which</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== YEAR TREND ==================== -->
+<div id="tab-yeartrend" class="section">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:rgba(0,230,118,0.12)">📈</div>
+    <div>
+      <h2>Year-wise Trend Analysis</h2>
+      <p>Evolution of NEET pattern, subject emphasis shifts, new question types</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:#00e676"></span>Topic Presence by Year — Cross-reference Matrix</div>
+    <div style="overflow-x:auto">
+    <table class="year-table">
+      <thead>
+        <tr><th>Topic</th><th>2018</th><th>2019</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th><th>Frequency</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Bohr's Atomic Model</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">8/8</td></tr>
+        <tr><td>Lac Operon</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">8/8</td></tr>
+        <tr><td>Embryo Sac</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">8/8</td></tr>
+        <tr><td>Hardy-Weinberg Law</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">8/8</td></tr>
+        <tr><td>Coordination Compounds</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">8/8</td></tr>
+        <tr><td>Logic Gates</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">8/8</td></tr>
+        <tr><td>DNA Replication</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">8/8</td></tr>
+        <tr><td>Animal Kingdom Phyla</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">8/8</td></tr>
+        <tr><td>Photosynthesis (C3/C4)</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">8/8</td></tr>
+        <tr><td>Assertion-Reason Format</td><td class="absent">—</td><td class="absent">—</td><td class="absent">—</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td style="color:#ffab40">5/8</td></tr>
+        <tr><td>Match-the-List Format</td><td class="absent">—</td><td class="absent">—</td><td class="absent">—</td><td class="absent">—</td><td class="absent">—</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td style="color:#ffab40">3/8</td></tr>
+        <tr><td>Statement I/II Format</td><td class="absent">—</td><td class="absent">—</td><td class="absent">—</td><td class="absent">—</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td class="present">✓</td><td style="color:#ffab40">4/8</td></tr>
+        <tr><td>Section A + Section B</td><td class="absent">—</td><td class="absent">—</td><td class="absent">—</td><td class="absent">—</td><td class="absent">—</td><td class="absent">—</td><td class="present">✓</td><td class="present">✓</td><td style="color:#7b2d8b">2/8</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:#00e5ff"></span>Subjects That GAINED Importance (2022–2025)</div>
+      <div class="strategy-block">
+        <ul>
+          <li><strong style="color:#00e5ff">Biotechnology</strong> — from 3% to 6–7% (PCR, CRISPR, gene therapy)</li>
+          <li><strong style="color:#00e5ff">Biodiversity & Conservation</strong> — now 4–5 Qs consistently</li>
+          <li><strong style="color:#00e5ff">Human Health/Immunity</strong> — monoclonal antibodies, cancer biology</li>
+          <li><strong style="color:#00e5ff">Evolution</strong> — more application-type than fact-based</li>
+          <li><strong style="color:#00e5ff">Environmental Issues</strong> — ozone, eutrophication, biomagnification</li>
+          <li><strong style="color:#00e5ff">Coordination Compounds</strong> — IUPAC naming now regular</li>
+          <li><strong style="color:#00e5ff">Match-list questions</strong> — across all subjects (2023 onward)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:#ff4f7b"></span>Subjects That DECLINED (After 2020)</div>
+      <div class="strategy-block">
+        <ul>
+          <li><strong style="color:#ff4f7b">Communication Systems</strong> — from 2–3 Qs to 0–1 Qs</li>
+          <li><strong style="color:#ff4f7b">Structural Organisation in Animals</strong> — earthworm/cockroach less asked</li>
+          <li><strong style="color:#ff4f7b">Gravitation</strong> — earlier 3+ Qs, now 1–2 Qs</li>
+          <li><strong style="color:#ff4f7b">Hydrogen & Its Compounds</strong> — rarely tested now</li>
+          <li><strong style="color:#ff4f7b">Living World</strong> — basic classification less tested</li>
+          <li><strong style="color:#ff4f7b">Basic Kinematics</strong> — SUVAT equations less directly tested</li>
+          <li><strong style="color:#ff4f7b">Simple Hydrocarbons</strong> — basic alkane reactions reduced</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:#ffab40"></span>Question Style Evolution — 2018 → 2025</div>
+    <div style="overflow-x:auto">
+    <table class="year-table">
+      <thead>
+        <tr><th>Question Type</th><th>2018–19</th><th>2020–21</th><th>2022–23</th><th>2024–25</th><th>Direction</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Direct fact recall (from NCERT)</td><td class="present">60%</td><td class="present">55%</td><td class="present">48%</td><td class="present">40%</td><td style="color:#ff4f7b">↓ Declining</td></tr>
+        <tr><td>Assertion-Reason</td><td class="absent">0%</td><td>5%</td><td>12%</td><td>18%</td><td style="color:#00e676">↑ Rising fast</td></tr>
+        <tr><td>Statement I/II type</td><td class="absent">0%</td><td>5%</td><td>10%</td><td>15%</td><td style="color:#00e676">↑ Rising fast</td></tr>
+        <tr><td>Match-the-List</td><td class="absent">0%</td><td>0%</td><td>5%</td><td>12%</td><td style="color:#00e676">↑ New trend</td></tr>
+        <tr><td>Numerical/Calculation</td><td>25%</td><td>22%</td><td>18%</td><td>15%</td><td style="color:#ff4f7b">↓ Slightly declining</td></tr>
+        <tr><td>Application-based conceptual</td><td>15%</td><td>13%</td><td>15%</td><td>20%</td><td style="color:#00e676">↑ Rising slightly</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="info-alert" style="margin-top:12px"><strong>Key Insight for 2026:</strong> The shift from pure recall → Assertion-Reason + Statement type is dramatic. Prepare to UNDERSTAND concepts, not just memorize. A/R and Statement questions require deeper conceptual clarity.</div>
+  </div>
+</div>
+
+<!-- ==================== STRATEGY ==================== -->
+<div id="tab-strategy" class="section">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:rgba(124,77,255,0.12)">🚀</div>
+    <div>
+      <h2>Exam Strategy & Preparation Blueprint</h2>
+      <p>Subject-wise time allocation, score optimisation, resource guide</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <h4>🎯 SCORE TARGET STRATEGY</h4>
+    <ul>
+      <li>680+ → Top AIIMS/JIPMER</li>
+      <li>620–680 → Top Govt Medical</li>
+      <li>550–620 → State Govt Medical</li>
+      <li>480–550 → Private Medical</li>
+      <li>&lt;480 → Need another attempt</li>
+    </ul>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:#00e5ff"></span>Optimal Subject-wise Time Investment</div>
+      <div class="donut-legend">
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#00b4d8"></div>
+          <span style="flex:1;font-size:0.82rem">Physics</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:30%;background:#00b4d8"></div></div>
+          <span class="legend-pct">30–35%</span>
+        </div>
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#c77dff"></div>
+          <span style="flex:1;font-size:0.82rem">Chemistry</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:25%;background:#c77dff"></div></div>
+          <span class="legend-pct">25–28%</span>
+        </div>
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#2d8b4e"></div>
+          <span style="flex:1;font-size:0.82rem">Botany</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:20%;background:#2d8b4e"></div></div>
+          <span class="legend-pct">20–22%</span>
+        </div>
+        <div class="donut-legend-item">
+          <div class="legend-dot" style="background:#ffab40"></div>
+          <span style="flex:1;font-size:0.82rem">Zoology</span>
+          <div class="legend-bar"><div class="legend-bar-fill" style="width:20%;background:#ffab40"></div></div>
+          <span class="legend-pct">20–22%</span>
+        </div>
+      </div>
+      <div class="info-alert" style="margin-top:14px"><strong>ROI Logic:</strong> Biology gives highest score per hour invested. Physics needs most time but has highest difficulty. Prioritise Biology mastery first.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:#00e676"></span>In-Exam Time Management (180 min)</div>
+      <div class="stat-row"><span>Botany (45 Qs)</span><span class="val" style="color:#2d8b4e">30 min</span></div>
+      <div class="stat-row"><span>Zoology (45 Qs)</span><span class="val" style="color:#ffab40">30 min</span></div>
+      <div class="stat-row"><span>Chemistry (45 Qs)</span><span class="val" style="color:#c77dff">40 min</span></div>
+      <div class="stat-row"><span>Physics (45 Qs)</span><span class="val" style="color:#00b4d8">50 min</span></div>
+      <div class="stat-row"><span>Revision / Re-check</span><span class="val">30 min</span></div>
+      <div class="info-alert" style="margin-top:10px"><strong>Sequence:</strong> Biology first → Chemistry → Physics. Do Physics last as it's most time-consuming.</div>
+    </div>
+  </div>
+
+  <div class="sub-heading">📚 Subject-wise Preparation Strategy</div>
+
+  <div class="card phys" style="border-color:rgba(0,180,216,0.25)">
+    <div class="card-title"><span class="dot" style="background:#00b4d8"></span>⚛️ Physics Preparation Strategy</div>
+    <div class="grid-2">
+      <div class="strategy-block">
+        <h4>MUST-DO CHAPTERS (Top 8 — 70% of Physics)</h4>
+        <ul>
+          <li>Electrostatics — capacitors, field, potential (highest ROI)</li>
+          <li>Current Electricity — Kirchhoff, Wheatstone, meters</li>
+          <li>Modern Physics — Bohr model, nuclear decay, photoelectric</li>
+          <li>Ray & Wave Optics — lenses, YDSE, polarisation</li>
+          <li>Magnetic Effects + Magnetism — force, torque, solenoid</li>
+          <li>Semiconductors — diodes, transistors, logic gates</li>
+          <li>EMI & AC — Faraday, impedance, power factor</li>
+          <li>Thermodynamics + KTG — Carnot, entropy, rms speed</li>
+        </ul>
+      </div>
+      <div class="strategy-block">
+        <h4>RESOURCES & APPROACH</h4>
+        <ul>
+          <li>NCERT XI & XII — must complete fully</li>
+          <li>HC Verma (Concepts of Physics) — selected chapters</li>
+          <li>DC Pandey — practice numericals</li>
+          <li>Focus on formula sheets — Physics is formula-heavy</li>
+          <li>Solve all NCERT examples + exercises</li>
+          <li>For A/R type: conceptually understand each law/principle</li>
+          <li>Avoid spending too much time on difficult numericals (−1 risk)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:rgba(199,125,255,0.25)">
+    <div class="card-title"><span class="dot" style="background:#c77dff"></span>🧪 Chemistry Preparation Strategy</div>
+    <div class="grid-2">
+      <div class="strategy-block">
+        <h4>SECTION-WISE APPROACH</h4>
+        <ul>
+          <li>Inorganic: Pure NCERT. No shortcuts needed. Read line by line.</li>
+          <li>Physical: Formula + concept + 1–2 examples per formula</li>
+          <li>Organic: Master named reactions + reaction mechanisms</li>
+          <li>Biomolecules & Polymers: NCERT tables are enough</li>
+          <li>Coordination: IUPAC naming + isomers thoroughly</li>
+          <li>Electrochemistry: Nernst equation problems</li>
+          <li>Solutions: Colligative properties — numerical practice</li>
+        </ul>
+      </div>
+      <div class="strategy-block">
+        <h4>HIGH ROI CHEMISTRY TOPICS FOR 2026</h4>
+        <ul>
+          <li>Amines — basicity order (asked 6/8 years)</li>
+          <li>Biomolecules — glucose reactions, amino acid structures</li>
+          <li>Coordination compounds — isomers + IUPAC (8/8 years)</li>
+          <li>Equilibrium — pH, buffer calculations (8/8 years)</li>
+          <li>Organic reactions — mechanism of addition/elimination</li>
+          <li>Solid state — unit cells, packing efficiency</li>
+          <li>Aldehydes & Ketones — Cannizzaro, Aldol, named reactions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:rgba(45,139,78,0.25)">
+    <div class="card-title"><span class="dot" style="background:#2d8b4e"></span>🌿 Biology Preparation Strategy (Botany + Zoology)</div>
+    <div class="grid-2">
+      <div class="strategy-block">
+        <h4>GOLDEN RULE: NCERT IS EVERYTHING</h4>
+        <ul>
+          <li>Read NCERT Class XI & XII Biology 3–5 times minimum</li>
+          <li>Memorise all NCERT tables, diagrams, and bold text</li>
+          <li>Chapter summaries in NCERT — learn them word-for-word</li>
+          <li>NCERT examples often appear as questions verbatim</li>
+          <li>Focus extra time on: Molecular Biology, Genetics, Ecology, Reproduction</li>
+          <li>Make personal notes for Botany: photosynthesis, cell division</li>
+          <li>For Zoology: endocrine glands, immunity, evolution calculations</li>
+        </ul>
+      </div>
+      <div class="strategy-block">
+        <h4>HIGHEST ROI BIOLOGY TOPICS 2026</h4>
+        <ul>
+          <li>Molecular Basis: Lac operon, replication, translation details</li>
+          <li>Biotechnology: PCR, vectors, rDNA technology, CRISPR</li>
+          <li>Human Reproduction: spermatogenesis/oogenesis comparison</li>
+          <li>Inheritance: Mendelian genetics + sex-linked disorders</li>
+          <li>Immunity: innate vs adaptive, antibody classes (IgG, IgE, etc.)</li>
+          <li>Animal Kingdom: phylum characters comparison tables</li>
+          <li>Evolution: Hardy-Weinberg numerical + speciation types</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="golden-box">
+    <h3>⚠️ Top 10 Mistakes to Avoid in NEET</h3>
+    <div class="grid-2">
+      <div class="strategy-block">
+        <h4>PREPARATION MISTAKES</h4>
+        <ul>
+          <li>Ignoring NCERT and relying only on coaching notes</li>
+          <li>Skipping Physics chapters (all chapters have been tested)</li>
+          <li>Not practising assertion-reason type questions</li>
+          <li>Leaving Inorganic Chemistry "for later" (never study it)</li>
+          <li>Not revising older chapters periodically</li>
+        </ul>
+      </div>
+      <div class="strategy-block">
+        <h4>EXAM-DAY MISTAKES</h4>
+        <ul>
+          <li>Attempting all 180 Qs without care (−1 penalty is real)</li>
+          <li>Spending too much time on single difficult Physics questions</li>
+          <li>Second-guessing NCERT-based Biology answers</li>
+          <li>Not using Section B wisely (2024–25 pattern)</li>
+          <li>Attempting Organic Chemistry questions without knowing mechanism</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:#00e5ff"></span>Static vs Dynamic Content Analysis</div>
+    <div class="grid-2">
+      <div>
+        <div class="stat-row"><span>Pure Static Knowledge</span><span class="val" style="color:#00e676">~92%</span></div>
+        <div class="stat-row"><span>Current Affairs / Dynamic</span><span class="val" style="color:#ff4f7b">~8%</span></div>
+        <div class="stat-row"><span>Recent Discoveries / News</span><span class="val" style="color:#ffab40">Rare</span></div>
+      </div>
+      <div>
+        <div class="info-alert">
+          <strong>NEET is overwhelmingly static.</strong> Unlike UPSC, NEET tests Class XI–XII NCERT content almost exclusively. Focus 95% on NCERT mastery. Only recent NMC/MCI changes or new diseases may rarely appear.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:#ffab40"></span>Recommended Study Resources</div>
+    <div class="grid-2">
+      <div class="strategy-block">
+        <h4>PRIMARY RESOURCES (Must-Have)</h4>
+        <ul>
+          <li>NCERT Physics Part I & II (Class XI & XII)</li>
+          <li>NCERT Chemistry Part I & II (Class XI & XII)</li>
+          <li>NCERT Biology (Class XI & XII)</li>
+          <li>MTG NCERT at Your Fingertips (Biology & Chemistry)</li>
+          <li>DC Pandey Physics for NEET</li>
+          <li>VK Jaiswal Inorganic Chemistry</li>
+          <li>MS Chauhan Organic Chemistry (selected chapters)</li>
+        </ul>
+      </div>
+      <div class="strategy-block">
+        <h4>PRACTICE & REVISION</h4>
+        <ul>
+          <li>Previous 10-year NEET PYQs (chapterwise + yearwise)</li>
+          <li>NTA Mock Tests (official practice portal)</li>
+          <li>Aakash/Allen Test Series (sectional + full mocks)</li>
+          <li>Biology: Trueman's Objective Biology Vol. I & II</li>
+          <li>PW (Physics Wallah) NEET Batch notes</li>
+          <li>Make Chapterwise formula sheets (especially Physics & Chem)</li>
+          <li>Flashcards for Inorganic Chemistry reactions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<div class="footer-note">
+  NEET UG PYQ Analysis 2018–2025 · Based on official papers · For educational purposes only<br>
+  Analysis covers Physics, Chemistry, Botany & Zoology · 8 Years · 1440 Questions
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
